@@ -3,5 +3,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(ProblemList());
+  runApp(MaterialApp(
+    title: 'aXess App',
+    debugShowCheckedModeBanner: false,
+    home: ProblemList(),
+  ));
 }

@@ -10,6 +10,7 @@ class CreateProblem extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         title: 'Axess Hackathon',
+        debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primarySwatch: Colors.blue,
           visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -23,12 +24,10 @@ class CreateProblem extends StatelessWidget {
                 alignment: Alignment.centerLeft,
                 margin: EdgeInsets.fromLTRB(16, 18, 16, 8),
                 child: Text(
-                  "Hackathons",
+                  "Create Problem",
                   style: kBlueTitle,
                 ),
               ),
-              HackathonWidget(SampleObjects.sampleHackathon),
-              HackathonWidget(SampleObjects.sampleHackathon)
             ],
           ),
         ));
