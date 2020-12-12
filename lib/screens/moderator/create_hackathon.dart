@@ -6,15 +6,15 @@ import 'package:flutter/material.dart';
 import 'package:searchable_dropdown/searchable_dropdown.dart';
 import 'package:flutter/cupertino.dart';
 
-class CreateProblem extends StatefulWidget {
-  const CreateProblem({
+class CreateHackathon extends StatefulWidget {
+  const CreateHackathon({
     Key key,
   }) : super(key: key);
 
-  _CreateProblemtState createState() => _CreateProblemtState();
+  _CreateHackathonState createState() => _CreateHackathonState();
 }
 
-class _CreateProblemtState extends State<CreateProblem> {
+class _CreateHackathonState extends State<CreateHackathon> {
   String groupSelectedValue;
   List<int> skillSelectedValues = [];
 
