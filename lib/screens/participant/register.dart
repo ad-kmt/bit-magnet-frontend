@@ -1,4 +1,5 @@
 import 'package:bit_magnet/components/app_bar.dart';
+import 'package:bit_magnet/components/buttons.dart';
 import 'package:bit_magnet/components/team_card.dart';
 import 'package:bit_magnet/styles/constants.dart';
 import 'package:bit_magnet/styles/palette.dart';
@@ -10,6 +11,12 @@ class Register extends StatelessWidget {
     return Scaffold(
       appBar: AxessAppBar(),
       backgroundColor: Colors.white,
+      bottomNavigationBar: BottomAppBar(
+        child: Container(
+          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+          child: FlatGreenButton("Register"),
+        ),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -48,14 +55,23 @@ class Register extends StatelessWidget {
                       color: Palette.darkBlue,
                     ),
                   ),
-                  CircleAvatar(
-                    child: Icon(
-                      Icons.add,
-                      size: 30,
-                      color: Colors.white,
+                  ClipOval(
+                    child: Material(
+                      color: Palette.greenWidget, // button color
+                      child: InkWell(
+                        splashColor: Colors.green.shade500, // inkwell color
+                        child: SizedBox(
+                          width: 48,
+                          height: 48,
+                          child: Icon(
+                            Icons.add,
+                            size: 30,
+                            color: Colors.white,
+                          ),
+                        ),
+                        onTap: () {},
+                      ),
                     ),
-                    backgroundColor: Palette.greenWidget,
-                    radius: 24,
                   ),
                   Expanded(
                     flex: 1,

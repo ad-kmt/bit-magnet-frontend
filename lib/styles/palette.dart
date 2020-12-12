@@ -13,4 +13,5 @@ class Palette {
   static Color darkBlue = Color(0xff003E52);
 
   static Color greenWidget = Color(0xff6EC069);
+  static Color greenText = Color(0xff3f9c35);
 }
