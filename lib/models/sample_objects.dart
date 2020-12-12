@@ -17,6 +17,10 @@ class SampleObjects {
     IProblemStatement(0084, "Problem Name", "description", "Department")
   ];
 
+  static List<IHackathon> sampleHlist = [
+    IHackathon("Hackathon 1", "DD:MM", "DD:MM", "Location", 5),
+    IHackathon("Hackathon 2", "DD:MM", "DD:MM", "Location", 5)
+  ];
 
   static List<DropdownMenuItem> sampleGroupList = [ DropdownMenuItem( child: Text('Retails'), value: 'Retails'), DropdownMenuItem( child: Text('CCIB'), value: 'CCIB') ];
   static List<DropdownMenuItem> sampleSkillList = [ DropdownMenuItem( child: Text('ReactJS'), value: 'ReactJS'), DropdownMenuItem( child: Text('NodeJS'), value: 'NodeJS') ];
