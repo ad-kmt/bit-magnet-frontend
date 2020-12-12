@@ -6,7 +6,7 @@ import 'package:bit_magnet/styles/constants.dart';
 import 'package:bit_magnet/styles/palette.dart';
 import 'package:flutter/material.dart';
 
-class ParticipantHackathon extends StatelessWidget {
+class HackathonDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

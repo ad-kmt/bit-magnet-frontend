@@ -1,5 +1,5 @@
-class Hackathon {
-  Hackathon(
+class IHackathon {
+  IHackathon(
       this.title, this.startDate, this.endDate, this.location, this.spaceLeft);
 
   final String title;

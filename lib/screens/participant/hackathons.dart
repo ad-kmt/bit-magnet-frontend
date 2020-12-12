@@ -1,11 +1,11 @@
 import 'package:bit_magnet/components/app_bar.dart';
-import 'package:bit_magnet/components/hackathon_widget.dart';
+import 'package:bit_magnet/components/hackathon_card.dart';
 import 'package:bit_magnet/models/sample_objects.dart';
 import 'package:bit_magnet/styles/constants.dart';
 import 'package:bit_magnet/styles/palette.dart';
 import 'package:flutter/material.dart';
 
-class ParticipantHome extends StatelessWidget {
+class Hackathons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -27,8 +27,8 @@ class ParticipantHome extends StatelessWidget {
                   style: kBlueTitle,
                 ),
               ),
-              HackathonWidget(SampleObjects.sampleHackathon),
-              HackathonWidget(SampleObjects.sampleHackathon)
+              HackathonCard(SampleObjects.sampleHackathon),
+              HackathonCard(SampleObjects.sampleHackathon)
             ],
           ),
         ));

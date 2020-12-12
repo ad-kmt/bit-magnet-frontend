@@ -1,10 +1,10 @@
-class ProblemStatement {
+class IProblemStatement {
   final int id;
   final String title;
   final String description;
   final String department;
 
-  ProblemStatement(this.id, this.title, this.description, this.department);
+  IProblemStatement(this.id, this.title, this.description, this.department);
 
   @override
   String toString() {
