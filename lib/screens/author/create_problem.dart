@@ -14,7 +14,6 @@ class CreateProblem extends StatefulWidget {
 }
 
 class _CreateProblemtState extends State<CreateProblem> {
-
   String groupSelectedValue;
   List<int> skillSelectedValues = [];
 
@@ -24,6 +23,7 @@ class _CreateProblemtState extends State<CreateProblem> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomPadding: false,
       appBar: AxessAppBar(),
       backgroundColor: Palette.lightGreyBackground,
       body: Column(
@@ -47,13 +47,10 @@ class _CreateProblemtState extends State<CreateProblem> {
                   style: customLabel,
                 ),
               ),
-
               TextFormField(
                 // The validator receives the text that the user has entered.
                 decoration: InputDecoration(
-                    border: InputBorder.none,
-                    hintText: 'Enter Title'
-                ),
+                    border: InputBorder.none, hintText: 'Enter Title'),
                 validator: (value) {
                   if (value.isEmpty) {
                     return 'Please enter some text';
@@ -61,7 +58,6 @@ class _CreateProblemtState extends State<CreateProblem> {
                   return null;
                 },
               ),
-
               Container(
                 margin: EdgeInsets.fromLTRB(0, 10, 0, 15),
                 alignment: Alignment.centerLeft,
@@ -130,6 +126,55 @@ class _CreateProblemtState extends State<CreateProblem> {
                   "Group this hackathon is for",
                   style: customHeplerText,
                 ),
+              ),
+              Container(
+                margin: EdgeInsets.fromLTRB(0, 10, 0, 5),
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  "Benefactor",
+                  style: customLabel,
+                ),
+              ),
+              TextFormField(
+                // The validator receives the text that the user has entered.
+                decoration: InputDecoration(
+                    border: InputBorder.none,
+                    hintText: 'Enter Benefactor Bank ID'),
+                validator: (value) {
+                  if (value.isEmpty) {
+                    return 'Please enter some text';
+                  }
+                  return null;
+                },
+              ),
+              Container(
+                margin: EdgeInsets.fromLTRB(0, 10, 0, 15),
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  "Benefactor Bank ID",
+                  style: customHeplerText,
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.fromLTRB(0, 10, 0, 5),
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  "Description",
+                  style: customLabel,
+                ),
+              ),
+              TextFormField(
+                maxLines: 12,
+                // The validator receives the text that the user has entered.
+                decoration: InputDecoration(
+                    border: InputBorder.none,
+                    hintText: 'Type details of problem statement'),
+                validator: (value) {
+                  if (value.isEmpty) {
+                    return 'Please enter some text';
+                  }
+                  return null;
+                },
               ),
             ]),
           ),
