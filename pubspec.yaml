@@ -13,6 +13,7 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.0
   collapsible_sidebar: ^1.0.5
+  flutter_login: ^1.0.14
 
 dev_dependencies:
   flutter_test:

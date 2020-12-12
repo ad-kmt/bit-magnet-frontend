@@ -6,29 +6,21 @@ import 'package:flutter/material.dart';
 class CreateProblem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        title: 'Axess Hackathon',
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-          visualDensity: VisualDensity.adaptivePlatformDensity,
-        ),
-        home: Scaffold(
-          appBar: AxessAppBar(),
-          backgroundColor: Palette.lightGreyBackground,
-          body: Column(
-            children: [
-              Container(
-                alignment: Alignment.centerLeft,
-                margin: EdgeInsets.fromLTRB(16, 18, 16, 8),
-                child: Text(
-                  "Create Problem",
-                  style: kBlueTitle,
-                ),
-              ),
-            ],
+    return Scaffold(
+      appBar: AxessAppBar(),
+      backgroundColor: Palette.lightGreyBackground,
+      body: Column(
+        children: [
+          Container(
+            alignment: Alignment.centerLeft,
+            margin: EdgeInsets.fromLTRB(16, 18, 16, 8),
+            child: Text(
+              "Create Problem",
+              style: kBlueTitle,
+            ),
           ),
-        )
+        ],
+      ),
     );
   }
 }
