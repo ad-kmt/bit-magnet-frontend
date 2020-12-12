@@ -8,10 +8,6 @@ class AxessAppBar extends PreferredSize {
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: Colors.white,
-      leading: Icon(
-        Icons.menu,
-        color: Color(0xff0780B4),
-      ),
       title: Container(
         alignment: Alignment.centerRight,
         child: Image(image: AssetImage("images/logo.png")),
