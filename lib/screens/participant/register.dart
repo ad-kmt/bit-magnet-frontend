@@ -37,6 +37,36 @@ class Register extends StatelessWidget {
               "Select one to proceed",
               style: kGreyInfo,
             ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 4),
+              child: Row(
+                children: [
+                  Expanded(
+                    flex: 10,
+                    child: Container(
+                      height: 2.0,
+                      color: Palette.darkBlue,
+                    ),
+                  ),
+                  CircleAvatar(
+                    child: Icon(
+                      Icons.add,
+                      size: 30,
+                      color: Colors.white,
+                    ),
+                    backgroundColor: Palette.greenWidget,
+                    radius: 24,
+                  ),
+                  Expanded(
+                    flex: 1,
+                    child: Container(
+                      height: 2.0,
+                      color: Palette.darkBlue,
+                    ),
+                  ),
+                ],
+              ),
+            ),
             TeamCard(),
           ],
         ),
