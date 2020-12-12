@@ -2,10 +2,10 @@ import 'package:bit_magnet/models/problem_statement.dart';
 import 'package:bit_magnet/styles/palette.dart';
 import 'package:flutter/material.dart';
 
-class ProblemStatementWidget extends StatelessWidget {
+class ProblemStatementCard extends StatelessWidget {
   final IProblemStatement problemStatement;
 
-  const ProblemStatementWidget(this.problemStatement);
+  const ProblemStatementCard(this.problemStatement);
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class ProblemStatementWidget extends StatelessWidget {
             child: Row(
               children: [
                 Text(
-                  problemStatement.id.toString(),
+                  problemStatement.id,
                   style: TextStyle(
                       color: Colors.black,
                       fontSize: 20,

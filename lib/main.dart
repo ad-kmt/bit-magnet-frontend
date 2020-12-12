@@ -1,3 +1,4 @@
+import 'package:bit_magnet/models/sample_objects.dart';
 import 'package:bit_magnet/screens/author/create_problem.dart';
 import 'package:bit_magnet/screens/author/invitations.dart';
 import 'package:bit_magnet/screens/author/problem_list.dart';
@@ -13,6 +14,6 @@ void main() {
     title: 'aXess App',
     debugShowCheckedModeBanner: false,
 //    home: ProblemStatement(),
-    home: HackathonList(),
+    home: ProblemStatement(SampleObjects.sampleProblemStatement),
   ));
 }

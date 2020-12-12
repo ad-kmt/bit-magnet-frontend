@@ -1,10 +1,15 @@
 import 'package:bit_magnet/components/app_bar.dart';
 import 'package:bit_magnet/components/buttons.dart';
+import 'package:bit_magnet/models/problem_statement.dart';
 import 'package:bit_magnet/styles/constants.dart';
 import 'package:bit_magnet/styles/palette.dart';
 import 'package:flutter/material.dart';
 
 class ProblemStatement extends StatelessWidget {
+  final IProblemStatement problem;
+
+  const ProblemStatement(this.problem);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +32,7 @@ class ProblemStatement extends StatelessWidget {
                   child: Row(
                     children: [
                       Text(
-                        "0086: ",
+                        "${problem.id}: ",
                         style: kBlackSubTitle,
                       ),
                       Text(
@@ -39,26 +44,42 @@ class ProblemStatement extends StatelessWidget {
                     ],
                   ),
                 ),
+                Section("Challenge", problem.description, Palette.greenText),
                 Section(
-                    "Challenge",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                    Palette.greenText),
-                Section("Who we're solving for", "RPBWM - Some Department",
-                    Colors.black),
+                    "Who we're solving for", problem.department, Colors.black),
                 Section(
                   "Benefits",
-                  "Lorem ipsum",
+                  problem.benefits,
                   Colors.black,
                 ),
                 Section(
                   "Success Criteria",
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod",
+                  problem.successCriteria,
                   Colors.black,
                 ),
-                Section(
-                  "Suggested Technology",
-                  "React     Java     JavaScript",
-                  Colors.black,
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 6),
+                  child: Text(
+                    "Suggested Technologies",
+                    style: TextStyle(
+                        fontSize: 22,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.black),
+                  ),
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: List.generate(problem.technologies.length, (index) {
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 6),
+                      child: Text(
+                        problem.technologies[index],
+                        style: TextStyle(
+                          fontSize: 18,
+                        ),
+                      ),
+                    );
+                  }),
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 6),

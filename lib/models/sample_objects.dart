@@ -9,12 +9,32 @@ class SampleObjects {
   static IHackathon sampleHackathon =
       IHackathon("Hackathon Name", "DD:MM", "DD:MM", "Location", 5);
 
-  static IProblemStatement sampleProblemStatement =
-      IProblemStatement(0083, "Problem Name", "description", "Department");
+  static IProblemStatement sampleProblemStatement = IProblemStatement(
+      "0083",
+      "Problem Name",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "RPBWM - Some Department",
+      "Lorem ipsum",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod",
+      ["React", "Java", "JavaScript"]);
 
   static List<IProblemStatement> samplePlist = [
-    IProblemStatement(0083, "Problem Name", "description", "Department"),
-    IProblemStatement(0084, "Problem Name", "description", "Department")
+    IProblemStatement(
+        "0083",
+        "Problem Name",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "RPBWM - Some Department",
+        "Lorem ipsum",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod",
+        ["React", "Java", "JavaScript"]),
+    IProblemStatement(
+        "0084",
+        "Problem Name",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "RPBWM - Some Department",
+        "Lorem ipsum",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod",
+        ["React", "Java", "JavaScript"])
   ];
 
   static List<IHackathon> sampleHlist = [
@@ -27,6 +47,7 @@ class SampleObjects {
   static List<DropdownMenuItem> sampleInvitationList = [ DropdownMenuItem( child: Text('Aditya@sc.com'), value: 'Aditya@sc.com'), DropdownMenuItem( child: Text('amar@sc.com'), value: 'amar@sc.com') ];
   static List<DropdownMenuItem> sampleLocationList = [ DropdownMenuItem( child: Text('Bangalore'), value: 'Bangalore'), DropdownMenuItem( child: Text('Chennai'), value: 'Chennai') ];
   static List<DropdownMenuItem> sampleProblemList = [ DropdownMenuItem( child: Text('problem 1'), value: 'problem 1'), DropdownMenuItem( child: Text('problem 2'), value: 'problem 2') ];
+
 
   static List<IInvitation> sampleIlist = [ IInvitation('1', 'Aditya', "hackathon1") ];
 

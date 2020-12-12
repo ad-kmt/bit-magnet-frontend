@@ -1,6 +1,6 @@
 import 'package:bit_magnet/components/app_bar.dart';
 import 'package:bit_magnet/components/hackathon_cover.dart';
-import 'package:bit_magnet/components/problem_statement_widget.dart';
+import 'package:bit_magnet/components/problem_statement_card.dart';
 import 'package:bit_magnet/models/sample_objects.dart';
 import 'package:bit_magnet/styles/constants.dart';
 import 'package:bit_magnet/styles/palette.dart';
@@ -38,7 +38,7 @@ class HackathonDetail extends StatelessWidget {
                   style: kBlackTitle,
                 ),
               ),
-              ProblemStatementWidget(SampleObjects.sampleProblemStatement)
+              ProblemStatementCard(SampleObjects.sampleProblemStatement)
             ],
           ),
         ));
