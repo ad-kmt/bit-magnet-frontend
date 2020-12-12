@@ -4,6 +4,7 @@ import 'package:bit_magnet/styles/constants.dart';
 import 'package:bit_magnet/styles/palette.dart';
 import 'package:flutter/material.dart';
 import 'package:searchable_dropdown/searchable_dropdown.dart';
+import 'package:flutter/cupertino.dart';
 
 class CreateProblem extends StatefulWidget {
   const CreateProblem({
@@ -175,6 +176,10 @@ class _CreateProblemtState extends State<CreateProblem> {
                   }
                   return null;
                 },
+              ),
+              CupertinoButton.filled(
+                child: Text('Submit'),
+                onPressed: () { /** */ },
               ),
             ]),
           ),

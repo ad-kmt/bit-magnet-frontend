@@ -1,3 +1,4 @@
+import 'package:bit_magnet/screens/author/create_problem.dart';
 import 'package:bit_magnet/screens/author/invitations.dart';
 import 'package:bit_magnet/screens/author/problem_list.dart';
 import 'package:bit_magnet/screens/login/login.dart';
@@ -9,6 +10,7 @@ void main() {
   runApp(MaterialApp(
     title: 'aXess App',
     debugShowCheckedModeBanner: false,
-    home: Register(),
+//    home: Register(),
+    home: CreateProblem(),
   ));
 }
