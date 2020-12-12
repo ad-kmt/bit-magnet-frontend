@@ -2,11 +2,11 @@ import 'package:bit_magnet/models/hackathon.dart';
 import 'package:bit_magnet/styles/constants.dart';
 import 'package:flutter/material.dart';
 
-class HackathonWidget extends StatelessWidget {
+class HackathonCard extends StatelessWidget {
   //Hackathon object
-  final Hackathon hackathon;
+  final IHackathon hackathon;
 
-  HackathonWidget(this.hackathon);
+  HackathonCard(this.hackathon);
 
   @override
   Widget build(BuildContext context) {

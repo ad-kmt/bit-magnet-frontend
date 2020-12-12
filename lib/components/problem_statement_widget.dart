@@ -3,7 +3,7 @@ import 'package:bit_magnet/styles/palette.dart';
 import 'package:flutter/material.dart';
 
 class ProblemStatementWidget extends StatelessWidget {
-  final ProblemStatement problemStatement;
+  final IProblemStatement problemStatement;
 
   const ProblemStatementWidget(this.problemStatement);
 

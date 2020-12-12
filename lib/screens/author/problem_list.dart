@@ -8,7 +8,6 @@ import 'package:flutter/material.dart';
 import 'package:bit_magnet/models/problem_statement.dart';
 
 class ProblemList extends StatefulWidget {
-
   const ProblemList({
     Key key,
   }) : super(key: key);
@@ -17,8 +16,7 @@ class ProblemList extends StatefulWidget {
 }
 
 class _ProblemListState extends State<ProblemList> {
-
-  List<ProblemStatement> samplePlist = SampleObjects.samplePlist;
+  List<IProblemStatement> samplePlist = SampleObjects.samplePlist;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +26,7 @@ class _ProblemListState extends State<ProblemList> {
       drawer: SideBar(),
       body: Column(
         children: [
-          for ( var problem in samplePlist ) ProblemStatementWidget(problem)
+          for (var problem in samplePlist) ProblemStatementWidget(problem)
         ],
       ),
       floatingActionButton: FloatingActionButton.extended(

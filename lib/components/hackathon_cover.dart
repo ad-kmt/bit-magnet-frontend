@@ -2,11 +2,11 @@ import 'package:bit_magnet/models/hackathon.dart';
 import 'package:bit_magnet/styles/constants.dart';
 import 'package:flutter/material.dart';
 
-import 'hackathon_widget.dart';
+import 'hackathon_card.dart';
 
 class HackathonCover extends StatelessWidget {
   //Hackathon object
-  final Hackathon hackathon;
+  final IHackathon hackathon;
 
   HackathonCover(this.hackathon);
 
