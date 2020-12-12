@@ -33,13 +33,40 @@ class _CreateHackathonState extends State<CreateHackathon> {
             alignment: Alignment.centerLeft,
             margin: EdgeInsets.fromLTRB(16, 18, 16, 8),
             child: Text(
-              "Create Problem",
+              "Create Hackathon",
               style: kBlueTitle,
             ),
           ),
           Padding(
             padding: EdgeInsets.all(16.0),
             child: Column(children: [
+              Container(
+                margin: EdgeInsets.fromLTRB(0, 10, 0, 5),
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  "Topic",
+                  style: customLabel,
+                ),
+              ),
+              TextFormField(
+                // The validator receives the text that the user has entered.
+                decoration: InputDecoration(
+                    border: InputBorder.none, hintText: 'Enter Topic'),
+                validator: (value) {
+                  if (value.isEmpty) {
+                    return 'Please enter some text';
+                  }
+                  return null;
+                },
+              ),
+              Container(
+                margin: EdgeInsets.fromLTRB(0, 10, 0, 15),
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  "Hackathon Topic",
+                  style: customHeplerText,
+                ),
+              ),
               Container(
                 margin: EdgeInsets.fromLTRB(0, 10, 0, 5),
                 alignment: Alignment.centerLeft,
@@ -63,7 +90,7 @@ class _CreateHackathonState extends State<CreateHackathon> {
                 margin: EdgeInsets.fromLTRB(0, 10, 0, 15),
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  "Problem Statement Title",
+                  "Hackathon Title",
                   style: customHeplerText,
                 ),
               ),
@@ -71,43 +98,15 @@ class _CreateHackathonState extends State<CreateHackathon> {
                 margin: EdgeInsets.fromLTRB(0, 10, 0, 5),
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  "Group",
-                  style: customLabel,
-                ),
-              ),
-              SearchableDropdown.single(
-                items: groupList,
-                value: groupSelectedValue,
-                hint: "Select a Group",
-                searchHint: "Retail, CCIB ",
-                onChanged: (value) {
-                  setState(() {
-                    groupSelectedValue = value;
-                  });
-                },
-                isExpanded: true,
-              ),
-              Container(
-                margin: EdgeInsets.fromLTRB(0, 5, 0, 15),
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  "Group this hackathon is for",
-                  style: customHeplerText,
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.fromLTRB(0, 10, 0, 5),
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  "Skills",
+                  "Send Invitations",
                   style: customLabel,
                 ),
               ),
               SearchableDropdown.multiple(
                 items: skillList,
                 selectedItems: skillSelectedValues,
-                hint: Text("Select skills"),
-                searchHint: "ReactJS, NodeJS",
+                hint: Text("Send Invitations"),
+                searchHint: "",
                 onChanged: (value) {
                   setState(() {
                     skillSelectedValues = value;
@@ -124,7 +123,7 @@ class _CreateHackathonState extends State<CreateHackathon> {
                 margin: EdgeInsets.fromLTRB(0, 5, 0, 15),
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  "Group this hackathon is for",
+                  "Invite CIO, CXO problems in this hackathon",
                   style: customHeplerText,
                 ),
               ),
@@ -132,15 +131,42 @@ class _CreateHackathonState extends State<CreateHackathon> {
                 margin: EdgeInsets.fromLTRB(0, 10, 0, 5),
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  "Benefactor",
+                  "Location",
+                  style: customLabel,
+                ),
+              ),
+              SearchableDropdown.single(
+                items: groupList,
+                value: groupSelectedValue,
+                hint: "Choose a location",
+                searchHint: "Bangalore",
+                onChanged: (value) {
+                  setState(() {
+                    groupSelectedValue = value;
+                  });
+                },
+                isExpanded: true,
+              ),
+              Container(
+                margin: EdgeInsets.fromLTRB(0, 5, 0, 15),
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  "Location where hackathon is held",
+                  style: customHeplerText,
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.fromLTRB(0, 10, 0, 5),
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  "Team size",
                   style: customLabel,
                 ),
               ),
               TextFormField(
                 // The validator receives the text that the user has entered.
                 decoration: InputDecoration(
-                    border: InputBorder.none,
-                    hintText: 'Enter Benefactor Bank ID'),
+                    border: InputBorder.none, hintText: 'Enter team size'),
                 validator: (value) {
                   if (value.isEmpty) {
                     return 'Please enter some text';
@@ -152,7 +178,7 @@ class _CreateHackathonState extends State<CreateHackathon> {
                 margin: EdgeInsets.fromLTRB(0, 10, 0, 15),
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  "Benefactor Bank ID",
+                  "Max number of teams",
                   style: customHeplerText,
                 ),
               ),
@@ -160,22 +186,34 @@ class _CreateHackathonState extends State<CreateHackathon> {
                 margin: EdgeInsets.fromLTRB(0, 10, 0, 5),
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  "Description",
+                  "Problems",
                   style: customLabel,
                 ),
               ),
-              TextFormField(
-                maxLines: 12,
-                // The validator receives the text that the user has entered.
-                decoration: InputDecoration(
-                    border: InputBorder.none,
-                    hintText: 'Type details of problem statement'),
-                validator: (value) {
-                  if (value.isEmpty) {
-                    return 'Please enter some text';
-                  }
-                  return null;
+              SearchableDropdown.multiple(
+                items: skillList,
+                selectedItems: skillSelectedValues,
+                hint: Text("Select problems"),
+                searchHint: "",
+                onChanged: (value) {
+                  setState(() {
+                    skillSelectedValues = value;
+                  });
                 },
+                closeButton: (skillSelectedValues) {
+                  return (skillSelectedValues.isNotEmpty
+                      ? "Save ${skillSelectedValues.length == 1 ? '"' + skillList[skillSelectedValues.first].value.toString() + '"' : '(' + skillSelectedValues.length.toString() + ')'}"
+                      : "Save without selection");
+                },
+                isExpanded: true,
+              ),
+              Container(
+                margin: EdgeInsets.fromLTRB(0, 5, 0, 15),
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  "Problem statements for this hackathon",
+                  style: customHeplerText,
+                ),
               ),
               CupertinoButton.filled(
                 child: Text('Submit'),
