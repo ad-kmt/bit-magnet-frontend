@@ -1,5 +1,6 @@
 import 'package:bit_magnet/models/invitation.dart';
 import 'package:bit_magnet/models/problem_statement.dart';
+import 'package:flutter/material.dart';
 
 import 'hackathon.dart';
 
@@ -11,4 +12,8 @@ class SampleObjects {
   static List<ProblemStatement> samplePlist = [ ProblemStatement(0083, "Problem Name", "description", "Department"), ProblemStatement(0084, "Problem Name", "description", "Department") ];
 
   static List<IInvitation> sampleIlist = [ IInvitation('1','Aditya', "hackathon1") ];
+
+  static List<DropdownMenuItem> sampleGroupList = [ DropdownMenuItem( child: Text('Retails'), value: 'Retails'), DropdownMenuItem( child: Text('CCIB'), value: 'CCIB') ];
+  static List<DropdownMenuItem> sampleSkillList = [ DropdownMenuItem( child: Text('ReactJS'), value: 'ReactJS'), DropdownMenuItem( child: Text('NodeJS'), value: 'NodeJS') ];
+
 }
