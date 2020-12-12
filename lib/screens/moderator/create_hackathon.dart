@@ -15,11 +15,14 @@ class CreateHackathon extends StatefulWidget {
 }
 
 class _CreateHackathonState extends State<CreateHackathon> {
-  String groupSelectedValue;
-  List<int> skillSelectedValues = [];
+  String locationSelectedValue;
 
-  final List<DropdownMenuItem> groupList = SampleObjects.sampleGroupList;
-  final List<DropdownMenuItem> skillList = SampleObjects.sampleSkillList;
+  List<int> invitationSelectedValues = [];
+  List<int> problemSelectedValues = [];
+
+  final List<DropdownMenuItem> invitationList = SampleObjects.sampleInvitationList;
+  final List<DropdownMenuItem> locationList = SampleObjects.sampleLocationList;
+  final List<DropdownMenuItem> problemList = SampleObjects.sampleProblemList;
 
   @override
   Widget build(BuildContext context) {
@@ -103,18 +106,18 @@ class _CreateHackathonState extends State<CreateHackathon> {
                 ),
               ),
               SearchableDropdown.multiple(
-                items: skillList,
-                selectedItems: skillSelectedValues,
+                items: invitationList,
+                selectedItems: invitationSelectedValues,
                 hint: Text("Send Invitations"),
                 searchHint: "",
                 onChanged: (value) {
                   setState(() {
-                    skillSelectedValues = value;
+                    invitationSelectedValues = value;
                   });
                 },
-                closeButton: (skillSelectedValues) {
-                  return (skillSelectedValues.isNotEmpty
-                      ? "Save ${skillSelectedValues.length == 1 ? '"' + skillList[skillSelectedValues.first].value.toString() + '"' : '(' + skillSelectedValues.length.toString() + ')'}"
+                closeButton: (invitationSelectedValues) {
+                  return (invitationSelectedValues.isNotEmpty
+                      ? "Save ${invitationSelectedValues.length == 1 ? '"' + invitationList[invitationSelectedValues.first].value.toString() + '"' : '(' + invitationSelectedValues.length.toString() + ')'}"
                       : "Save without selection");
                 },
                 isExpanded: true,
@@ -136,13 +139,13 @@ class _CreateHackathonState extends State<CreateHackathon> {
                 ),
               ),
               SearchableDropdown.single(
-                items: groupList,
-                value: groupSelectedValue,
+                items: locationList,
+                value: locationSelectedValue,
                 hint: "Choose a location",
                 searchHint: "Bangalore",
                 onChanged: (value) {
                   setState(() {
-                    groupSelectedValue = value;
+                    locationSelectedValue = value;
                   });
                 },
                 isExpanded: true,
@@ -191,18 +194,18 @@ class _CreateHackathonState extends State<CreateHackathon> {
                 ),
               ),
               SearchableDropdown.multiple(
-                items: skillList,
-                selectedItems: skillSelectedValues,
+                items: problemList,
+                selectedItems: problemSelectedValues,
                 hint: Text("Select problems"),
                 searchHint: "",
                 onChanged: (value) {
                   setState(() {
-                    skillSelectedValues = value;
+                    problemSelectedValues = value;
                   });
                 },
-                closeButton: (skillSelectedValues) {
-                  return (skillSelectedValues.isNotEmpty
-                      ? "Save ${skillSelectedValues.length == 1 ? '"' + skillList[skillSelectedValues.first].value.toString() + '"' : '(' + skillSelectedValues.length.toString() + ')'}"
+                closeButton: (problemSelectedValues) {
+                  return (problemSelectedValues.isNotEmpty
+                      ? "Save ${problemSelectedValues.length == 1 ? '"' + problemList[problemSelectedValues.first].value.toString() + '"' : '(' + problemSelectedValues.length.toString() + ')'}"
                       : "Save without selection");
                 },
                 isExpanded: true,

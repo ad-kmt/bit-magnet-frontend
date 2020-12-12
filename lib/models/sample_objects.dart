@@ -24,10 +24,11 @@ class SampleObjects {
 
   static List<DropdownMenuItem> sampleGroupList = [ DropdownMenuItem( child: Text('Retails'), value: 'Retails'), DropdownMenuItem( child: Text('CCIB'), value: 'CCIB') ];
   static List<DropdownMenuItem> sampleSkillList = [ DropdownMenuItem( child: Text('ReactJS'), value: 'ReactJS'), DropdownMenuItem( child: Text('NodeJS'), value: 'NodeJS') ];
+  static List<DropdownMenuItem> sampleInvitationList = [ DropdownMenuItem( child: Text('Aditya@sc.com'), value: 'Aditya@sc.com'), DropdownMenuItem( child: Text('amar@sc.com'), value: 'amar@sc.com') ];
+  static List<DropdownMenuItem> sampleLocationList = [ DropdownMenuItem( child: Text('Bangalore'), value: 'Bangalore'), DropdownMenuItem( child: Text('Chennai'), value: 'Chennai') ];
+  static List<DropdownMenuItem> sampleProblemList = [ DropdownMenuItem( child: Text('problem 1'), value: 'problem 1'), DropdownMenuItem( child: Text('problem 2'), value: 'problem 2') ];
 
-  static List<IInvitation> sampleIlist = [
-    IInvitation('1', 'Aditya', "hackathon1")
-  ];
+  static List<IInvitation> sampleIlist = [ IInvitation('1', 'Aditya', "hackathon1") ];
 
   static List<IParticipant> sampleParticipants = [
     IParticipant("Aditya", "Kumawat"),
@@ -37,6 +38,5 @@ class SampleObjects {
     IParticipant("Kanak", "Durga"),
   ];
 
-  static ITeam sampleTeam =
-      ITeam(sampleParticipants, IParticipant("Smita", "Meshram"), "Bit Magnet");
+  static ITeam sampleTeam = ITeam(sampleParticipants, IParticipant("Smita", "Meshram"), "Bit Magnet");
 }
