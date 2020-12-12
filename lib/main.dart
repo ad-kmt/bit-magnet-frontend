@@ -14,6 +14,6 @@ void main() {
     title: 'aXess App',
     debugShowCheckedModeBanner: false,
 //    home: ProblemStatement(),
-    home: ProblemStatement(SampleObjects.sampleProblemStatement),
+    home: ProblemList(),
   ));
 }
