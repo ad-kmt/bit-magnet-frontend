@@ -17,9 +17,30 @@ class SampleObjects {
     IProblemStatement(0084, "Problem Name", "description", "Department")
   ];
 
-
-  static List<DropdownMenuItem> sampleGroupList = [ DropdownMenuItem( child: Text('Retails'), value: 'Retails'), DropdownMenuItem( child: Text('CCIB'), value: 'CCIB') ];
-  static List<DropdownMenuItem> sampleSkillList = [ DropdownMenuItem( child: Text('ReactJS'), value: 'ReactJS'), DropdownMenuItem( child: Text('NodeJS'), value: 'NodeJS') ];
+  static List<DropdownMenuItem> sampleGroupList = [
+    DropdownMenuItem(child: Text('Retails'), value: 'Retails'),
+    DropdownMenuItem(child: Text('CCIB'), value: 'CCIB')
+  ];
+  static List<DropdownMenuItem> sampleSkillList = [
+    DropdownMenuItem(child: Text('ReactJS'), value: 'ReactJS'),
+    DropdownMenuItem(child: Text('NodeJS'), value: 'NodeJS')
+  ];
+  static List<DropdownMenuItem> sampleParticipantsList = [
+    DropdownMenuItem(
+        child: Text('Amardeep Saini (1626143)'),
+        value: 'Amardeep Saini (1626143)'),
+    DropdownMenuItem(
+        child: Text('Aditya Kumawat (1626888)'),
+        value: 'Aditya Kumawat (1626888)'),
+    DropdownMenuItem(
+        child: Text('Varun Bhandia (1626999)'),
+        value: 'Varun Bhandia (1626999)'),
+    DropdownMenuItem(
+        child: Text('Smita Smart (1626777)'), value: 'Smita Smart (1626777)'),
+    DropdownMenuItem(
+        child: Text('Kanak Durga (1626444)'),
+        value: 'Kanak Durga (1626444)'),
+  ];
 
   static List<IInvitation> sampleIlist = [
     IInvitation('1', 'Aditya', "hackathon1")
