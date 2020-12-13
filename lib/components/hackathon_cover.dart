@@ -14,7 +14,7 @@ class HackathonCover extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 180,
-      margin: EdgeInsets.symmetric(horizontal: 0, vertical: 8),
+      margin: EdgeInsets.symmetric(horizontal: 0, vertical: 0),
       padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
       decoration: kGradientFlatBoxDecoration,
       child: Column(

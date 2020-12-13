@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 
 class FlatGreenButton extends StatelessWidget {
   final String textContent;
+  final callback;
 
-  const FlatGreenButton(this.textContent);
+  const FlatGreenButton(this.textContent, this.callback);
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +14,9 @@ class FlatGreenButton extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(18.0),
       ),
-      onPressed: () => print(textContent),
+      onPressed: () {
+        callback();
+      },
       child: Padding(
         padding: const EdgeInsets.all(12.0),
         child: Text(

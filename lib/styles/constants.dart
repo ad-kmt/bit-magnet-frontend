@@ -24,13 +24,16 @@ var kDarkBlueSubHeading = TextStyle(
     color: Palette.darkBlue, fontSize: 20.0, fontWeight: FontWeight.w600);
 
 var kDarkBlueSubHeading22 = TextStyle(
-    color: Palette.darkBlue, fontSize: 20.0, fontWeight: FontWeight.w600);
+    color: Palette.darkBlue, fontSize: 22.0, fontWeight: FontWeight.w600);
 
 //BOX STYLES
 
 var kGradientBoxDecoration = BoxDecoration(
   gradient: kGradientPurpleCream,
-  borderRadius: BorderRadius.all(Radius.circular(20)),
+  borderRadius: BorderRadius.all(
+    Radius.circular(20),
+  ),
+  boxShadow: [kBoxShadowGrey],
 );
 
 var kCurvedBoxDecoration = BoxDecoration(
@@ -57,3 +60,13 @@ var kGradientPurpleCream = LinearGradient(
     begin: Alignment.bottomLeft,
     end: Alignment.topRight,
     colors: [Palette.purpleGradient, Palette.creamGradient]);
+
+var kGradientGreen = LinearGradient(
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+    colors: [Color(0xff87da7f), Color(0xff419d37)]);
+
+var kGradientBlue = LinearGradient(
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+    colors: [Color(0xff00cbee), Color(0xff0087b9)]);

@@ -1,14 +1,13 @@
 import 'package:bit_magnet/components/app_bar.dart';
 import 'package:bit_magnet/components/hackathon_card.dart';
-import 'package:bit_magnet/components/problem_statement_card.dart';
+
 import 'package:bit_magnet/components/side_bar.dart';
 import 'package:bit_magnet/models/hackathon.dart';
 import 'package:bit_magnet/models/sample_objects.dart';
-import 'package:bit_magnet/screens/author/create_problem.dart';
+
 import 'package:bit_magnet/screens/moderator/create_hackathon.dart';
 import 'package:bit_magnet/styles/palette.dart';
 import 'package:flutter/material.dart';
-import 'package:bit_magnet/models/problem_statement.dart';
 
 class HackathonList extends StatefulWidget {
   const HackathonList({
@@ -19,7 +18,7 @@ class HackathonList extends StatefulWidget {
 }
 
 class _HackathonListState extends State<HackathonList> {
-  List<IHackathon> sampleHlist = SampleObjects.sampleHlist;
+  List<IHackathon> sampleHlist = SampleObjects.sampleHackathonList;
 
   @override
   Widget build(BuildContext context) {

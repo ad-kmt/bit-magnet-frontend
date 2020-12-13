@@ -17,7 +17,7 @@ class ProblemList extends StatefulWidget {
 }
 
 class _ProblemListState extends State<ProblemList> {
-  List<IProblemStatement> samplePlist = SampleObjects.samplePlist;
+  List<IProblemStatement> samplePlist = SampleObjects.sampleProblemList;
 
   @override
   Widget build(BuildContext context) {

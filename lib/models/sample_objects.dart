@@ -6,8 +6,8 @@ import 'package:bit_magnet/models/team.dart';
 import 'hackathon.dart';
 
 class SampleObjects {
-  static IHackathon sampleHackathon =
-      IHackathon("Hackathon Name", "DD:MM", "DD:MM", "Location", 5);
+  static IHackathon sampleHackathon = IHackathon(
+      "Hackathon Name", "DD:MM", "DD:MM", "Location", 5, sampleProblemList);
 
   static IProblemStatement sampleProblemStatement = IProblemStatement(
       "0083",
@@ -18,7 +18,7 @@ class SampleObjects {
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod",
       ["React", "Java", "JavaScript"]);
 
-  static List<IProblemStatement> samplePlist = [
+  static List<IProblemStatement> sampleProblemList = [
     IProblemStatement(
         "0083",
         "Problem Name",
@@ -34,7 +34,23 @@ class SampleObjects {
         "RPBWM - Some Department",
         "Lorem ipsum",
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod",
-        ["React", "Java", "JavaScript"])
+        ["React", "Java", "JavaScript"]),
+    IProblemStatement(
+        "0085",
+        "Problem Name",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "RPBWM - Some Department",
+        "Lorem ipsum",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod",
+        ["React", "Java", "JavaScript"]),
+    IProblemStatement(
+        "0086",
+        "Problem Name",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "RPBWM - Some Department",
+        "Lorem ipsum",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod",
+        ["React", "Java", "JavaScript"]),
   ];
 
   static List<DropdownMenuItem> sampleParticipantsList = [
@@ -52,9 +68,11 @@ class SampleObjects {
     DropdownMenuItem(
         child: Text('Kanak Durga (1626444)'), value: 'Kanak Durga (1626444)'),
   ];
-  static List<IHackathon> sampleHlist = [
-    IHackathon("Hackathon 1", "DD:MM", "DD:MM", "Location", 5),
-    IHackathon("Hackathon 2", "DD:MM", "DD:MM", "Location", 5)
+  static List<IHackathon> sampleHackathonList = [
+    IHackathon(
+        "Hackathon 1", "DD:MM", "DD:MM", "Location", 5, sampleProblemList),
+    IHackathon(
+        "Hackathon 2", "DD:MM", "DD:MM", "Location", 5, sampleProblemList)
   ];
 
   static List<DropdownMenuItem> sampleGroupList = [
@@ -73,7 +91,7 @@ class SampleObjects {
     DropdownMenuItem(child: Text('Bangalore'), value: 'Bangalore'),
     DropdownMenuItem(child: Text('Chennai'), value: 'Chennai')
   ];
-  static List<DropdownMenuItem> sampleProblemList = [
+  static List<DropdownMenuItem> sampleProblemList2 = [
     DropdownMenuItem(child: Text('problem 1'), value: 'problem 1'),
     DropdownMenuItem(child: Text('problem 2'), value: 'problem 2')
   ];
@@ -90,6 +108,17 @@ class SampleObjects {
     IParticipant("Kanak", "Durga"),
   ];
 
+  static List<IParticipant> sampleParticipants2 = [
+    IParticipant("Aditya", "Kumawat"),
+    IParticipant("Varun", "Bhandia"),
+    IParticipant("Amardeep", "Singh"),
+  ];
+
+  static IParticipant sampleParticipant = IParticipant("Aditya", "Kumawat");
+
   static ITeam sampleTeam =
       ITeam(sampleParticipants, IParticipant("Smita", "Meshram"), "Bit Magnet");
+
+  static ITeam sampleTeam2 = ITeam(
+      sampleParticipants2, IParticipant("Amardeep", "Singh"), "Elastic Minds");
 }

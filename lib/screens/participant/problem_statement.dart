@@ -1,6 +1,8 @@
 import 'package:bit_magnet/components/app_bar.dart';
 import 'package:bit_magnet/components/buttons.dart';
 import 'package:bit_magnet/models/problem_statement.dart';
+import 'package:bit_magnet/models/sample_objects.dart';
+import 'package:bit_magnet/screens/participant/register.dart';
 import 'package:bit_magnet/styles/constants.dart';
 import 'package:bit_magnet/styles/palette.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +20,17 @@ class ProblemStatement extends StatelessWidget {
         bottomNavigationBar: BottomAppBar(
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 8),
-            child: FlatGreenButton("Register"),
+            child: FlatGreenButton("Register", () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return Register(
+                        [SampleObjects.sampleTeam, SampleObjects.sampleTeam2]);
+                  },
+                ),
+              );
+            }),
           ),
         ),
         body: SingleChildScrollView(

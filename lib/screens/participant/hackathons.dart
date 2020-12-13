@@ -17,19 +17,19 @@ class Hackathons extends StatelessWidget {
         home: Scaffold(
           appBar: AxessAppBar(),
           backgroundColor: Palette.lightGreyBackground,
-          body: Column(
-            children: [
-              Container(
-                alignment: Alignment.centerLeft,
-                margin: EdgeInsets.fromLTRB(16, 18, 16, 8),
-                child: Text(
+          body: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
                   "Hackathons",
                   style: kBlueTitle,
                 ),
-              ),
-              HackathonCard(SampleObjects.sampleHackathon),
-              HackathonCard(SampleObjects.sampleHackathon)
-            ],
+                HackathonCard(SampleObjects.sampleHackathon),
+                HackathonCard(SampleObjects.sampleHackathon)
+              ],
+            ),
           ),
         ));
   }

@@ -16,7 +16,7 @@ class ProblemSubmit extends StatefulWidget {
 }
 
 class _ProblemSubmitState extends State<ProblemSubmit> {
-  List<IProblemStatement> samplePlist = SampleObjects.samplePlist;
+  List<IProblemStatement> samplePlist = SampleObjects.sampleProblemList;
 
   @override
   Widget build(BuildContext context) {
