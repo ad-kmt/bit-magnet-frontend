@@ -22,7 +22,35 @@ class FlatGreenButton extends StatelessWidget {
         child: Text(
           textContent,
           style: TextStyle(
-              fontSize: 22, fontWeight: FontWeight.w600, color: Colors.white),
+              fontSize: 20, fontWeight: FontWeight.w600, color: Colors.white),
+        ),
+      ),
+    );
+  }
+}
+
+class FlatBlueButton extends StatelessWidget {
+  final String textContent;
+  final callback;
+
+  const FlatBlueButton(this.textContent, this.callback);
+
+  @override
+  Widget build(BuildContext context) {
+    return FlatButton(
+      color: Palette.darkBlue,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(18.0),
+      ),
+      onPressed: () {
+        callback();
+      },
+      child: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: Text(
+          textContent,
+          style: TextStyle(
+              fontSize: 20, fontWeight: FontWeight.w600, color: Colors.white),
         ),
       ),
     );

@@ -1,4 +1,6 @@
 import 'package:bit_magnet/components/app_bar.dart';
+import 'package:bit_magnet/components/bottom_bar_register.dart';
+import 'package:bit_magnet/components/bottom_bar_two_buttons.dart';
 import 'package:bit_magnet/components/buttons.dart';
 import 'package:bit_magnet/models/problem_statement.dart';
 import 'package:bit_magnet/models/sample_objects.dart';
@@ -14,25 +16,46 @@ class ProblemStatement extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var editButtonCallBack = () {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) {
+            return Register(
+                [SampleObjects.sampleTeam, SampleObjects.sampleTeam2]);
+          },
+        ),
+      );
+    };
+
+    var removeButtonCallBack = () {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) {
+            return Register(
+                [SampleObjects.sampleTeam, SampleObjects.sampleTeam2]);
+          },
+        ),
+      );
+    };
+
+    var returnBottomBar = () {
+      //IF MODERATOR OR AUTHOR
+      if (false) {
+        return BottomBarTwoButtons(
+            "Edit", editButtonCallBack, "Remove", removeButtonCallBack);
+      }
+      //IF PARTICIPANT
+      else {
+        return BottomBarRegister();
+      }
+    };
+
     return Scaffold(
         appBar: AxessAppBar(),
         backgroundColor: Colors.white,
-        bottomNavigationBar: BottomAppBar(
-          child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 8),
-            child: FlatGreenButton("Register", () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) {
-                    return Register(
-                        [SampleObjects.sampleTeam, SampleObjects.sampleTeam2]);
-                  },
-                ),
-              );
-            }),
-          ),
-        ),
+        bottomNavigationBar: returnBottomBar(),
         body: SingleChildScrollView(
           child: Container(
             padding: EdgeInsets.all(16),

@@ -9,6 +9,7 @@ class Palette {
   static Color purpleGradient = Color(0xff8E0885);
   static Color creamGradient = Color(0xffE7B384);
 
+  static Color bluishGrey = Color(0xff85959e);
   static Color blue = Color(0xff0780B4);
   static Color darkBlue = Color(0xff003E52);
 
