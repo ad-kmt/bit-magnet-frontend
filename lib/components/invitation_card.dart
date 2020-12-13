@@ -24,12 +24,14 @@ class InvitationCard extends StatelessWidget {
             ),
             child: Row(
               children: [
-                Text(
-                  invitationCard.host.toString()+' is inviting you in '+invitationCard.hackathon.toString(),
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 20,
-                      fontWeight: FontWeight.w900),
+                Expanded(
+                  child: Text(
+                    invitationCard.host.toString()+' is inviting you in '+invitationCard.hackathon.toString(),
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 20,
+                        fontWeight: FontWeight.w900),
+                  ),
                 ),
 
               ],
