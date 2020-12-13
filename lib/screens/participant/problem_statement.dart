@@ -16,33 +16,13 @@ class ProblemStatement extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var editButtonCallBack = () {
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) {
-            return Register(
-                [SampleObjects.sampleTeam, SampleObjects.sampleTeam2]);
-          },
-        ),
-      );
-    };
+    var editButtonCallBack = () {};
 
-    var removeButtonCallBack = () {
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) {
-            return Register(
-                [SampleObjects.sampleTeam, SampleObjects.sampleTeam2]);
-          },
-        ),
-      );
-    };
+    var removeButtonCallBack = () {};
 
     var returnBottomBar = () {
       //IF MODERATOR OR AUTHOR
-      if (false) {
+      if (true) {
         return BottomBarTwoButtons(
             "Edit", editButtonCallBack, "Remove", removeButtonCallBack);
       }

@@ -6,6 +6,7 @@ import 'package:bit_magnet/models/hackathon.dart';
 import 'package:bit_magnet/models/sample_objects.dart';
 
 import 'package:bit_magnet/screens/moderator/create_hackathon.dart';
+import 'package:bit_magnet/styles/constants.dart';
 import 'package:bit_magnet/styles/palette.dart';
 import 'package:flutter/material.dart';
 
@@ -26,8 +27,22 @@ class _HackathonListState extends State<HackathonList> {
       appBar: AxessAppBar(),
       backgroundColor: Palette.lightGreyBackground,
       drawer: SideBar(),
-      body: Column(
-        children: [for (var hackathon in sampleHlist) HackathonCard(hackathon)],
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              "Hackathons",
+              style: kBlueTitle,
+            ),
+            Column(
+              children: [
+                for (var hackathon in sampleHlist) HackathonCard(hackathon)
+              ],
+            ),
+          ],
+        ),
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {
@@ -39,7 +54,7 @@ class _HackathonListState extends State<HackathonList> {
         },
         label: Text('Create'),
         icon: Icon(Icons.add),
-        backgroundColor: Colors.green,
+        backgroundColor: Palette.greenWidget,
       ),
     );
   }

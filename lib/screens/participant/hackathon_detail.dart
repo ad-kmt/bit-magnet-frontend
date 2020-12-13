@@ -1,4 +1,6 @@
 import 'package:bit_magnet/components/app_bar.dart';
+import 'package:bit_magnet/components/bottom_bar_register.dart';
+import 'package:bit_magnet/components/bottom_bar_two_buttons.dart';
 import 'package:bit_magnet/components/buttons.dart';
 import 'package:bit_magnet/components/hackathon_cover.dart';
 import 'package:bit_magnet/components/hackathon_icon_bar.dart';
@@ -87,9 +89,25 @@ class _HackathonDetailState extends State<HackathonDetail> {
 
   @override
   Widget build(BuildContext context) {
+    var editButtonCallBack = () {};
+
+    var publishButtonCallBack = () {};
+
+    var returnBottomBar = () {
+      //IF MODERATOR OR AUTHOR
+      if (false) {
+        return BottomBarTwoButtons(
+            "Edit", editButtonCallBack, "Publish", publishButtonCallBack);
+      }
+      //IF PARTICIPANT
+      else {
+        return showRegisterButton();
+      }
+    };
+
     return Scaffold(
       appBar: AxessAppBar(),
-      bottomNavigationBar: showRegisterButton(),
+      bottomNavigationBar: returnBottomBar(),
       backgroundColor: Palette.lightGreyBackground,
       body: SingleChildScrollView(
         child: Column(

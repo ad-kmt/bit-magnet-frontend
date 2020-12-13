@@ -4,15 +4,20 @@ import 'package:flutter/material.dart';
 //TEXT STYLES
 
 var kBlueTitle =
-    TextStyle(color: Palette.blue, fontSize: 28, fontWeight: FontWeight.w600);
+    TextStyle(color: Palette.blue, fontSize: 28, fontWeight: FontWeight.w700);
 
 var kBlackTitle =
     TextStyle(color: Colors.black, fontSize: 28, fontWeight: FontWeight.w600);
 
 var customHeplerText = TextStyle(color: Colors.blueGrey, fontSize: 12);
 
-var customLabel = TextStyle(color: Colors.black87, fontSize: 16, fontWeight: FontWeight.w500);
-var smallItalic = TextStyle(color: Colors.black87, fontSize: 13, fontStyle: FontStyle.italic, fontWeight: FontWeight.w400);
+var customLabel =
+    TextStyle(color: Colors.black87, fontSize: 16, fontWeight: FontWeight.w500);
+var smallItalic = TextStyle(
+    color: Colors.black87,
+    fontSize: 13,
+    fontStyle: FontStyle.italic,
+    fontWeight: FontWeight.w400);
 
 var kBlackSubTitle =
     TextStyle(color: Colors.black, fontSize: 24, fontWeight: FontWeight.w600);

@@ -22,7 +22,7 @@ class FlatGreenButton extends StatelessWidget {
         child: Text(
           textContent,
           style: TextStyle(
-              fontSize: 20, fontWeight: FontWeight.w600, color: Colors.white),
+              fontSize: 18, fontWeight: FontWeight.w500, color: Colors.white),
         ),
       ),
     );
@@ -50,7 +50,7 @@ class FlatBlueButton extends StatelessWidget {
         child: Text(
           textContent,
           style: TextStyle(
-              fontSize: 20, fontWeight: FontWeight.w600, color: Colors.white),
+              fontSize: 18, fontWeight: FontWeight.w500, color: Colors.white),
         ),
       ),
     );

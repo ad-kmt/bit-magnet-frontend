@@ -1,6 +1,9 @@
+import 'package:bit_magnet/components/hackathon_card.dart';
+import 'package:bit_magnet/models/sample_objects.dart';
 import 'package:bit_magnet/screens/author/create_problem.dart';
 import 'package:bit_magnet/screens/moderator/create_hackathon.dart';
 import 'package:bit_magnet/screens/moderator/hackathon_list.dart';
+import 'package:bit_magnet/screens/moderator/problem_statements_all.dart';
 import 'package:bit_magnet/screens/participant/hackathons.dart';
 import 'package:bit_magnet/screens/participant/test.dart';
 import 'package:flutter/cupertino.dart';
@@ -17,7 +20,8 @@ class AxessApp extends StatelessWidget {
     return MaterialApp(
       title: 'aXess App',
       debugShowCheckedModeBanner: false,
-      home: Test(),
+      // home: ProblemStatementsAll(SampleObjects.sampleProblemList),
+      home: HackathonList(),
       routes: {},
     );
   }

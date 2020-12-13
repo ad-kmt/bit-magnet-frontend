@@ -3,6 +3,7 @@ import 'package:bit_magnet/components/buttons.dart';
 import 'package:bit_magnet/components/team_card.dart';
 import 'package:bit_magnet/models/sample_objects.dart';
 import 'package:bit_magnet/models/team.dart';
+import 'package:bit_magnet/screens/participant/create_team.dart';
 import 'package:bit_magnet/styles/constants.dart';
 import 'package:bit_magnet/styles/palette.dart';
 import 'package:flutter/material.dart';
@@ -28,6 +29,14 @@ class _RegisterState extends State<Register> {
 
   @override
   Widget build(BuildContext context) {
+    var createTeamCallback = () {
+      print('Clicked');
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => CreateTeam()),
+      );
+    };
+
     return Scaffold(
       appBar: AxessAppBar(),
       backgroundColor: Colors.white,
@@ -58,7 +67,7 @@ class _RegisterState extends State<Register> {
                 ),
               ),
               Text(
-                "You hava x teams:",
+                "You have x teams:",
                 style: kBlackSubTitle,
               ),
               Text(
@@ -90,7 +99,7 @@ class _RegisterState extends State<Register> {
                               color: Colors.white,
                             ),
                           ),
-                          onTap: () {},
+                          onTap: createTeamCallback,
                         ),
                       ),
                     ),

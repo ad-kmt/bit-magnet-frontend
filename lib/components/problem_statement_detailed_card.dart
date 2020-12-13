@@ -23,7 +23,7 @@ class ProblemStatementDetailedCard extends StatelessWidget {
         );
       },
       child: Container(
-        margin: EdgeInsets.symmetric(horizontal: 4, vertical: 16),
+        margin: EdgeInsets.symmetric(horizontal: 4, vertical: 4),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -114,7 +114,7 @@ class StatusSymbol extends StatelessWidget {
         statusText,
         style: TextStyle(
           color: Colors.white,
-          fontSize: 16,
+          fontSize: 14,
           fontWeight: FontWeight.w500,
         ),
       ),
