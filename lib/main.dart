@@ -10,6 +10,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
+import 'screens/author/problem_list.dart';
+
 void main() {
   runApp(AxessApp());
 }
@@ -21,7 +23,7 @@ class AxessApp extends StatelessWidget {
       title: 'aXess App',
       debugShowCheckedModeBanner: false,
       // home: ProblemStatementsAll(SampleObjects.sampleProblemList),
-      home: HackathonList(),
+      home: ProblemList(),
       routes: {},
     );
   }

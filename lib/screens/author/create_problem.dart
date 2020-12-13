@@ -1,5 +1,6 @@
 import 'package:bit_magnet/components/app_bar.dart';
 import 'package:bit_magnet/models/sample_objects.dart';
+import 'package:bit_magnet/screens/author/side_bar.dart';
 import 'package:bit_magnet/styles/constants.dart';
 import 'package:bit_magnet/styles/palette.dart';
 import 'package:flutter/material.dart';

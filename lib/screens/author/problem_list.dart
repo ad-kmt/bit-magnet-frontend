@@ -1,9 +1,10 @@
 import 'package:bit_magnet/components/app_bar.dart';
 import 'package:bit_magnet/components/problem_statement_card.dart';
-import 'package:bit_magnet/components/side_bar.dart';
+
 import 'package:bit_magnet/models/sample_objects.dart';
 import 'package:bit_magnet/screens/author/create_problem.dart';
 import 'package:bit_magnet/screens/author/problem_detail.dart';
+import 'package:bit_magnet/screens/author/side_bar.dart';
 import 'package:bit_magnet/styles/palette.dart';
 import 'package:flutter/material.dart';
 import 'package:bit_magnet/models/problem_statement.dart';
@@ -24,7 +25,7 @@ class _ProblemListState extends State<ProblemList> {
     return Scaffold(
       appBar: AxessAppBar(),
       backgroundColor: Palette.lightGreyBackground,
-      drawer: SideBar(),
+      drawer: ASideBar(),
       body: Column(
         children: [
           for (var problem in samplePlist)

@@ -1,6 +1,7 @@
 import 'package:bit_magnet/components/app_bar.dart';
 import 'package:bit_magnet/components/buttons.dart';
 import 'package:bit_magnet/models/problem_statement.dart';
+import 'package:bit_magnet/screens/author/side_bar.dart';
 import 'package:bit_magnet/styles/constants.dart';
 import 'package:bit_magnet/styles/palette.dart';
 import 'package:flutter/material.dart';
@@ -14,6 +15,7 @@ class ProblemDetail extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AxessAppBar(),
+        drawer: ASideBar(),
         backgroundColor: Colors.white,
         body: SingleChildScrollView(
           child: Container(

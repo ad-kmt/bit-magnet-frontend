@@ -1,8 +1,8 @@
 import 'package:bit_magnet/components/app_bar.dart';
 import 'package:bit_magnet/components/invitation_card.dart';
-import 'package:bit_magnet/components/side_bar.dart';
 import 'package:bit_magnet/models/invitation.dart';
 import 'package:bit_magnet/screens/author/problem_submit.dart';
+import 'package:bit_magnet/screens/author/side_bar.dart';
 import 'package:bit_magnet/styles/palette.dart';
 import 'package:flutter/material.dart';
 import 'package:bit_magnet/models/sample_objects.dart';
@@ -35,7 +35,7 @@ class _InvitationsListState extends State<InvitationsList> {
               ), 
         ],
       ),
-      drawer: SideBar(),
+      drawer: ASideBar(),
     );
   }
 }
