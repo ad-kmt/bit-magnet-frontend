@@ -97,7 +97,7 @@ class SampleObjects {
   ];
 
   static List<IInvitation> sampleIlist = [
-    IInvitation('1', 'Aditya', "hackathon1")
+    IInvitation('1', 'Aditya', sampleHackathon)
   ];
 
   static List<IParticipant> sampleParticipants = [

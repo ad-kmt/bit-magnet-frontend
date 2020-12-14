@@ -9,15 +9,15 @@ import 'package:bit_magnet/styles/palette.dart';
 import 'package:flutter/material.dart';
 import 'package:bit_magnet/models/problem_statement.dart';
 
-class ProblemList extends StatefulWidget {
-  const ProblemList({
+class AProblemList extends StatefulWidget {
+  const AProblemList({
     Key key,
   }) : super(key: key);
 
-  _ProblemListState createState() => _ProblemListState();
+  _AProblemListState createState() => _AProblemListState();
 }
 
-class _ProblemListState extends State<ProblemList> {
+class _AProblemListState extends State<AProblemList> {
   List<IProblemStatement> samplePlist = SampleObjects.sampleProblemList;
 
   @override

@@ -6,6 +6,7 @@ import 'package:bit_magnet/models/hackathon.dart';
 import 'package:bit_magnet/models/sample_objects.dart';
 
 import 'package:bit_magnet/screens/moderator/create_hackathon.dart';
+import 'package:bit_magnet/screens/moderator/hackathon_detail.dart';
 import 'package:bit_magnet/styles/constants.dart';
 import 'package:bit_magnet/styles/palette.dart';
 import 'package:flutter/material.dart';
@@ -38,7 +39,8 @@ class _MHackathonListState extends State<MHackathonList> {
             ),
             Column(
               children: [
-                for (var hackathon in sampleHlist) HackathonCard(hackathon)
+                for (var hackathon in sampleHlist)
+                  HackathonCard(hackathon, MHackathonDetail(hackathon)),
               ],
             ),
           ],

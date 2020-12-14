@@ -1,3 +1,4 @@
+import 'package:bit_magnet/styles/palette.dart';
 import 'package:flutter/material.dart';
 
 import '../login/login.dart';
@@ -19,54 +20,85 @@ class ASideBar extends PreferredSize {
         padding: EdgeInsets.zero,
         children: <Widget>[
           DrawerHeader(
-            child: Image(image: AssetImage("images/logo.png")),
+            child: Row(
+              children: [
+                CircleAvatar(
+                  radius: 32,
+                  backgroundColor: Palette.lightGreyContainer,
+                  child: Icon(
+                    Icons.person,
+                    size: 34,
+                    color: Colors.white,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 12.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        width: MediaQuery.of(context).size.width * 0.5,
+                        padding: EdgeInsets.symmetric(vertical: 4),
+                        child: Text(
+                          "Aditya Kumawat",
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                      Container(
+                        width: MediaQuery.of(context).size.width * 0.5,
+                        padding: EdgeInsets.symmetric(vertical: 4),
+                        child: Text(
+                          "Developer - Technology & Innovation",
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: Colors.white,
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ],
+            ),
             decoration: BoxDecoration(
               color: Colors.blue,
             ),
           ),
           ListTile(
-            leading: Icon(Icons.home,
-            color: Colors.black),
+            leading: Icon(Icons.home, color: Colors.black),
             title: Text('Home'),
             onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) {
-                    return ProblemList();
-                  },
-                )
-              );
+              Navigator.push(context, MaterialPageRoute(
+                builder: (context) {
+                  return AProblemList();
+                },
+              ));
             },
           ),
           ListTile(
-            leading: Icon(Icons.notifications,
-            color: Colors.black),
+            leading: Icon(Icons.notifications, color: Colors.black),
             title: Text('Notifications'),
             onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) {
-                    return InvitationsList();
-                  },
-                )
-              );
+              Navigator.push(context, MaterialPageRoute(
+                builder: (context) {
+                  return InvitationsList();
+                },
+              ));
             },
           ),
           ListTile(
-            leading: Icon(Icons.logout,
-            color: Colors.black),
+            leading: Icon(Icons.logout, color: Colors.black),
             title: Text('Logout'),
             onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) {
-                    return LoginScreen();
-                  },
-                )
-              );
+              Navigator.push(context, MaterialPageRoute(
+                builder: (context) {
+                  return LoginScreen();
+                },
+              ));
             },
           ),
         ],

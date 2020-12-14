@@ -7,8 +7,9 @@ import 'package:flutter/material.dart';
 class HackathonCard extends StatelessWidget {
   //Hackathon object
   final IHackathon hackathon;
+  final dynamic hackathonDetailScreen;
 
-  HackathonCard(this.hackathon);
+  HackathonCard(this.hackathon, this.hackathonDetailScreen);
 
   @override
   Widget build(BuildContext context) {
@@ -22,8 +23,7 @@ class HackathonCard extends StatelessWidget {
               context,
               MaterialPageRoute(
                 builder: (context) {
-                  return PHackathonDetail(
-                      hackathon, SampleObjects.sampleParticipant);
+                  return hackathonDetailScreen;
                 },
               ),
             );

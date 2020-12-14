@@ -1,12 +1,14 @@
+import 'package:bit_magnet/models/hackathon.dart';
+
 class IInvitation {
   IInvitation(this.id, this.host, this.hackathon);
 
   final String id;
   final String host;
-  final String hackathon;
+  final IHackathon hackathon;
 
   @override
   String toString() {
-    return 'IInvitation{host: $host, hackathon: $hackathon, id: $id}';
+    return 'IInvitation{host: $host, hackathon: ${hackathon.title}, id: $id}';
   }
 }

@@ -15,7 +15,6 @@ class Test extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Column(
         children: [
-          ProblemStatementDetailedCard(SampleObjects.sampleProblemStatement),
         ],
       ),
     );

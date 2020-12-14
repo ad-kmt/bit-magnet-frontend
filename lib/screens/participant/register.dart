@@ -67,7 +67,7 @@ class _RegisterState extends State<Register> {
                 ),
               ),
               Text(
-                "You have x teams:",
+                "You have ${widget.userTeams.length} teams:",
                 style: kBlackSubTitle,
               ),
               Text(

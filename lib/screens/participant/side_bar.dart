@@ -1,7 +1,11 @@
+import 'package:bit_magnet/screens/author/invitations.dart';
+import 'package:bit_magnet/screens/author/problem_list.dart';
+import 'package:bit_magnet/screens/login/login.dart';
+import 'package:bit_magnet/screens/participant/hackathon_list.dart';
 import 'package:bit_magnet/styles/palette.dart';
 import 'package:flutter/material.dart';
 
-class SideBar extends PreferredSize {
+class PSideBar extends PreferredSize {
   @override
   Size get preferredSize => Size.fromHeight(50);
 
@@ -65,21 +69,35 @@ class SideBar extends PreferredSize {
             ),
           ),
           ListTile(
-            title: Text('Item 1'),
+            leading: Icon(Icons.home, color: Colors.black),
+            title: Text('Home'),
             onTap: () {
-              // Update the state of the app
-              // ...
-              // Then close the drawer
-              Navigator.pop(context);
+              Navigator.push(context, MaterialPageRoute(
+                builder: (context) {
+                  return PHackathonList();
+                },
+              ));
             },
           ),
           ListTile(
-            title: Text('Item 2'),
+            leading: Icon(Icons.trending_up, color: Colors.black),
+            title: Text('Stats'),
+            onTap: () {},
+          ),
+          ListTile(
+            leading: Icon(Icons.people, color: Colors.black),
+            title: Text('Teams'),
+            onTap: () {},
+          ),
+          ListTile(
+            leading: Icon(Icons.logout, color: Colors.black),
+            title: Text('Logout'),
             onTap: () {
-              // Update the state of the app
-              // ...
-              // Then close the drawer
-              Navigator.pop(context);
+              Navigator.push(context, MaterialPageRoute(
+                builder: (context) {
+                  return LoginScreen();
+                },
+              ));
             },
           ),
         ],

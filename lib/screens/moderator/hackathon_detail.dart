@@ -11,6 +11,7 @@ import 'package:bit_magnet/models/participant.dart';
 import 'package:bit_magnet/models/problem_statement.dart';
 import 'package:bit_magnet/models/sample_objects.dart';
 import 'package:bit_magnet/models/team.dart';
+import 'package:bit_magnet/screens/moderator/problem_detail.dart';
 import 'package:bit_magnet/screens/participant/problem_detail.dart';
 import 'package:bit_magnet/screens/participant/register.dart';
 import 'package:bit_magnet/styles/constants.dart';
@@ -18,10 +19,9 @@ import 'package:bit_magnet/styles/palette.dart';
 import 'package:flutter/material.dart';
 
 class MHackathonDetail extends StatefulWidget {
-  final IParticipant participant;
   final IHackathon hackathon;
 
-  MHackathonDetail(this.hackathon, this.participant);
+  MHackathonDetail(this.hackathon);
 
   @override
   _MHackathonDetailState createState() => _MHackathonDetailState();
@@ -201,7 +201,8 @@ class ProblemList extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: List.generate(problems.length, (index) {
-              return ProblemStatementDetailedCard(problems[index]);
+              return ProblemStatementDetailedCard(
+                  problems[index], MProblemDetail(problems[index]));
             }),
           ),
         ],

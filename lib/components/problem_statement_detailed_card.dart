@@ -6,8 +6,9 @@ import 'package:flutter/material.dart';
 
 class ProblemStatementDetailedCard extends StatelessWidget {
   final IProblemStatement problemStatement;
+  final dynamic problemDetailScreen;
 
-  const ProblemStatementDetailedCard(this.problemStatement);
+  const ProblemStatementDetailedCard(this.problemStatement, this.problemDetailScreen);
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +18,7 @@ class ProblemStatementDetailedCard extends StatelessWidget {
           context,
           MaterialPageRoute(
             builder: (context) {
-              return PProblemDetail(problemStatement);
+              return problemDetailScreen;
             },
           ),
         );

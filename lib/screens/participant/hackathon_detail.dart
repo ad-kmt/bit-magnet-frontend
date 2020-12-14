@@ -17,10 +17,9 @@ import 'package:bit_magnet/styles/palette.dart';
 import 'package:flutter/material.dart';
 
 class PHackathonDetail extends StatefulWidget {
-  final IParticipant participant;
   final IHackathon hackathon;
 
-  PHackathonDetail(this.hackathon, this.participant);
+  PHackathonDetail(this.hackathon);
 
   @override
   _PHackathonDetailState createState() => _PHackathonDetailState();
@@ -30,11 +29,13 @@ class _PHackathonDetailState extends State<PHackathonDetail> {
   ITeam userTeam;
   List<IProblemStatement> userProblemStatements;
   bool isRegistered;
+  IParticipant participant;
 
   @override
   void initState() {
     super.initState();
-    update(widget.participant, widget.hackathon);
+    participant = SampleObjects.sampleParticipant;
+    update(participant, widget.hackathon);
   }
 
   void update(IParticipant participant, IHackathon hackathon) {
