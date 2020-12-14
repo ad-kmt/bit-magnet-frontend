@@ -10,15 +10,15 @@ import 'package:bit_magnet/styles/constants.dart';
 import 'package:bit_magnet/styles/palette.dart';
 import 'package:flutter/material.dart';
 
-class HackathonList extends StatefulWidget {
-  const HackathonList({
+class MHackathonList extends StatefulWidget {
+  const MHackathonList({
     Key key,
   }) : super(key: key);
 
-  _HackathonListState createState() => _HackathonListState();
+  _MHackathonListState createState() => _MHackathonListState();
 }
 
-class _HackathonListState extends State<HackathonList> {
+class _MHackathonListState extends State<MHackathonList> {
   List<IHackathon> sampleHlist = SampleObjects.sampleHackathonList;
 
   @override

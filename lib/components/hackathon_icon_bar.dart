@@ -1,8 +1,14 @@
+import 'package:bit_magnet/models/hackathon.dart';
 import 'package:bit_magnet/screens/participant/about_hackathon.dart';
-import 'package:bit_magnet/screens/participant/instructions_hacathon.dart';
+import 'package:bit_magnet/screens/participant/instructions_hackathon.dart';
 import 'package:flutter/material.dart';
 
 class HackathonIconBar extends StatelessWidget {
+
+  final IHackathon hackathon;
+
+  HackathonIconBar(this.hackathon);
+
   @override
   Widget build(BuildContext context) {
     return ButtonBar(
@@ -41,7 +47,7 @@ class HackathonIconBar extends StatelessWidget {
                 child: Container(
                   padding: EdgeInsets.only(
                       bottom: MediaQuery.of(context).viewInsets.bottom),
-                  child: AboutHackathon(),
+                  child: AboutHackathon(hackathon.description),
                 ),
               ),
             )

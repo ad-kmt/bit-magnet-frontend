@@ -4,7 +4,7 @@ import 'package:bit_magnet/screens/author/create_problem.dart';
 import 'package:bit_magnet/screens/moderator/create_hackathon.dart';
 import 'package:bit_magnet/screens/moderator/hackathon_list.dart';
 import 'package:bit_magnet/screens/moderator/problem_statements_all.dart';
-import 'package:bit_magnet/screens/participant/hackathons.dart';
+import 'package:bit_magnet/screens/participant/hackathon_list.dart';
 import 'package:bit_magnet/screens/participant/test.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

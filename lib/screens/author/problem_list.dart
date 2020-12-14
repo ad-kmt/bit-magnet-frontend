@@ -33,7 +33,8 @@ class _ProblemListState extends State<ProblemList> {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => ProblemDetail(problem)),
+                    MaterialPageRoute(
+                        builder: (context) => AProblemDetail(problem)),
                   );
                 },
                 child: ProblemStatementCard(problem)),

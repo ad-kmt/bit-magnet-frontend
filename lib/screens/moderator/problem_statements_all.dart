@@ -9,10 +9,19 @@ import 'package:bit_magnet/styles/constants.dart';
 import 'package:bit_magnet/styles/palette.dart';
 import 'package:flutter/material.dart';
 
-class ProblemStatementsAll extends StatelessWidget {
-  final List<IProblemStatement> problems;
+class MProblemList extends StatefulWidget {
+  @override
+  _MProblemListState createState() => _MProblemListState();
+}
 
-  ProblemStatementsAll(this.problems);
+class _MProblemListState extends State<MProblemList> {
+  List<IProblemStatement> problems;
+
+  @override
+  void initState() {
+    super.initState();
+    problems = SampleObjects.sampleProblemList;
+  }
 
   @override
   Widget build(BuildContext context) {

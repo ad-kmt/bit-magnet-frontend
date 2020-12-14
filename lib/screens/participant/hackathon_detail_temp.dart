@@ -3,7 +3,7 @@
 // import 'package:bit_magnet/components/hackathon_icon_bar.dart';
 // import 'package:bit_magnet/components/problem_statement_card.dart';
 // import 'package:bit_magnet/models/hackathon.dart';
-// import 'package:bit_magnet/models/problem_statement.dart';
+// import 'package:bit_magnet/models/problem_detail.dart';
 // import 'package:bit_magnet/models/sample_objects.dart';
 // import 'package:bit_magnet/models/team.dart';
 // import 'package:bit_magnet/styles/constants.dart';

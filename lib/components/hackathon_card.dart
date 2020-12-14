@@ -22,7 +22,7 @@ class HackathonCard extends StatelessWidget {
               context,
               MaterialPageRoute(
                 builder: (context) {
-                  return HackathonDetail(
+                  return PHackathonDetail(
                       hackathon, SampleObjects.sampleParticipant);
                 },
               ),

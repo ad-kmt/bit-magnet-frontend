@@ -1,11 +1,25 @@
 import 'package:bit_magnet/components/app_bar.dart';
 import 'package:bit_magnet/components/hackathon_card.dart';
+import 'package:bit_magnet/models/hackathon.dart';
 import 'package:bit_magnet/models/sample_objects.dart';
 import 'package:bit_magnet/styles/constants.dart';
 import 'package:bit_magnet/styles/palette.dart';
 import 'package:flutter/material.dart';
 
-class Hackathons extends StatelessWidget {
+class PHackathonList extends StatefulWidget {
+  @override
+  _PHackathonListState createState() => _PHackathonListState();
+}
+
+class _PHackathonListState extends State<PHackathonList> {
+  List<IHackathon> hackathons;
+
+  @override
+  void initState() {
+    super.initState();
+    hackathons = SampleObjects.sampleHackathonList;
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -26,8 +40,12 @@ class Hackathons extends StatelessWidget {
                   "Hackathons",
                   style: kBlueTitle,
                 ),
-                HackathonCard(SampleObjects.sampleHackathon),
-                HackathonCard(SampleObjects.sampleHackathon)
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: List.generate(hackathons.length, (index) {
+                    return HackathonCard(hackathons[index]);
+                  }),
+                ),
               ],
             ),
           ),

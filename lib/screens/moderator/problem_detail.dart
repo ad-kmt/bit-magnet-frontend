@@ -9,33 +9,29 @@ import 'package:bit_magnet/styles/constants.dart';
 import 'package:bit_magnet/styles/palette.dart';
 import 'package:flutter/material.dart';
 
-class ProblemStatement extends StatelessWidget {
+
+class MProblemDetail extends StatefulWidget {
+
   final IProblemStatement problem;
 
-  const ProblemStatement(this.problem);
+  const MProblemDetail(this.problem);
 
+  @override
+  _MProblemDetailState createState() => _MProblemDetailState();
+}
+
+class _MProblemDetailState extends State<MProblemDetail> {
   @override
   Widget build(BuildContext context) {
     var editButtonCallBack = () {};
 
     var removeButtonCallBack = () {};
 
-    var returnBottomBar = () {
-      //IF MODERATOR OR AUTHOR
-      if (true) {
-        return BottomBarTwoButtons(
-            "Edit", editButtonCallBack, "Remove", removeButtonCallBack);
-      }
-      //IF PARTICIPANT
-      else {
-        return BottomBarRegister();
-      }
-    };
-
     return Scaffold(
         appBar: AxessAppBar(),
         backgroundColor: Colors.white,
-        bottomNavigationBar: returnBottomBar(),
+        bottomNavigationBar: BottomBarTwoButtons(
+            "Edit", editButtonCallBack, "Remove", removeButtonCallBack),
         body: SingleChildScrollView(
           child: Container(
             padding: EdgeInsets.all(16),
@@ -47,7 +43,7 @@ class ProblemStatement extends StatelessWidget {
                   child: Row(
                     children: [
                       Text(
-                        "${problem.id}: ",
+                        "${widget.problem.id}: ",
                         style: kBlackSubTitle,
                       ),
                       Text(
@@ -59,17 +55,17 @@ class ProblemStatement extends StatelessWidget {
                     ],
                   ),
                 ),
-                Section("Challenge", problem.description, Palette.greenText),
+                Section("Challenge", widget.problem.description, Palette.greenText),
                 Section(
-                    "Who we're solving for", problem.department, Colors.black),
+                    "Who we're solving for", widget.problem.department, Colors.black),
                 Section(
                   "Benefits",
-                  problem.benefits,
+                  widget.problem.benefits,
                   Colors.black,
                 ),
                 Section(
                   "Success Criteria",
-                  problem.successCriteria,
+                  widget.problem.successCriteria,
                   Colors.black,
                 ),
                 Padding(
@@ -84,11 +80,11 @@ class ProblemStatement extends StatelessWidget {
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: List.generate(problem.technologies.length, (index) {
+                  children: List.generate(widget.problem.technologies.length, (index) {
                     return Padding(
                       padding: const EdgeInsets.symmetric(vertical: 6),
                       child: Text(
-                        problem.technologies[index],
+                        widget.problem.technologies[index],
                         style: TextStyle(
                           fontSize: 18,
                         ),

@@ -1,5 +1,5 @@
 import 'package:bit_magnet/models/problem_statement.dart';
-import 'package:bit_magnet/screens/participant/problem_statement.dart';
+import 'package:bit_magnet/screens/participant/problem_detail.dart';
 import 'package:bit_magnet/styles/constants.dart';
 import 'package:bit_magnet/styles/palette.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +17,7 @@ class ProblemStatementDetailedCard extends StatelessWidget {
           context,
           MaterialPageRoute(
             builder: (context) {
-              return ProblemStatement(problemStatement);
+              return PProblemDetail(problemStatement);
             },
           ),
         );

@@ -5,6 +5,7 @@ import 'package:bit_magnet/components/buttons.dart';
 import 'package:bit_magnet/components/hackathon_cover.dart';
 import 'package:bit_magnet/components/hackathon_icon_bar.dart';
 import 'package:bit_magnet/components/problem_statement_card.dart';
+import 'package:bit_magnet/components/problem_statement_detailed_card.dart';
 import 'package:bit_magnet/models/hackathon.dart';
 import 'package:bit_magnet/models/participant.dart';
 import 'package:bit_magnet/models/problem_statement.dart';
@@ -16,75 +17,26 @@ import 'package:bit_magnet/styles/constants.dart';
 import 'package:bit_magnet/styles/palette.dart';
 import 'package:flutter/material.dart';
 
-class PHackathonDetail extends StatefulWidget {
+class MHackathonDetail extends StatefulWidget {
   final IParticipant participant;
   final IHackathon hackathon;
 
-  PHackathonDetail(this.hackathon, this.participant);
+  MHackathonDetail(this.hackathon, this.participant);
 
   @override
-  _PHackathonDetailState createState() => _PHackathonDetailState();
+  _MHackathonDetailState createState() => _MHackathonDetailState();
 }
 
-class _PHackathonDetailState extends State<PHackathonDetail> {
-  ITeam userTeam;
-  List<IProblemStatement> userProblemStatements;
-  bool isRegistered;
-
+class _MHackathonDetailState extends State<MHackathonDetail> {
   @override
   void initState() {
     super.initState();
-    update(widget.participant, widget.hackathon);
-  }
-
-  void update(IParticipant participant, IHackathon hackathon) {
-    setState(() {
-      //LOGIC TO SEE IF PARTICIPANT'S ANY TEAM IS REGISTERED
-      //1. Get team details
-      //2. Get which hackathon registered. Check if matches
-      //3. Check which problem statement is/are registered
-
-      //GET THESE FIELDS FROM BACKEND
-      isRegistered = false;
-      userTeam = SampleObjects.sampleTeam;
-      userProblemStatements = [SampleObjects.sampleProblemStatement];
-    });
   }
 
   List<Widget> showContent() {
     List<Widget> list = List();
-    if (isRegistered) {
-      list.add(TeamInfo(userTeam));
-      list.add(ProblemList(
-          "Your team's registered challenge(s):", userProblemStatements));
-      list.add(ProblemList("Problem Statements", widget.hackathon.problems));
-    } else {
-      list.add(ProblemList("Problem Statements", widget.hackathon.problems));
-    }
+    list.add(ProblemList("Problem Statements", widget.hackathon.problems));
     return list;
-  }
-
-  BottomAppBar showRegisterButton() {
-    if (isRegistered) {
-      return null;
-    } else {
-      return BottomAppBar(
-        child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 24, vertical: 8),
-          child: FlatGreenButton("Register", () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) {
-                  return Register(
-                      [SampleObjects.sampleTeam, SampleObjects.sampleTeam2]);
-                },
-              ),
-            );
-          }),
-        ),
-      );
-    }
   }
 
   @override
@@ -93,21 +45,10 @@ class _PHackathonDetailState extends State<PHackathonDetail> {
 
     var publishButtonCallBack = () {};
 
-    var returnBottomBar = () {
-      //IF MODERATOR OR AUTHOR
-      if (false) {
-        return BottomBarTwoButtons(
-            "Edit", editButtonCallBack, "Publish", publishButtonCallBack);
-      }
-      //IF PARTICIPANT
-      else {
-        return showRegisterButton();
-      }
-    };
-
     return Scaffold(
       appBar: AxessAppBar(),
-      bottomNavigationBar: returnBottomBar(),
+      bottomNavigationBar: BottomBarTwoButtons(
+          "Edit", editButtonCallBack, "Publish", publishButtonCallBack),
       backgroundColor: Palette.lightGreyBackground,
       body: SingleChildScrollView(
         child: Column(
@@ -260,7 +201,7 @@ class ProblemList extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: List.generate(problems.length, (index) {
-              return ProblemStatementCard(problems[index]);
+              return ProblemStatementDetailedCard(problems[index]);
             }),
           ),
         ],

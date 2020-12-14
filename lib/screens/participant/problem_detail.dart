@@ -1,27 +1,29 @@
 import 'package:bit_magnet/components/app_bar.dart';
+import 'package:bit_magnet/components/bottom_bar_register.dart';
+import 'package:bit_magnet/components/bottom_bar_two_buttons.dart';
 import 'package:bit_magnet/components/buttons.dart';
 import 'package:bit_magnet/models/problem_statement.dart';
-import 'package:bit_magnet/screens/author/side_bar.dart';
+import 'package:bit_magnet/models/sample_objects.dart';
+import 'package:bit_magnet/screens/participant/register.dart';
 import 'package:bit_magnet/styles/constants.dart';
 import 'package:bit_magnet/styles/palette.dart';
 import 'package:flutter/material.dart';
 
-class AProblemDetail extends StatefulWidget {
+class PProblemDetail extends StatefulWidget {
   final IProblemStatement problem;
-
-  const AProblemDetail(this.problem);
+  const PProblemDetail(this.problem);
 
   @override
-  _AProblemDetailState createState() => _AProblemDetailState();
+  _PProblemDetailState createState() => _PProblemDetailState();
 }
 
-class _AProblemDetailState extends State<AProblemDetail> {
+class _PProblemDetailState extends State<PProblemDetail> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AxessAppBar(),
-        drawer: ASideBar(),
         backgroundColor: Colors.white,
+        bottomNavigationBar: BottomBarRegister(),
         body: SingleChildScrollView(
           child: Container(
             padding: EdgeInsets.all(16),
