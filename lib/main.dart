@@ -24,7 +24,7 @@ class AxessApp extends StatelessWidget {
     return MaterialApp(
       title: 'aXess App',
       debugShowCheckedModeBanner: false,
-      home: AProblemList(),
+      home: MHackathonList(),
       routes: {},
     );
   }

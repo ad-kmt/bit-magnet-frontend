@@ -6,6 +6,7 @@ import 'package:bit_magnet/models/problem_statement.dart';
 import 'package:bit_magnet/models/sample_objects.dart';
 import 'package:bit_magnet/screens/author/create_problem.dart';
 import 'package:bit_magnet/screens/moderator/problem_detail.dart';
+import 'package:bit_magnet/screens/moderator/side_bar.dart';
 import 'package:bit_magnet/styles/constants.dart';
 import 'package:bit_magnet/styles/palette.dart';
 import 'package:flutter/material.dart';
@@ -65,6 +66,7 @@ class _MProblemListState extends State<MProblemList> {
           ),
         ),
       ),
+      drawer: MSideBar(),
     );
   }
 }

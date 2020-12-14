@@ -7,6 +7,7 @@ import 'package:bit_magnet/models/sample_objects.dart';
 
 import 'package:bit_magnet/screens/moderator/create_hackathon.dart';
 import 'package:bit_magnet/screens/moderator/hackathon_detail.dart';
+import 'package:bit_magnet/screens/moderator/side_bar.dart';
 import 'package:bit_magnet/styles/constants.dart';
 import 'package:bit_magnet/styles/palette.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +28,7 @@ class _MHackathonListState extends State<MHackathonList> {
     return Scaffold(
       appBar: AxessAppBar(),
       backgroundColor: Palette.lightGreyBackground,
-      drawer: SideBar(),
+      drawer: MSideBar(),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
