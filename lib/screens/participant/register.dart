@@ -9,20 +9,22 @@ import 'package:bit_magnet/styles/palette.dart';
 import 'package:flutter/material.dart';
 
 class Register extends StatefulWidget {
-  final List<ITeam> userTeams;
-  Register(this.userTeams);
-
   @override
   _RegisterState createState() => _RegisterState();
 }
 
 class _RegisterState extends State<Register> {
   List<bool> teamState = List<bool>();
+  List<ITeam> userTeams;
 
   @override
   void initState() {
     super.initState();
-    for (int i = 0; i < widget.userTeams.length; i++) {
+
+    //API CALL : get list of teams of the user. $userTeams.
+    userTeams = [SampleObjects.sampleTeam, SampleObjects.sampleTeam2];
+
+    for (int i = 0; i < userTeams.length; i++) {
       teamState.add(false);
     }
   }
@@ -67,7 +69,7 @@ class _RegisterState extends State<Register> {
                 ),
               ),
               Text(
-                "You have ${widget.userTeams.length} teams:",
+                "You have ${userTeams.length} teams:",
                 style: kBlackSubTitle,
               ),
               Text(
@@ -116,7 +118,7 @@ class _RegisterState extends State<Register> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: List.generate(
-                  widget.userTeams.length,
+                  userTeams.length,
                   (index) {
                     return Padding(
                       padding: const EdgeInsets.symmetric(vertical: 12.0),
@@ -142,8 +144,7 @@ class _RegisterState extends State<Register> {
                               print(teamState);
                             });
                           },
-                          child: TeamCard(
-                              widget.userTeams[index], teamState[index]),
+                          child: TeamCard(userTeams[index], teamState[index]),
                         ),
                       ),
                     );

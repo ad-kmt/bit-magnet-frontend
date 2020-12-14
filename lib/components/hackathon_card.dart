@@ -54,7 +54,7 @@ class HackathonCard extends StatelessWidget {
                 ),
                 HackathonInfo(
                   Icons.event_seat_outlined,
-                  "Space left: ${hackathon.spaceLeft} teams",
+                  "Space left: ${hackathon.spaceLeftForTeams} teams",
                 ),
               ],
             ),

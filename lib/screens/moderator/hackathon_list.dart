@@ -21,7 +21,15 @@ class MHackathonList extends StatefulWidget {
 }
 
 class _MHackathonListState extends State<MHackathonList> {
-  List<IHackathon> sampleHlist = SampleObjects.sampleHackathonList;
+  List<IHackathon> hackathonList;
+
+  @override
+  void initState() {
+    super.initState();
+
+    //API CALL
+    hackathonList = SampleObjects.sampleHackathonList;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +48,7 @@ class _MHackathonListState extends State<MHackathonList> {
             ),
             Column(
               children: [
-                for (var hackathon in sampleHlist)
+                for (var hackathon in hackathonList)
                   HackathonCard(hackathon, MHackathonDetail(hackathon)),
               ],
             ),

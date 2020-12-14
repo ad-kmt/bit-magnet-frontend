@@ -3,6 +3,7 @@ import 'package:bit_magnet/models/sample_objects.dart';
 import 'package:bit_magnet/screens/author/create_problem.dart';
 import 'package:bit_magnet/screens/author/invitations.dart';
 import 'package:bit_magnet/screens/author/problem_submit.dart';
+import 'package:bit_magnet/screens/login/login.dart';
 import 'package:bit_magnet/screens/moderator/create_hackathon.dart';
 import 'package:bit_magnet/screens/moderator/hackathon_list.dart';
 import 'package:bit_magnet/screens/moderator/problem_statements_all.dart';

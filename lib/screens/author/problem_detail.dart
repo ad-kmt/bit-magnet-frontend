@@ -20,7 +20,6 @@ class _AProblemDetailState extends State<AProblemDetail> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AxessAppBar(),
-        drawer: ASideBar(),
         backgroundColor: Colors.white,
         body: SingleChildScrollView(
           child: Container(

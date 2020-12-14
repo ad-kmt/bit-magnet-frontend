@@ -27,6 +27,12 @@ class _CreateHackathonState extends State<CreateHackathon> {
 
   @override
   Widget build(BuildContext context) {
+
+    var submitCallback = () {
+      //API CALL
+    };
+
+
     return Scaffold(
       resizeToAvoidBottomPadding: false,
       appBar: AxessAppBar(),
@@ -222,7 +228,7 @@ class _CreateHackathonState extends State<CreateHackathon> {
                 ),
                 CupertinoButton.filled(
                   child: Text('Submit'),
-                  onPressed: () {/** */},
+                  onPressed: submitCallback,
                 ),
               ]),
             ),

@@ -15,8 +15,7 @@ class BottomBarRegister extends StatelessWidget {
             context,
             MaterialPageRoute(
               builder: (context) {
-                return Register(
-                    [SampleObjects.sampleTeam, SampleObjects.sampleTeam2]);
+                return Register();
               },
             ),
           );

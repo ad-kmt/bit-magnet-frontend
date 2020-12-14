@@ -13,8 +13,9 @@ import 'package:flutter/material.dart';
 class MProblemDetail extends StatefulWidget {
 
   final IProblemStatement problem;
+  final String parent;
 
-  const MProblemDetail(this.problem);
+  const MProblemDetail(this.problem, this.parent);
 
   @override
   _MProblemDetailState createState() => _MProblemDetailState();
@@ -23,9 +24,23 @@ class MProblemDetail extends StatefulWidget {
 class _MProblemDetailState extends State<MProblemDetail> {
   @override
   Widget build(BuildContext context) {
-    var editButtonCallBack = () {};
+    var editButtonCallBack = () {
 
-    var removeButtonCallBack = () {};
+    };
+
+    var removeButtonCallBack = () {
+
+
+      if(widget.parent == "hackathon"){
+        //API CALL : only remove from hackathon
+
+      } else if (widget.parent == "problem list"){
+        //API CALL : remove from problem database
+
+      }
+
+
+    };
 
     return Scaffold(
         appBar: AxessAppBar(),

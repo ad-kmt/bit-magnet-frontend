@@ -33,6 +33,8 @@ class _MHackathonDetailState extends State<MHackathonDetail> {
     super.initState();
   }
 
+
+
   List<Widget> showContent() {
     List<Widget> list = List();
     list.add(ProblemList("Problem Statements", widget.hackathon.problems));
@@ -41,9 +43,16 @@ class _MHackathonDetailState extends State<MHackathonDetail> {
 
   @override
   Widget build(BuildContext context) {
-    var editButtonCallBack = () {};
 
-    var publishButtonCallBack = () {};
+    var editButtonCallBack = () {
+
+    };
+
+    var publishButtonCallBack = () {
+
+      //API CALL PUT:  hackathon update
+
+    };
 
     return Scaffold(
       appBar: AxessAppBar(),
@@ -202,7 +211,7 @@ class ProblemList extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: List.generate(problems.length, (index) {
               return ProblemStatementDetailedCard(
-                  problems[index], MProblemDetail(problems[index]));
+                  problems[index], MProblemDetail(problems[index], "hackathon"),);
             }),
           ),
         ],

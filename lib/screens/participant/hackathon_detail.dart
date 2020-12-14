@@ -26,10 +26,10 @@ class PHackathonDetail extends StatefulWidget {
 }
 
 class _PHackathonDetailState extends State<PHackathonDetail> {
+  IParticipant participant;
+  bool isRegistered;
   ITeam userTeam;
   List<IProblemStatement> userProblemStatements;
-  bool isRegistered;
-  IParticipant participant;
 
   @override
   void initState() {
@@ -41,6 +41,7 @@ class _PHackathonDetailState extends State<PHackathonDetail> {
   void update(IParticipant participant, IHackathon hackathon) {
     setState(() {
       //LOGIC TO SEE IF PARTICIPANT'S ANY TEAM IS REGISTERED
+      //0. Get User details
       //1. Get team details
       //2. Get which hackathon registered. Check if matches
       //3. Check which problem statement is/are registered
@@ -77,8 +78,7 @@ class _PHackathonDetailState extends State<PHackathonDetail> {
               context,
               MaterialPageRoute(
                 builder: (context) {
-                  return Register(
-                      [SampleObjects.sampleTeam, SampleObjects.sampleTeam2]);
+                  return Register();
                 },
               ),
             );

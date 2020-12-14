@@ -18,7 +18,16 @@ class InvitationsList extends StatefulWidget {
 
 class _InvitationsListState extends State<InvitationsList> {
 
-  List<IInvitation> sampleIlist = SampleObjects.sampleIlist;
+  List<IInvitation> sampleIlist;
+
+  @override
+  void initState() {
+    super.initState();
+
+    //API CALL. get all invitations for author
+    sampleIlist = SampleObjects.sampleIlist;
+
+  }
 
   @override
   Widget build(BuildContext context) {

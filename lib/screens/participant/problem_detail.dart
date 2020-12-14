@@ -19,6 +19,11 @@ class PProblemDetail extends StatefulWidget {
 
 class _PProblemDetailState extends State<PProblemDetail> {
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AxessAppBar(),

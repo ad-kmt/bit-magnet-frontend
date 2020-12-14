@@ -57,8 +57,8 @@ class _MProblemListState extends State<MProblemList> {
                 children: List.generate(problems.length, (index) {
                   return Padding(
                     padding: const EdgeInsets.symmetric(vertical: 8),
-                    child: ProblemStatementDetailedCard(
-                        problems[index], MProblemDetail(problems[index])),
+                    child: ProblemStatementDetailedCard(problems[index],
+                        MProblemDetail(problems[index], "problem list")),
                   );
                 }),
               ),

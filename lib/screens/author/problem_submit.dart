@@ -28,6 +28,14 @@ class _ProblemSubmitState extends State<ProblemSubmit> {
 
   @override
   Widget build(BuildContext context) {
+
+    var submitCallback = (){
+
+      //API CALL : submit problems, notification for moderator by author.
+
+
+    };
+
     return Scaffold(
           appBar: AxessAppBar(),
           backgroundColor: Palette.lightGreyBackground,
