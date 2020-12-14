@@ -1,7 +1,9 @@
+import 'package:bit_magnet/components/side_bar.dart';
 import 'package:bit_magnet/screens/author/invitations.dart';
 import 'package:bit_magnet/screens/author/problem_list.dart';
 import 'package:bit_magnet/screens/login/login.dart';
 import 'package:bit_magnet/screens/participant/hackathon_list.dart';
+import 'package:bit_magnet/styles/constants.dart';
 import 'package:bit_magnet/styles/palette.dart';
 import 'package:flutter/material.dart';
 
@@ -19,58 +21,13 @@ class PSideBar extends PreferredSize {
         // Important: Remove any padding from the ListView.
         padding: EdgeInsets.zero,
         children: <Widget>[
-          DrawerHeader(
-            child: Row(
-              children: [
-                CircleAvatar(
-                  radius: 32,
-                  backgroundColor: Palette.lightGreyContainer,
-                  child: Icon(
-                    Icons.person,
-                    size: 34,
-                    color: Colors.white,
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 12.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        width: MediaQuery.of(context).size.width * 0.5,
-                        padding: EdgeInsets.symmetric(vertical: 4),
-                        child: Text(
-                          "Aditya Kumawat",
-                          style: TextStyle(
-                            fontSize: 20,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                      Container(
-                        width: MediaQuery.of(context).size.width * 0.5,
-                        padding: EdgeInsets.symmetric(vertical: 4),
-                        child: Text(
-                          "Developer - Technology & Innovation",
-                          style: TextStyle(
-                            fontSize: 12,
-                            color: Colors.white,
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-              ],
-            ),
-            decoration: BoxDecoration(
-              color: Colors.blue,
-            ),
-          ),
+          SideBarHeader(),
           ListTile(
-            leading: Icon(Icons.home, color: Colors.black),
-            title: Text('Home'),
+            leading: Icon(Icons.home, color: kSideBarIconColor),
+            title: Text(
+              'Home',
+              style: kSideBarTextStyle,
+            ),
             onTap: () {
               Navigator.push(context, MaterialPageRoute(
                 builder: (context) {
@@ -80,18 +37,27 @@ class PSideBar extends PreferredSize {
             },
           ),
           ListTile(
-            leading: Icon(Icons.trending_up, color: Colors.black),
-            title: Text('Stats'),
+            leading: Icon(Icons.trending_up, color: kSideBarIconColor),
+            title: Text(
+              'Stats',
+              style: kSideBarTextStyle,
+            ),
             onTap: () {},
           ),
           ListTile(
-            leading: Icon(Icons.people, color: Colors.black),
-            title: Text('Teams'),
+            leading: Icon(Icons.people, color: kSideBarIconColor),
+            title: Text(
+              'Teams',
+              style: kSideBarTextStyle,
+            ),
             onTap: () {},
           ),
           ListTile(
-            leading: Icon(Icons.logout, color: Colors.black),
-            title: Text('Logout'),
+            leading: Icon(Icons.logout, color: kSideBarIconColor),
+            title: Text(
+              'Logout',
+              style: kSideBarTextStyle,
+            ),
             onTap: () {
               Navigator.push(context, MaterialPageRoute(
                 builder: (context) {
