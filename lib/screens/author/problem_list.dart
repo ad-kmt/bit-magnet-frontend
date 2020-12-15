@@ -10,11 +10,23 @@ import 'package:bit_magnet/styles/constants.dart';
 import 'package:bit_magnet/styles/palette.dart';
 import 'package:flutter/material.dart';
 import 'package:bit_magnet/models/problem_statement.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class AProblemList extends StatefulWidget {
   const AProblemList({
     Key key,
   }) : super(key: key);
+
+  Future<void> getUserData() async {
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+
+    var token = preferences.getString("token");
+    var psid = preferences.getString("psid");
+
+    print("===============");
+    print(token);
+    print(psid);
+  }
 
   _AProblemListState createState() => _AProblemListState();
 }
@@ -23,12 +35,13 @@ class _AProblemListState extends State<AProblemList> {
   List<IProblemStatement> problemList = SampleObjects.sampleProblemList;
 
   @override
-  void initState() {
+  Future<void> initState() {
     super.initState();
+
+    widget.getUserData();
 
     //API CALL : author's problem list
     problemList = SampleObjects.sampleProblemList;
-
   }
 
   @override

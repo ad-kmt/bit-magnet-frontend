@@ -26,7 +26,7 @@ class AxessApp extends StatelessWidget {
     return MaterialApp(
       title: 'aXess App',
       debugShowCheckedModeBanner: false,
-      home: FrontPage(),
+      home: LoginScreen(),
       routes: {},
     );
   }

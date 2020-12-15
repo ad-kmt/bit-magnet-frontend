@@ -13,6 +13,8 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.0
   flutter_login: ^1.0.14
+  shared_preferences: ^0.5.12+4
+  http: ^0.12.2
   searchable_dropdown:
 
 dev_dependencies:

@@ -1,3 +1,4 @@
+import 'package:bit_magnet/components/caraousel.dart';
 import 'package:bit_magnet/data/front_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/semantics.dart';
@@ -16,78 +17,7 @@ class _FrontPageState extends State<FrontPage> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AxessAppBar(),
-        body:BottomSheet(),
-      ),
-    );
-  }
-}
-
-class Home extends StatefulWidget {
-  @override
-  _HomeState createState() => _HomeState();
-}
-
-class _HomeState extends State<Home> {
-  List<SliderModel> slides = new List<SliderModel>();
-
-  @override
-  void initState() {
-    super.initState();
-    slides = getSlides();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return 
-      //backgroundColor: Colors.blueGrey,
-       PageView.builder(
-          itemCount: slides.length,
-          itemBuilder: (context, index) {
-            return SliderTile(
-              slides[index].getImageAssetPath(),
-              slides[index].getTitle(),
-              slides[index].getDesc(),
-            );
-          });
-  }
-}
-
-class SliderTile extends StatelessWidget {
-  String imageAssetPath, title, desc;
-  SliderTile(this.imageAssetPath, this.title, this.desc);
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        width: 300.0,
-      height: 300.0,
-      margin: const EdgeInsets.all(10.0),
-      color: Colors.amber,
-        
-        padding: EdgeInsets.symmetric(horizontal: 10),
-        child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Image.asset(imageAssetPath),
-              SizedBox(
-                height: 20,
-              ),
-              Text(title, style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
-
-              ),),
-              SizedBox(
-                height: 12,
-              ),
-              Text(desc, textAlign: TextAlign.center, style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 18,
-                color: Colors.white,
-              ),),
-            ]),
+        body: BottomSheet(),
       ),
     );
   }
@@ -97,27 +27,36 @@ class BottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
+      fit: StackFit.loose,
       children: [
         Image(
           image: AssetImage('images/sunrise.jpg'),
           width: double.infinity,
           fit: BoxFit.fitWidth,
         ),
-        Home(),
+        Carousel(),
         RaisedButton(
           color: Colors.green,
-          onPressed: (){},
+          onPressed: () {},
           padding: EdgeInsets.all(10.0),
-          child: Row(
-            children: [
-              Text('Login', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
-              SizedBox(width: 5,),
-              Icon(Icons.login)
-            ],
+          child: Container(
+            width: 80,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text('Login',
+                    style:
+                        TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                SizedBox(
+                  width: 5,
+                ),
+                Icon(Icons.login)
+              ],
+            ),
           ),
-          ),
+        ),
         Padding(
-          padding: const EdgeInsets.only(top: 300),
+          padding: const EdgeInsets.only(top: 50),
           child: DraggableScrollableSheet(builder: (context, controller) {
             return Container(
               child: ListView.builder(

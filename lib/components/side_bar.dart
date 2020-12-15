@@ -58,34 +58,48 @@ class SideBarHeader extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 16.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  width: MediaQuery.of(context).size.width * 0.5,
-                  padding: EdgeInsets.symmetric(vertical: 4),
-                  child: Text(
-                    "Aditya Kumawat",
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.white,
+            padding: const EdgeInsets.only(left: 14.0),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    width: MediaQuery.of(context).size.width * 0.45,
+                    padding: EdgeInsets.symmetric(vertical: 4),
+                    child: Text(
+                      "Aditya",
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
-                ),
-                Container(
-                  width: MediaQuery.of(context).size.width * 0.5,
-                  padding: EdgeInsets.symmetric(vertical: 4),
-                  child: Text(
-                    "Developer - Technology & Innovation ",
-                    style: TextStyle(
-                      fontSize: 12,
-                      color: Colors.white,
+                  Container(
+                    width: MediaQuery.of(context).size.width * 0.45,
+                    padding: EdgeInsets.symmetric(vertical: 4),
+                    child: Text(
+                      "Developer - Technology & Innovation",
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
-                )
-              ],
+                  Container(
+                    width: MediaQuery.of(context).size.width * 0.45,
+                    padding: EdgeInsets.symmetric(vertical: 4),
+                    child: Text(
+                      "Admin",
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: Colors.white,
+                      ),
+                    ),
+                  )
+                ],
+              ),
             ),
           ),
         ],
