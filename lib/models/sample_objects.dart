@@ -21,7 +21,7 @@ class SampleObjects {
   static List<IProblemStatement> sampleProblemList = [
     IProblemStatement(
         "0083",
-        "Problem Name",
+        "Problem Name 1",
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         "RPBWM - Some Department",
         "Lorem ipsum",
@@ -29,7 +29,7 @@ class SampleObjects {
         ["React", "Java", "JavaScript"]),
     IProblemStatement(
         "0084",
-        "Problem Name",
+        "Problem Name 2",
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         "RPBWM - Some Department",
         "Lorem ipsum",
@@ -37,7 +37,7 @@ class SampleObjects {
         ["React", "Java", "JavaScript"]),
     IProblemStatement(
         "0085",
-        "Problem Name",
+        "Problem Name 3",
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         "RPBWM - Some Department",
         "Lorem ipsum",
@@ -45,7 +45,7 @@ class SampleObjects {
         ["React", "Java", "JavaScript"]),
     IProblemStatement(
         "0086",
-        "Problem Name",
+        "Problem Name 4",
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         "RPBWM - Some Department",
         "Lorem ipsum",
@@ -67,6 +67,22 @@ class SampleObjects {
         child: Text('Smita Smart (1626777)'), value: 'Smita Smart (1626777)'),
     DropdownMenuItem(
         child: Text('Kanak Durga (1626444)'), value: 'Kanak Durga (1626444)'),
+  ];
+
+  static List<DropdownMenuItem> sampleProblemsList = [
+    DropdownMenuItem(
+        child: Text('Axess Challenge App'),
+        value: 'Axess Challenge App'),
+    DropdownMenuItem(
+        child: Text('Gamification'),
+        value: 'Gamification'),
+    DropdownMenuItem(
+        child: Text('House Pricing'),
+        value: 'House Pricing'),
+    DropdownMenuItem(
+        child: Text('virtual customer assistant'), value: 'virtual customer assistant'),
+    DropdownMenuItem(
+        child: Text('Stock Market Challenge'), value: 'Stock Market Challenge'),
   ];
   static List<IHackathon> sampleHackathonList = [
     IHackathon(
