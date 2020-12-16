@@ -34,6 +34,7 @@ class _LoginScreenState extends State<LoginScreen> {
     Navigator.of(context).pushReplacement(MaterialPageRoute(
       builder: (context) {
         if (role == "AUTHOR") {
+          print("author");
           return AHome();
         } else if (role == "PARTICIPANT") {
           return PHome();
@@ -64,9 +65,6 @@ class _LoginScreenState extends State<LoginScreen> {
     );
 
     var responseData = jsonDecode(response.body);
-    // await setState(() {
-    //   role = responseData["role"];
-    // });
 
     if (responseData["status"] == "success") {
       SharedPreferences preferences = await SharedPreferences.getInstance();

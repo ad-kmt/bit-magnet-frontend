@@ -4,15 +4,18 @@ import 'package:bit_magnet/components/hackathon_card.dart';
 import 'package:bit_magnet/components/home_carousel.dart';
 
 import 'package:bit_magnet/components/side_bar.dart';
-import 'package:bit_magnet/models/hackathon.dart';
+import 'package:bit_magnet/models/hackathon_basic_details.dart';
+
 import 'package:bit_magnet/models/sample_objects.dart';
 
-import 'package:bit_magnet/screens/moderator/create_hackathon.dart';
+
 import 'package:bit_magnet/screens/moderator/hackathon_detail.dart';
 import 'package:bit_magnet/screens/moderator/side_bar.dart';
 import 'package:bit_magnet/styles/constants.dart';
 import 'package:bit_magnet/styles/palette.dart';
 import 'package:flutter/material.dart';
+
+import 'create_hackathon.dart';
 
 class MHome extends StatefulWidget {
   const MHome({
@@ -23,7 +26,7 @@ class MHome extends StatefulWidget {
 }
 
 class _MHomeState extends State<MHome> {
-  List<IHackathon> hackathonList;
+  List<IHackathonBasic> hackathonList;
 
   @override
   void initState() {

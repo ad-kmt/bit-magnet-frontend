@@ -1,11 +1,12 @@
-import 'package:bit_magnet/models/hackathon.dart';
+
+import 'package:bit_magnet/models/hackathon_basic_details.dart';
 import 'package:bit_magnet/screens/participant/about_hackathon.dart';
 import 'package:bit_magnet/screens/participant/instructions_hackathon.dart';
 import 'package:flutter/material.dart';
 
 class HackathonIconBar extends StatelessWidget {
 
-  final IHackathon hackathon;
+  final IHackathonBasic hackathon;
 
   HackathonIconBar(this.hackathon);
 

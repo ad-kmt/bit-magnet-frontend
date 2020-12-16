@@ -1,11 +1,13 @@
-import 'package:bit_magnet/models/hackathon.dart';
+
+
+import 'hackathon_basic_details.dart';
 
 class IInvitation {
   IInvitation(this.id, this.host, this.hackathon);
 
   final String id;
   final String host;
-  final IHackathon hackathon;
+  final IHackathonBasic hackathon;
 
   @override
   String toString() {

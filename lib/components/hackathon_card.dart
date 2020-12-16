@@ -1,4 +1,5 @@
-import 'package:bit_magnet/models/hackathon.dart';
+
+import 'package:bit_magnet/models/hackathon_basic_details.dart';
 import 'package:bit_magnet/models/sample_objects.dart';
 import 'package:bit_magnet/screens/participant/hackathon_detail.dart';
 import 'package:bit_magnet/styles/constants.dart';
@@ -6,7 +7,7 @@ import 'package:flutter/material.dart';
 
 class HackathonCard extends StatelessWidget {
   //Hackathon object
-  final IHackathon hackathon;
+  final IHackathonBasic hackathon;
   final dynamic hackathonDetailScreen;
 
   HackathonCard(this.hackathon, this.hackathonDetailScreen);
@@ -54,7 +55,7 @@ class HackathonCard extends StatelessWidget {
                 ),
                 HackathonInfo(
                   Icons.event_seat_outlined,
-                  "Space left: ${hackathon.spaceLeftForTeams} teams",
+                  "Space left: 5 teams",
                 ),
               ],
             ),

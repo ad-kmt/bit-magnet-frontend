@@ -7,7 +7,8 @@ import 'package:bit_magnet/components/hackathon_cover.dart';
 import 'package:bit_magnet/components/hackathon_icon_bar.dart';
 import 'package:bit_magnet/components/problem_statement_card.dart';
 import 'package:bit_magnet/components/problem_statement_detailed_card.dart';
-import 'package:bit_magnet/models/hackathon.dart';
+import 'package:bit_magnet/models/hackathon_basic_details.dart';
+
 import 'package:bit_magnet/models/participant.dart';
 import 'package:bit_magnet/models/problem_statement.dart';
 import 'package:bit_magnet/models/sample_objects.dart';
@@ -20,7 +21,7 @@ import 'package:bit_magnet/styles/palette.dart';
 import 'package:flutter/material.dart';
 
 class MHackathonDetail extends StatefulWidget {
-  final IHackathon hackathon;
+  final IHackathonBasic hackathon;
 
   MHackathonDetail(this.hackathon);
 
@@ -36,7 +37,7 @@ class _MHackathonDetailState extends State<MHackathonDetail> {
 
   List<Widget> showContent() {
     List<Widget> list = List();
-    list.add(ProblemList("Problem Statements", widget.hackathon.problems));
+    list.add(ProblemList("Problem Statements", SampleObjects.sampleProblemList));
     return list;
   }
 
