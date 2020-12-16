@@ -9,6 +9,9 @@ import 'package:searchable_dropdown/searchable_dropdown.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
+import 'dart:convert';
+
+import 'home.dart';
 
 class CreateProblem extends StatefulWidget {
   const CreateProblem({
@@ -19,8 +22,12 @@ class CreateProblem extends StatefulWidget {
 }
 
 class _CreateProblemtState extends State<CreateProblem> {
-  String groupSelectedValue;
   List<int> skillSelectedValues = [];
+  String title;
+  String group;
+  String benefactorID;
+  String description;
+  List<String> skills =[];
 
   final List<DropdownMenuItem> groupList = SampleObjects.sampleGroupList;
   final List<DropdownMenuItem> skillList = SampleObjects.sampleSkillList;
@@ -31,14 +38,25 @@ class _CreateProblemtState extends State<CreateProblem> {
       //API CALL: creating problem statement.
       SharedPreferences preferences = await SharedPreferences.getInstance();
       String jwt = 'Bearer ' + preferences.getString("token");
-      var url = baseIP + "/api/problem/current/get";
-      http.Response response = await http.get(
+      var url = baseIP + "/api/problem/current/add";
+      http.Response response = await http.post(
         url,
         headers: <String, String>{
           'Content-Type': 'application/json; charset=UTF-8',
           'Authorization': jwt,
         },
+        body: json.encode({
+          "title": title,
+          "group": group,
+          "description": description,
+          "skills": skills,
+        }),
       );
+      Navigator.of(context).pushReplacement(MaterialPageRoute(
+        builder: (context) {
+            return AHome();
+        },
+      ));
     };
 
     return Scaffold(
@@ -79,6 +97,11 @@ class _CreateProblemtState extends State<CreateProblem> {
                       }
                       return null;
                     },
+                    onChanged: (String value) async {
+                      setState(() {
+                        title = value;
+                      });
+                    },
                   ),
                   Container(
                     margin: EdgeInsets.fromLTRB(0, 10, 0, 15),
@@ -98,12 +121,12 @@ class _CreateProblemtState extends State<CreateProblem> {
                   ),
                   SearchableDropdown.single(
                     items: groupList,
-                    value: groupSelectedValue,
+                    value: group,
                     hint: "Select a Group",
                     searchHint: "Retail, CCIB ",
                     onChanged: (value) {
                       setState(() {
-                        groupSelectedValue = value;
+                        group = value;
                       });
                     },
                     isExpanded: true,
@@ -132,6 +155,7 @@ class _CreateProblemtState extends State<CreateProblem> {
                     onChanged: (value) {
                       setState(() {
                         skillSelectedValues = value;
+                        skills = new List<String>.from(value.map((id) => (skillList[id].value).toString()).toList());
                       });
                     },
                     closeButton: (skillSelectedValues) {
@@ -168,6 +192,11 @@ class _CreateProblemtState extends State<CreateProblem> {
                       }
                       return null;
                     },
+                    onChanged: (String value) async {
+                      setState(() {
+                        benefactorID = value;
+                      });
+                    },
                   ),
                   Container(
                     margin: EdgeInsets.fromLTRB(0, 10, 0, 15),
@@ -197,10 +226,15 @@ class _CreateProblemtState extends State<CreateProblem> {
                       }
                       return null;
                     },
+                    onChanged: (String value) async {
+                      setState(() {
+                        description = value;
+                      });
+                    },
                   ),
                   CupertinoButton.filled(
                     child: Text('Submit'),
-                    onPressed: () {/** */},
+                    onPressed: () {createCallback();},
                   ),
                 ]),
               ),
