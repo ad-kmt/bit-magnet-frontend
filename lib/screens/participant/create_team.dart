@@ -25,7 +25,8 @@ class _CreateTeamtState extends State<CreateTeam> {
     return Scaffold(
       appBar: AxessAppBar(),
       backgroundColor: Palette.lightGreyBackground,
-      body: Column(
+      body: SingleChildScrollView(
+          child: Column(
         children: [
           Container(
             alignment: Alignment.centerLeft,
@@ -36,7 +37,7 @@ class _CreateTeamtState extends State<CreateTeam> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.all(16.0),
+            padding: const EdgeInsets.fromLTRB(16, 16, 16, 76),
             child: Column(children: [
               Container(
                 margin: EdgeInsets.fromLTRB(0, 10, 0, 5),
@@ -105,32 +106,32 @@ class _CreateTeamtState extends State<CreateTeam> {
                   // decoration: BoxDecoration(color: Palette.lightGreyBackground),
                   child: Column(
                       children: new List.generate(team.length, (int index) {
-                    return new ListTile(
-                      title: new Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: <Widget>[
-                            team[index],
-                            Radio(
-                              value: index,
-                              groupValue: leader,
-                              onChanged: (val) {
-                                setState(() {
-                                  leader = index;
-                                });
-                              },
-                            ),
-                          ]),
-                      onTap: () {
-                        setState(() {
-                          leader = index;
-                        });
-                      },
-                    );
-                  }))),
+                return new ListTile(
+                  title: new Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        team[index],
+                        Radio(
+                          value: index,
+                          groupValue: leader,
+                          onChanged: (val) {
+                            setState(() {
+                              leader = index;
+                            });
+                          },
+                        ),
+                      ]),
+                  onTap: () {
+                    setState(() {
+                      leader = index;
+                    });
+                  },
+                );
+              }))),
             ]),
           ),
         ],
-      ),
+      )),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {
           print('Clicked');
