@@ -35,6 +35,7 @@ class _LoginScreenState extends State<LoginScreen> {
     Navigator.of(context).pushReplacement(MaterialPageRoute(
       builder: (context) {
         if (role == "AUTHOR") {
+          print("author");
           return AHome();
         } else if (role == "PARTICIPANT") {
           return PHome();

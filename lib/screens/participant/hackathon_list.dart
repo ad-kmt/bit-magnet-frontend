@@ -2,7 +2,8 @@ import 'dart:convert';
 
 import 'package:bit_magnet/components/app_bar.dart';
 import 'package:bit_magnet/components/hackathon_card.dart';
-import 'package:bit_magnet/models/hackathon.dart';
+
+import 'package:bit_magnet/models/hackathon_basic_details.dart';
 import 'package:bit_magnet/models/sample_objects.dart';
 import 'package:bit_magnet/screens/participant/side_bar.dart';
 import 'package:bit_magnet/styles/constants.dart';
@@ -15,38 +16,51 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'hackathon_detail.dart';
 
-
 class PHackathonList extends StatefulWidget {
   @override
   _PHackathonListState createState() => _PHackathonListState();
 }
 
 class _PHackathonListState extends State<PHackathonList> {
-  List<IHackathon> hackathons;
-  
-Future<String> getHackathonList() async {
- 
+  List<IHackathonBasic> hackathons = [];
+
+  Future<String> getHackathonList() async {
     //API CALL
 
     SharedPreferences preferences = await SharedPreferences.getInstance();
-  
 
     String jwt = 'Bearer ' + preferences.getString("token");
-    String url= baseIP + '/api/hackathon/get';
+    String url = baseIP + '/api/hackathon/get';
     http.Response response = await http.get(
       url,
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
         'Authorization': jwt,
       },
-      
     );
 
-    
     var responseData = jsonDecode(response.body);
-    
+
     if (responseData["message"] == "success") {
-      print("Successful");
+      List<IHackathonBasic> x = responseData["data"].map((hackathon) {
+        IHackathonBasic h = IHackathonBasic(
+    hackathon._id,
+    hackathon.topic,
+    hackathon.title,
+    hackathon.location,
+    hackathon.team_size,
+    hackathon.moderator_id,
+    hackathon.createdAt,
+    hackathon.updatedAt,
+    hackathon.startDate,
+    hackathon.endDate,
+    
+  );
+  return h;
+      }).toList();
+      setState(() {
+        hackathons = x;
+      });
       return null;
     } else {
       return responseData["message"];
@@ -57,12 +71,12 @@ Future<String> getHackathonList() async {
   void initState() {
     getHackathonList();
     super.initState();
-    hackathons = SampleObjects.sampleHackathonList;
   }
-  
 
   @override
   Widget build(BuildContext context) {
+    print("smita");
+    print(hackathons);
     return Scaffold(
       appBar: AxessAppBar(),
       backgroundColor: Palette.lightGreyBackground,

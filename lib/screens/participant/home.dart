@@ -1,7 +1,8 @@
 import 'package:bit_magnet/components/app_bar.dart';
 import 'package:bit_magnet/components/hackathon_card.dart';
 import 'package:bit_magnet/components/home_carousel.dart';
-import 'package:bit_magnet/models/hackathon.dart';
+import 'package:bit_magnet/models/hackathon_basic_details.dart';
+
 import 'package:bit_magnet/models/sample_objects.dart';
 import 'package:bit_magnet/screens/participant/side_bar.dart';
 import 'package:bit_magnet/styles/constants.dart';
@@ -16,7 +17,7 @@ class PHome extends StatefulWidget {
 }
 
 class _PHomeState extends State<PHome> {
-  List<IHackathon> hackathons;
+  List<IHackathonBasic> hackathons;
 
   @override
   void initState() {

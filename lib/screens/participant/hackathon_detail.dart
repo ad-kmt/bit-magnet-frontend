@@ -5,7 +5,8 @@ import 'package:bit_magnet/components/buttons.dart';
 import 'package:bit_magnet/components/hackathon_cover.dart';
 import 'package:bit_magnet/components/hackathon_icon_bar.dart';
 import 'package:bit_magnet/components/problem_statement_card.dart';
-import 'package:bit_magnet/models/hackathon.dart';
+
+import 'package:bit_magnet/models/hackathon_basic_details.dart';
 import 'package:bit_magnet/models/participant.dart';
 import 'package:bit_magnet/models/problem_statement.dart';
 import 'package:bit_magnet/models/sample_objects.dart';
@@ -17,7 +18,7 @@ import 'package:bit_magnet/styles/palette.dart';
 import 'package:flutter/material.dart';
 
 class PHackathonDetail extends StatefulWidget {
-  final IHackathon hackathon;
+  final IHackathonBasic hackathon;
 
   PHackathonDetail(this.hackathon);
 
@@ -38,7 +39,7 @@ class _PHackathonDetailState extends State<PHackathonDetail> {
     update(participant, widget.hackathon);
   }
 
-  void update(IParticipant participant, IHackathon hackathon) {
+  void update(IParticipant participant, IHackathonBasic hackathon) {
     setState(() {
       //LOGIC TO SEE IF PARTICIPANT'S ANY TEAM IS REGISTERED
       //0. Get User details
@@ -59,9 +60,9 @@ class _PHackathonDetailState extends State<PHackathonDetail> {
       list.add(TeamInfo(userTeam));
       list.add(ProblemList(
           "Your team's registered challenge(s):", userProblemStatements));
-      list.add(ProblemList("Problem Statements", widget.hackathon.problems));
+      list.add(ProblemList("Problem Statements", SampleObjects.sampleProblemList));
     } else {
-      list.add(ProblemList("Problem Statements", widget.hackathon.problems));
+      list.add(ProblemList("Problem Statements", SampleObjects.sampleProblemList));
     }
     return list;
   }
