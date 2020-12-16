@@ -21,7 +21,7 @@ import 'package:bit_magnet/styles/palette.dart';
 import 'package:flutter/material.dart';
 
 class MHackathonDetail extends StatefulWidget {
-  final IHackathonBasic hackathon;
+  final dynamic hackathon;
 
   MHackathonDetail(this.hackathon);
 

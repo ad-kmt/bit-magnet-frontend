@@ -22,7 +22,7 @@ class PHackathonList extends StatefulWidget {
 }
 
 class _PHackathonListState extends State<PHackathonList> {
-  List<IHackathonBasic> hackathons = [];
+  List<dynamic> hackathons = [];
 
   Future<String> getHackathonList() async {
     //API CALL
@@ -42,22 +42,7 @@ class _PHackathonListState extends State<PHackathonList> {
     var responseData = jsonDecode(response.body);
 
     if (responseData["message"] == "success") {
-      List<IHackathonBasic> x = responseData["data"].map((hackathon) {
-        IHackathonBasic h = IHackathonBasic(
-    hackathon._id,
-    hackathon.topic,
-    hackathon.title,
-    hackathon.location,
-    hackathon.team_size,
-    hackathon.moderator_id,
-    hackathon.createdAt,
-    hackathon.updatedAt,
-    hackathon.startDate,
-    hackathon.endDate,
-    
-  );
-  return h;
-      }).toList();
+      List<dynamic> x = responseData["data"];
       setState(() {
         hackathons = x;
       });
@@ -75,8 +60,6 @@ class _PHackathonListState extends State<PHackathonList> {
 
   @override
   Widget build(BuildContext context) {
-    print("smita");
-    print(hackathons);
     return Scaffold(
       appBar: AxessAppBar(),
       backgroundColor: Palette.lightGreyBackground,
