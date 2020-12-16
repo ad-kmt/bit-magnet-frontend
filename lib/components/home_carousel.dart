@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:bit_magnet/components/caraousel_dots.dart';
 import 'package:bit_magnet/styles/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class HomeCarousel extends StatefulWidget {
   @override
@@ -84,15 +85,78 @@ var listCaraousel = [
     decoration: BoxDecoration(
       gradient: kGradientBlue,
     ),
+    child: Stack(
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(top: 8.0),
+          child: Container(
+            height: double.infinity,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                SvgPicture.asset("images/working.svg"),
+              ],
+            ),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(
+            "Axess Event",
+            style: TextStyle(color: Colors.white, fontSize: 18),
+          ),
+        )
+      ],
+    ),
   ),
   Container(
     decoration: BoxDecoration(
       gradient: kGradientGreen,
     ),
+    child: Stack(
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(top: 16.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              SvgPicture.asset("images/presenting.svg"),
+            ],
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(
+            "Axess Event",
+            style: TextStyle(color: Colors.white, fontSize: 18),
+          ),
+        )
+      ],
+    ),
   ),
   Container(
     decoration: BoxDecoration(
       gradient: kGradientPurpleCream,
+    ),
+    child: Stack(
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            Image(
+              image: AssetImage("images/making.png"),
+            ),
+          ],
+        ),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(
+            "Axess Event",
+            style: TextStyle(color: Colors.white, fontSize: 18),
+          ),
+        )
+      ],
     ),
   ),
 ];

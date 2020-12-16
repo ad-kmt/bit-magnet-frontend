@@ -3,6 +3,7 @@ import 'package:bit_magnet/screens/author/invitations.dart';
 import 'package:bit_magnet/screens/author/problem_list.dart';
 import 'package:bit_magnet/screens/login/login.dart';
 import 'package:bit_magnet/screens/participant/hackathon_list.dart';
+import 'package:bit_magnet/screens/participant/home.dart';
 import 'package:bit_magnet/styles/constants.dart';
 import 'package:bit_magnet/styles/palette.dart';
 import 'package:flutter/material.dart';
@@ -26,6 +27,20 @@ class PSideBar extends PreferredSize {
             leading: Icon(Icons.home, color: kSideBarIconColor),
             title: Text(
               'Home',
+              style: kSideBarTextStyle,
+            ),
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(
+                builder: (context) {
+                  return PHome();
+                },
+              ));
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.code, color: kSideBarIconColor),
+            title: Text(
+              'Hackathons',
               style: kSideBarTextStyle,
             ),
             onTap: () {

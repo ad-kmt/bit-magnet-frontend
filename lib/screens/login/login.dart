@@ -1,8 +1,12 @@
 import 'dart:convert';
 
 import 'package:bit_magnet/config/base.dart';
+import 'package:bit_magnet/screens/author/home.dart';
 import 'package:bit_magnet/screens/author/problem_list.dart';
+import 'package:bit_magnet/screens/moderator/home.dart';
 import 'package:bit_magnet/screens/participant/hackathon_list.dart';
+import 'package:bit_magnet/screens/participant/home.dart';
+import 'package:bit_magnet/screens/participant/test.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_login/flutter_login.dart';
 import 'package:http/http.dart';
@@ -13,15 +17,43 @@ const users = const {
   '1625185': 'password',
 };
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({
+    Key key,
+  }) : super(key: key);
+
+  _LoginScreenState createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  // int role;
   Duration get loginTime => Duration(milliseconds: 2250);
+
+  void routToDashBoards() async {
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+    String role = preferences.getString("role");
+    Navigator.of(context).pushReplacement(MaterialPageRoute(
+      builder: (context) {
+        if (role == "AUTHOR") {
+          print("author");
+          return AHome();
+        } else if (role == "PARTICIPANT") {
+          return PHome();
+        } else if (role == "MODERATOR") {
+          return MHome();
+        } else {
+          return Test();
+        }
+      },
+    ));
+  }
 
   Future<String> _authUser(LoginData data) async {
     var psid = data.name;
     var password = data.password;
-    
+
     //API CALL
-    String url= baseIP + '/api/author/login';
+    String url = baseIP + '/api/admin/common/login';
     http.Response response = await http.post(
       url,
       headers: <String, String>{
@@ -34,12 +66,15 @@ class LoginScreen extends StatelessWidget {
     );
 
     var responseData = jsonDecode(response.body);
-    
+    // await setState(() {
+    //   role = responseData["role"];
+    // });
 
     if (responseData["status"] == "success") {
       SharedPreferences preferences = await SharedPreferences.getInstance();
 
       preferences.setString("token", responseData["token"]);
+      preferences.setString("role", responseData["role"]);
       preferences.setString("psid", responseData["user"]["psid"]);
 
       return null;
@@ -68,21 +103,18 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FlutterLogin(
-      title: 'Hackathon',
-      logo: 'images/logo.png',
-      onLogin: _authUser,
-      onSignup: _authUser,
-      emailValidator: psidValidator,
-      onSubmitAnimationCompleted: () {
-        Navigator.of(context).pushReplacement(MaterialPageRoute(
-          builder: (context) => PHackathonList(),
+        title: 'Hackathon',
+        logo: 'images/logo.png',
+        onLogin: _authUser,
+        onSignup: _authUser,
+        emailValidator: psidValidator,
+        onSubmitAnimationCompleted: () {
+          routToDashBoards();
+        },
+        onRecoverPassword: _recoverPassword,
+        messages: LoginMessages(
+          usernameHint: 'Username',
+          passwordHint: 'Password',
         ));
-      },
-      onRecoverPassword: _recoverPassword,
-      messages: LoginMessages(
-        usernameHint: 'Username',
-        passwordHint: 'Password',
-      )
-    );
   }
 }

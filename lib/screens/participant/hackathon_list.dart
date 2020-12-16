@@ -57,8 +57,7 @@ class _PHackathonListState extends State<PHackathonList> {
     
   );
   return h;
-      });
-
+      }).toList();
       setState(() {
         hackathons = x;
       });

@@ -2,6 +2,7 @@ import 'package:bit_magnet/components/side_bar.dart';
 import 'package:bit_magnet/screens/author/invitations.dart';
 import 'package:bit_magnet/screens/author/problem_list.dart';
 import 'package:bit_magnet/screens/login/login.dart';
+import 'package:bit_magnet/screens/moderator/home.dart';
 import 'package:bit_magnet/screens/moderator/problem_statements_all.dart';
 import 'package:bit_magnet/screens/participant/hackathon_list.dart';
 import 'package:bit_magnet/styles/constants.dart';
@@ -25,6 +26,20 @@ class MSideBar extends PreferredSize {
         padding: EdgeInsets.zero,
         children: <Widget>[
           SideBarHeader(),
+          ListTile(
+            leading: Icon(Icons.home, color: kSideBarIconColor),
+            title: Text(
+              'Home',
+              style: kSideBarTextStyle,
+            ),
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(
+                builder: (context) {
+                  return MHome();
+                },
+              ));
+            },
+          ),
           ListTile(
             leading: Icon(Icons.code, color: kSideBarIconColor),
             title: Text(

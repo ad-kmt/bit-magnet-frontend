@@ -18,9 +18,7 @@ class MAppBar extends PreferredSize {
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             Container(
-                height: 25,
-                child: FittedBox(
-                    child: Image(image: AssetImage("images/logo.png")))),
+                height: 25, child: Image(image: AssetImage("images/logo.png"))),
             Text(
               "admin",
               style: TextStyle(
