@@ -52,7 +52,7 @@ class _AProblemListState extends State<AProblemList> {
       drawer: ASideBar(),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.fromLTRB(16, 16, 16, 76),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
