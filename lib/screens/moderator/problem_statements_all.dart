@@ -1,4 +1,5 @@
 import 'package:bit_magnet/components/app_bar.dart';
+import 'package:bit_magnet/components/app_bar_admin.dart';
 import 'package:bit_magnet/components/hackathon_icon_bar.dart';
 import 'package:bit_magnet/components/problem_statement_detailed_card.dart';
 import 'package:bit_magnet/components/team_card.dart';
@@ -28,7 +29,7 @@ class _MProblemListState extends State<MProblemList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AxessAppBar(),
+      appBar: MAppBar(),
       backgroundColor: Palette.lightGreyBackground,
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {

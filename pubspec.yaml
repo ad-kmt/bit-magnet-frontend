@@ -15,6 +15,7 @@ dependencies:
   flutter_login: ^1.0.14
   shared_preferences: ^0.5.12+4
   http: ^0.12.2
+  carousel_slider: ^2.3.1
   searchable_dropdown:
 
 dev_dependencies:

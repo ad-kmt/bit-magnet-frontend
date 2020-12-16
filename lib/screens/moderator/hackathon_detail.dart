@@ -1,4 +1,5 @@
 import 'package:bit_magnet/components/app_bar.dart';
+import 'package:bit_magnet/components/app_bar_admin.dart';
 import 'package:bit_magnet/components/bottom_bar_register.dart';
 import 'package:bit_magnet/components/bottom_bar_two_buttons.dart';
 import 'package:bit_magnet/components/buttons.dart';
@@ -33,8 +34,6 @@ class _MHackathonDetailState extends State<MHackathonDetail> {
     super.initState();
   }
 
-
-
   List<Widget> showContent() {
     List<Widget> list = List();
     list.add(ProblemList("Problem Statements", widget.hackathon.problems));
@@ -43,19 +42,14 @@ class _MHackathonDetailState extends State<MHackathonDetail> {
 
   @override
   Widget build(BuildContext context) {
-
-    var editButtonCallBack = () {
-
-    };
+    var editButtonCallBack = () {};
 
     var publishButtonCallBack = () {
-
       //API CALL PUT:  hackathon update
-
     };
 
     return Scaffold(
-      appBar: AxessAppBar(),
+      appBar: MAppBar(),
       bottomNavigationBar: BottomBarTwoButtons(
           "Edit", editButtonCallBack, "Publish", publishButtonCallBack),
       backgroundColor: Palette.lightGreyBackground,
@@ -211,7 +205,9 @@ class ProblemList extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: List.generate(problems.length, (index) {
               return ProblemStatementDetailedCard(
-                  problems[index], MProblemDetail(problems[index], "hackathon"),);
+                problems[index],
+                MProblemDetail(problems[index], "hackathon"),
+              );
             }),
           ),
         ],

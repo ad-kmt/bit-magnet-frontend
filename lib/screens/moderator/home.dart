@@ -1,6 +1,7 @@
 import 'package:bit_magnet/components/app_bar.dart';
 import 'package:bit_magnet/components/app_bar_admin.dart';
 import 'package:bit_magnet/components/hackathon_card.dart';
+import 'package:bit_magnet/components/home_carousel.dart';
 
 import 'package:bit_magnet/components/side_bar.dart';
 import 'package:bit_magnet/models/hackathon.dart';
@@ -13,15 +14,15 @@ import 'package:bit_magnet/styles/constants.dart';
 import 'package:bit_magnet/styles/palette.dart';
 import 'package:flutter/material.dart';
 
-class MHackathonList extends StatefulWidget {
-  const MHackathonList({
+class MHome extends StatefulWidget {
+  const MHome({
     Key key,
   }) : super(key: key);
 
-  _MHackathonListState createState() => _MHackathonListState();
+  _MHomeState createState() => _MHomeState();
 }
 
-class _MHackathonListState extends State<MHackathonList> {
+class _MHomeState extends State<MHome> {
   List<IHackathon> hackathonList;
 
   @override
@@ -38,23 +39,32 @@ class _MHackathonListState extends State<MHackathonList> {
       appBar: MAppBar(),
       backgroundColor: Palette.lightGreyBackground,
       drawer: MSideBar(),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              "Hackathons",
-              style: kBlueTitle,
-            ),
-            Column(
+      body: Column(
+        children: [
+          HomeCarousel(),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                for (var hackathon in hackathonList)
-                  HackathonCard(hackathon, MHackathonDetail(hackathon)),
+                Text(
+                  "Hackathons",
+                  style: TextStyle(
+                    color: Palette.blue,
+                    fontSize: 24,
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+                Column(
+                  children: [
+                    for (var hackathon in hackathonList)
+                      HackathonCard(hackathon, MHackathonDetail(hackathon)),
+                  ],
+                ),
               ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {
