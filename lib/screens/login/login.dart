@@ -38,7 +38,7 @@ class _LoginScreenState extends State<LoginScreen> {
           print("author");
           return AHome();
         } else if (role == "PARTICIPANT") {
-          return PHome();
+          return PHackathonList();
         } else if (role == "MODERATOR") {
           return MHome();
         } else {
