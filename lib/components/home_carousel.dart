@@ -87,11 +87,18 @@ var listCaraousel = [
     ),
     child: Stack(
       children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            SvgPicture.asset("images/working.svg"),
-          ],
+        Padding(
+          padding: const EdgeInsets.only(top: 8.0),
+          child: Container(
+            height: double.infinity,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                SvgPicture.asset("images/working.svg"),
+              ],
+            ),
+          ),
         ),
         Padding(
           padding: const EdgeInsets.all(8.0),
@@ -109,11 +116,14 @@ var listCaraousel = [
     ),
     child: Stack(
       children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            SvgPicture.asset("images/presenting.svg"),
-          ],
+        Padding(
+          padding: const EdgeInsets.only(top: 16.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              SvgPicture.asset("images/presenting.svg"),
+            ],
+          ),
         ),
         Padding(
           padding: const EdgeInsets.all(8.0),
