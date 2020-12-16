@@ -63,7 +63,7 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FlutterLogin(
-      title: 'Login',
+      title: 'Hackathon',
       logo: 'images/logo.png',
       onLogin: _authUser,
       onSignup: _authUser,
@@ -74,6 +74,10 @@ class LoginScreen extends StatelessWidget {
         ));
       },
       onRecoverPassword: _recoverPassword,
+      messages: LoginMessages(
+        usernameHint: 'Username',
+        passwordHint: 'Password',
+      )
     );
   }
 }
