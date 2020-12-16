@@ -39,7 +39,7 @@ class _PHackathonDetailState extends State<PHackathonDetail> {
     update(participant, widget.hackathon);
   }
 
-  void update(IParticipant participant, IHackathonBasic hackathon) {
+  void update(IParticipant participant, dynamic hackathon) {
     setState(() {
       //LOGIC TO SEE IF PARTICIPANT'S ANY TEAM IS REGISTERED
       //0. Get User details
