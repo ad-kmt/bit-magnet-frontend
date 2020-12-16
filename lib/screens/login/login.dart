@@ -1,6 +1,8 @@
 import 'dart:convert';
 
+import 'package:bit_magnet/config/base.dart';
 import 'package:bit_magnet/screens/author/problem_list.dart';
+import 'package:bit_magnet/screens/participant/hackathon_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_login/flutter_login.dart';
 import 'package:http/http.dart';
@@ -17,10 +19,11 @@ class LoginScreen extends StatelessWidget {
   Future<String> _authUser(LoginData data) async {
     var psid = data.name;
     var password = data.password;
-
+    
     //API CALL
+    String url= baseIP + '/api/hackathon/get';
     http.Response response = await http.post(
-      "http://10.0.2.2:3000/api/author/login",
+      url,
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
       },
@@ -31,6 +34,8 @@ class LoginScreen extends StatelessWidget {
     );
 
     var responseData = jsonDecode(response.body);
+    
+
     if (responseData["status"] == "success") {
       SharedPreferences preferences = await SharedPreferences.getInstance();
 
@@ -70,7 +75,7 @@ class LoginScreen extends StatelessWidget {
       emailValidator: psidValidator,
       onSubmitAnimationCompleted: () {
         Navigator.of(context).pushReplacement(MaterialPageRoute(
-          builder: (context) => AProblemList(),
+          builder: (context) => PHackathonList(),
         ));
       },
       onRecoverPassword: _recoverPassword,
