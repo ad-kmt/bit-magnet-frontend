@@ -2,7 +2,7 @@ import 'package:bit_magnet/components/app_bar.dart';
 import 'package:bit_magnet/components/app_bar_admin.dart';
 import 'package:bit_magnet/components/hackathon_icon_bar.dart';
 import 'package:bit_magnet/components/problem_statement_detailed_card.dart';
-import 'package:bit_magnet/components/team_card.dart';
+import 'package:bit_magnet/components/team_card_select.dart';
 import 'package:bit_magnet/models/problem_statement.dart';
 import 'package:bit_magnet/models/sample_objects.dart';
 import 'package:bit_magnet/screens/author/create_problem.dart';
