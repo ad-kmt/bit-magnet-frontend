@@ -1,4 +1,5 @@
 import 'package:bit_magnet/components/app_bar.dart';
+import 'package:bit_magnet/components/app_bar_admin.dart';
 import 'package:bit_magnet/models/sample_objects.dart';
 import 'package:bit_magnet/styles/constants.dart';
 import 'package:bit_magnet/styles/palette.dart';
@@ -27,15 +28,13 @@ class _CreateHackathonState extends State<CreateHackathon> {
 
   @override
   Widget build(BuildContext context) {
-
     var submitCallback = () {
       //API CALL
     };
 
-
     return Scaffold(
       resizeToAvoidBottomPadding: false,
-      appBar: AxessAppBar(),
+      appBar: MAppBar(),
       backgroundColor: Palette.lightGreyBackground,
       body: SingleChildScrollView(
         child: Column(

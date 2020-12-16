@@ -1,4 +1,5 @@
 import 'package:bit_magnet/components/side_bar.dart';
+import 'package:bit_magnet/screens/author/home.dart';
 import 'package:bit_magnet/styles/constants.dart';
 import 'package:bit_magnet/styles/palette.dart';
 import 'package:flutter/material.dart';
@@ -26,6 +27,20 @@ class ASideBar extends PreferredSize {
             leading: Icon(Icons.home, color: kSideBarIconColor),
             title: Text(
               'Home',
+              style: kSideBarTextStyle,
+            ),
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(
+                builder: (context) {
+                  return AHome();
+                },
+              ));
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.build_rounded, color: kSideBarIconColor),
+            title: Text(
+              'Problem Statements',
               style: kSideBarTextStyle,
             ),
             onTap: () {

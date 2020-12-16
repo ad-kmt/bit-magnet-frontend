@@ -1,5 +1,6 @@
 import 'package:bit_magnet/components/caraousel.dart';
 import 'package:bit_magnet/data/front_page.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/semantics.dart';
 
@@ -27,32 +28,40 @@ class BottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
-      fit: StackFit.loose,
       children: [
         Image(
           image: AssetImage('images/sunrise.jpg'),
           width: double.infinity,
           fit: BoxFit.fitWidth,
         ),
-        Carousel(),
-        RaisedButton(
-          color: Colors.green,
-          onPressed: () {},
-          padding: EdgeInsets.all(10.0),
-          child: Container(
-            width: 80,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text('Login',
-                    style:
-                        TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
-                SizedBox(
-                  width: 5,
+        Container(
+          margin: EdgeInsets.only(top: 100),
+          height: MediaQuery.of(context).size.height * 0.5,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Expanded(child: Carousel()),
+              RaisedButton(
+                color: Colors.green,
+                onPressed: () {},
+                padding: EdgeInsets.all(10.0),
+                child: Container(
+                  width: 80,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text('Login',
+                          style: TextStyle(
+                              fontSize: 16, fontWeight: FontWeight.bold)),
+                      SizedBox(
+                        width: 5,
+                      ),
+                      Icon(Icons.login)
+                    ],
+                  ),
                 ),
-                Icon(Icons.login)
-              ],
-            ),
+              ),
+            ],
           ),
         ),
         Padding(
