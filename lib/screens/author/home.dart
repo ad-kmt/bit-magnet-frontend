@@ -1,4 +1,5 @@
 import 'package:bit_magnet/components/app_bar.dart';
+import 'package:bit_magnet/components/home_carousel.dart';
 import 'package:bit_magnet/components/problem_statement_card.dart';
 import 'package:bit_magnet/components/problem_statement_detailed_card.dart';
 
@@ -12,8 +13,8 @@ import 'package:flutter/material.dart';
 import 'package:bit_magnet/models/problem_statement.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class AProblemList extends StatefulWidget {
-  const AProblemList({
+class AHome extends StatefulWidget {
+  const AHome({
     Key key,
   }) : super(key: key);
 
@@ -28,10 +29,10 @@ class AProblemList extends StatefulWidget {
     print(psid);
   }
 
-  _AProblemListState createState() => _AProblemListState();
+  _AHomeState createState() => _AHomeState();
 }
 
-class _AProblemListState extends State<AProblemList> {
+class _AHomeState extends State<AHome> {
   List<IProblemStatement> problemList = SampleObjects.sampleProblemList;
 
   @override
@@ -51,29 +52,40 @@ class _AProblemListState extends State<AProblemList> {
       backgroundColor: Palette.lightGreyBackground,
       drawer: ASideBar(),
       body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(16, 16, 16, 76),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                "Problem Statements: ",
-                style: kBlackSubTitle,
+        child: Column(
+          children: [
+            HomeCarousel(),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 8.0),
+                    child: Text(
+                      "Problem Statements: ",
+                      style: kBlackSubTitle,
+                    ),
+                  ),
+                  for (var problem in problemList)
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => AProblemDetail(problem)),
+                        );
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 8.0),
+                        child: ProblemStatementDetailedCard(
+                            problem, AProblemDetail(problem)),
+                      ),
+                    )
+                ],
               ),
-              for (var problem in problemList)
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => AProblemDetail(problem)),
-                    );
-                  },
-                  child: ProblemStatementDetailedCard(
-                      problem, AProblemDetail(problem)),
-                )
-            ],
-          ),
+            ),
+          ],
         ),
       ),
       floatingActionButton: FloatingActionButton.extended(

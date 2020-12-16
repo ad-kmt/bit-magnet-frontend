@@ -1,4 +1,5 @@
 import 'package:bit_magnet/components/app_bar.dart';
+import 'package:bit_magnet/components/app_bar_admin.dart';
 import 'package:bit_magnet/components/bottom_bar_register.dart';
 import 'package:bit_magnet/components/bottom_bar_two_buttons.dart';
 import 'package:bit_magnet/components/buttons.dart';
@@ -9,9 +10,7 @@ import 'package:bit_magnet/styles/constants.dart';
 import 'package:bit_magnet/styles/palette.dart';
 import 'package:flutter/material.dart';
 
-
 class MProblemDetail extends StatefulWidget {
-
   final IProblemStatement problem;
   final String parent;
 
@@ -24,26 +23,20 @@ class MProblemDetail extends StatefulWidget {
 class _MProblemDetailState extends State<MProblemDetail> {
   @override
   Widget build(BuildContext context) {
-    var editButtonCallBack = () {
-
-    };
+    var editButtonCallBack = () {};
 
     var removeButtonCallBack = () {
-
-
-      if(widget.parent == "hackathon"){
+      if (widget.parent == "hackathon") {
         //API CALL : only remove from hackathon
 
-      } else if (widget.parent == "problem list"){
+      } else if (widget.parent == "problem list") {
         //API CALL : remove from problem database
 
       }
-
-
     };
 
     return Scaffold(
-        appBar: AxessAppBar(),
+        appBar: MAppBar(),
         backgroundColor: Colors.white,
         bottomNavigationBar: BottomBarTwoButtons(
             "Edit", editButtonCallBack, "Remove", removeButtonCallBack),
@@ -70,9 +63,10 @@ class _MProblemDetailState extends State<MProblemDetail> {
                     ],
                   ),
                 ),
-                Section("Challenge", widget.problem.description, Palette.greenText),
                 Section(
-                    "Who we're solving for", widget.problem.department, Colors.black),
+                    "Challenge", widget.problem.description, Palette.greenText),
+                Section("Who we're solving for", widget.problem.department,
+                    Colors.black),
                 Section(
                   "Benefits",
                   widget.problem.benefits,
@@ -95,7 +89,8 @@ class _MProblemDetailState extends State<MProblemDetail> {
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: List.generate(widget.problem.technologies.length, (index) {
+                  children: List.generate(widget.problem.technologies.length,
+                      (index) {
                     return Padding(
                       padding: const EdgeInsets.symmetric(vertical: 6),
                       child: Text(
