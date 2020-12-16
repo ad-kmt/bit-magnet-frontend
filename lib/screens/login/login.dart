@@ -17,7 +17,6 @@ const users = const {
   '1625185': 'password',
 };
 
-
 class LoginScreen extends StatefulWidget {
   const LoginScreen({
     Key key,
@@ -51,9 +50,9 @@ class _LoginScreenState extends State<LoginScreen> {
   Future<String> _authUser(LoginData data) async {
     var psid = data.name;
     var password = data.password;
-    
+
     //API CALL
-    String url= baseIP + 'api/admin/common/login';
+    String url = baseIP + '/api/admin/common/login';
     http.Response response = await http.post(
       url,
       headers: <String, String>{
@@ -69,7 +68,6 @@ class _LoginScreenState extends State<LoginScreen> {
     // await setState(() {
     //   role = responseData["role"];
     // });
-    
 
     if (responseData["status"] == "success") {
       SharedPreferences preferences = await SharedPreferences.getInstance();
@@ -104,19 +102,18 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return FlutterLogin(
-      title: 'Hackathon',
-      logo: 'images/logo.png',
-      onLogin: _authUser,
-      onSignup: _authUser,
-      emailValidator: psidValidator,
-      onSubmitAnimationCompleted: () {
-        routToDashBoards();
-      },
-      onRecoverPassword: _recoverPassword,
-      messages: LoginMessages(
-        usernameHint: 'Username',
-        passwordHint: 'Password',
-      )
-    );
+        title: 'Hackathon',
+        logo: 'images/logo.png',
+        onLogin: _authUser,
+        onSignup: _authUser,
+        emailValidator: psidValidator,
+        onSubmitAnimationCompleted: () {
+          routToDashBoards();
+        },
+        onRecoverPassword: _recoverPassword,
+        messages: LoginMessages(
+          usernameHint: 'Username',
+          passwordHint: 'Password',
+        ));
   }
 }
