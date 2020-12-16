@@ -1,11 +1,14 @@
 import 'package:bit_magnet/components/app_bar.dart';
 import 'package:bit_magnet/components/buttons.dart';
 import 'package:bit_magnet/components/team_card.dart';
+import 'package:bit_magnet/models/problem_statement.dart';
 import 'package:bit_magnet/models/sample_objects.dart';
 import 'package:bit_magnet/models/team.dart';
 import 'package:bit_magnet/screens/participant/create_team.dart';
 import 'package:bit_magnet/styles/constants.dart';
 import 'package:bit_magnet/styles/palette.dart';
+import 'package:bit_magnet/models/sample_objects.dart';
+import 'package:searchable_dropdown/searchable_dropdown.dart';
 import 'package:flutter/material.dart';
 
 class Register extends StatefulWidget {
@@ -16,6 +19,9 @@ class Register extends StatefulWidget {
 class _RegisterState extends State<Register> {
   List<bool> teamState = List<bool>();
   List<ITeam> userTeams;
+  String selectedProblem;
+
+  final List<DropdownMenuItem> problemList = SampleObjects.sampleProblemsList;
 
   @override
   void initState() {
@@ -58,16 +64,43 @@ class _RegisterState extends State<Register> {
                 "Problem:",
                 style: kBlackSubTitle,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 12),
-                child: Container(
-                  height: 40,
-                  decoration: BoxDecoration(
-                    color: Palette.lightGreyContainer,
-                    borderRadius: BorderRadius.all(Radius.circular(8)),
-                  ),
-                ),
+              SearchableDropdown.single(
+                items: problemList,
+                value: selectedProblem,
+                hint: "Select a Problem",
+                searchHint: "Search Problem by name",
+                onChanged: (value) {
+                  setState(() {
+                    selectedProblem = value;
+                  });
+                },
+                displayClearIcon: false,
+                isExpanded: true,
+                dialogBox: true,
               ),
+              // Padding(
+              //   padding: const EdgeInsets.symmetric(vertical: 12),
+              //   child: Container(
+              //     // height: 40,
+              //     decoration: BoxDecoration(
+              //       color: Palette.lightGreyContainer,
+              //       borderRadius: BorderRadius.all(Radius.circular(8)),
+              //     ),
+              //     padding: const EdgeInsets.all(0),
+              //     child: SearchableDropdown.single(
+              //       items: participantsList,
+              //       value: null,
+              //       hint: "Select a Problem",
+              //       searchHint: "Search Problem by name",
+              //       onChanged: (value) {
+              //         setState(() {
+              //           selectedProblem = value;
+              //         });
+              //       },
+              //       isExpanded: true,
+              //     ),
+              //   ),
+              // ),
               Text(
                 "You have ${userTeams.length} teams:",
                 style: kBlackSubTitle,
