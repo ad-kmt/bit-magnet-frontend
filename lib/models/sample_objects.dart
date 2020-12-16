@@ -3,12 +3,10 @@ import 'package:bit_magnet/models/participant.dart';
 import 'package:bit_magnet/models/problem_statement.dart';
 import 'package:flutter/material.dart';
 import 'package:bit_magnet/models/team.dart';
-import 'hackathon.dart';
+
+import 'hackathon_basic_details.dart';
 
 class SampleObjects {
-  static IHackathon sampleHackathon = IHackathon(
-      "Hackathon Name", "DD:MM", "DD:MM", "Location", 5, sampleProblemList);
-
   static IProblemStatement sampleProblemStatement = IProblemStatement(
       "0083",
       "Problem Name",
@@ -17,6 +15,20 @@ class SampleObjects {
       "Lorem ipsum",
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod",
       ["React", "Java", "JavaScript"]);
+
+  static IHackathonBasic sampleHackathon = IHackathonBasic(
+    '_id',
+    'topic',
+    'title',
+    'location',
+    'team_size',
+    'moderator_id',
+    'createdAt',
+    'updatedAt',
+    'startDate',
+    'endDate',
+    
+  );
 
   static List<IProblemStatement> sampleProblemList = [
     IProblemStatement(
@@ -71,25 +83,16 @@ class SampleObjects {
 
   static List<DropdownMenuItem> sampleProblemsList = [
     DropdownMenuItem(
-        child: Text('Axess Challenge App'),
-        value: 'Axess Challenge App'),
+        child: Text('Axess Challenge App'), value: 'Axess Challenge App'),
+    DropdownMenuItem(child: Text('Gamification'), value: 'Gamification'),
+    DropdownMenuItem(child: Text('House Pricing'), value: 'House Pricing'),
     DropdownMenuItem(
-        child: Text('Gamification'),
-        value: 'Gamification'),
-    DropdownMenuItem(
-        child: Text('House Pricing'),
-        value: 'House Pricing'),
-    DropdownMenuItem(
-        child: Text('virtual customer assistant'), value: 'virtual customer assistant'),
+        child: Text('virtual customer assistant'),
+        value: 'virtual customer assistant'),
     DropdownMenuItem(
         child: Text('Stock Market Challenge'), value: 'Stock Market Challenge'),
   ];
-  static List<IHackathon> sampleHackathonList = [
-    IHackathon(
-        "Hackathon 1", "DD:MM", "DD:MM", "Location", 5, sampleProblemList),
-    IHackathon(
-        "Hackathon 2", "DD:MM", "DD:MM", "Location", 5, sampleProblemList)
-  ];
+  static List<IHackathonBasic> sampleHackathonList = [sampleHackathon, sampleHackathon];
 
   static List<DropdownMenuItem> sampleGroupList = [
     DropdownMenuItem(child: Text('Retails'), value: 'Retails'),

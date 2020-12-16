@@ -21,7 +21,7 @@ class LoginScreen extends StatelessWidget {
     var password = data.password;
     
     //API CALL
-    String url= baseIP + '/api/hackathon/get';
+    String url= baseIP + '/api/author/login';
     http.Response response = await http.post(
       url,
       headers: <String, String>{

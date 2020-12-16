@@ -1,4 +1,5 @@
-import 'package:bit_magnet/models/hackathon.dart';
+
+import 'package:bit_magnet/models/hackathon_basic_details.dart';
 import 'package:bit_magnet/styles/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -28,7 +29,7 @@ class InstructionsHackathon extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: List.generate(
-                  IHackathon.instructions.length,
+                  IHackathonBasic.instructions.length,
                   (index) {
                     return Padding(
                       padding: const EdgeInsets.symmetric(vertical: 8.0),
@@ -51,7 +52,7 @@ class InstructionsHackathon extends StatelessWidget {
                           ),
                           Expanded(
                             child: Text(
-                              IHackathon.instructions[index],
+                              IHackathonBasic.instructions[index],
                               style:
                                   TextStyle(fontSize: 18, color: Colors.white),
                             ),

@@ -6,7 +6,6 @@ import 'package:bit_magnet/screens/author/invitations.dart';
 import 'package:bit_magnet/screens/author/problem_submit.dart';
 import 'package:bit_magnet/screens/login/front_page.dart';
 import 'package:bit_magnet/screens/login/login.dart';
-import 'package:bit_magnet/screens/moderator/create_hackathon.dart';
 import 'package:bit_magnet/screens/moderator/hackathon_list.dart';
 import 'package:bit_magnet/screens/moderator/home.dart';
 import 'package:bit_magnet/screens/moderator/problem_statements_all.dart';
@@ -16,7 +15,6 @@ import 'package:bit_magnet/screens/participant/test.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-
 import 'screens/author/problem_list.dart';
 
 void main() {
@@ -29,7 +27,7 @@ class AxessApp extends StatelessWidget {
     return MaterialApp(
       title: 'aXess App',
       debugShowCheckedModeBanner: false,
-      home: MHome(),
+      home: LoginScreen(),
       routes: {},
     );
   }
