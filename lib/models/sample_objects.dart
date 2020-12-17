@@ -8,13 +8,14 @@ import 'hackathon_basic_details.dart';
 
 class SampleObjects {
   static IProblemStatement sampleProblemStatement = IProblemStatement(
+      
       "0083",
-      "Problem Name",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "RPBWM - Some Department",
-      "Lorem ipsum",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod",
-      ["React", "Java", "JavaScript"]);
+        "Problem Name 1",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "RPBWM - Some Department",
+        "Lorem ipsum",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod",
+        ["React", "Java", "JavaScript"]);
 
   static IHackathonBasic sampleHackathon = IHackathonBasic(
     '_id',
@@ -32,35 +33,35 @@ class SampleObjects {
   static List<IProblemStatement> sampleProblemList = [
     IProblemStatement(
         "0083",
-        "Problem Name 1",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "RPBWM - Some Department",
-        "Lorem ipsum",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod",
-        ["React", "Java", "JavaScript"]),
+      "QR Code - Africa",
+      "With the opening up of malls and retail sector, online and offline merchants provide a unique opportunity for us to explore a new channel/ medium for self assisted digital sales.",
+      "RPBWM - Retail Core Platforms",
+      "The model will provide incentives for (a) 'merchants to display SCB cards in the asset (b) clients to self initiate a registration journey",
+      "Able to scan the QR code and make the transactions from one wallet to other wallet",
+      ["React", "Java", "JavaScript", "Spring"]),
     IProblemStatement(
         "0084",
-        "Problem Name 2",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "RPBWM - Some Department",
-        "Lorem ipsum",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod",
+        "Algo trading based analysis",
+        "Collect the data from the news around financial world(Moneycontrol, Bloomberg) and build a data model that can predict the risk an organisation can get on my investment",
+        "RPBWM - Wealth Management",
+        "It helps institutaions in increasing yield on their investment book, while simultaneously reducing the risk, by leveraging quantitative and AI techniques",
+        "Model to predict the risk of the default and downgrade",
         ["React", "Java", "JavaScript"]),
     IProblemStatement(
         "0085",
-        "Problem Name 3",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "RPBWM - Some Department",
-        "Lorem ipsum",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod",
+        "aXess Challange App",
+        "An App to build problem statements which will be later hosted on SC App. This App will be meant to be available for Senior Mnaagement (CXOs, Country Heads).",
+        "Other",
+        "Benefits to the team to have submit the problem statement any time on their mobile",
+        "Frontend screens and possible integration with APP Center or aXess.sc.net",
         ["React", "Java", "JavaScript"]),
     IProblemStatement(
         "0086",
-        "Problem Name 4",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "RPBWM - Some Department",
-        "Lorem ipsum",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod",
+        "Video Support-Hearing Impaired",
+        "This Problem Statement is an intent of Corporate Social Responsibility(CSR) initiative to setup the Retail Banking prospects for our clients who are hearing impaired",
+        "RPBWM - Retail Core Platforms",
+        "Benefit the organisation overall",
+        "Creating a WebRTC and peer-to-peer communication.",
         ["React", "Java", "JavaScript"]),
   ];
 
