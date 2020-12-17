@@ -45,14 +45,14 @@ class SampleObjects {
   static IHackathonBasic hackathon2 = IHackathonBasic(
     '_id',
     'topic',
-    'aXess Graduate Hackathon',
+    'aXess Retail Banking Hackathon',
     'Bangalore - India',
     '15',
     'moderator_id',
     'createdAt',
     'updatedAt',
-    'Dec\' 6',
-    'Dec\' 18',
+    'Jul\' 6',
+    'Jul\' 18',
   );
 
   static IHackathonBasic pastHackathon1 = IHackathonBasic(
@@ -199,8 +199,8 @@ class SampleObjects {
     DropdownMenuItem(child: Text('Rapid Miner'), value: 'Rapid Miner'),
   ];
   static List<DropdownMenuItem> sampleInvitationList = [
-    DropdownMenuItem(child: Text('Aditya@sc.com'), value: 'Aditya@sc.com'),
-    DropdownMenuItem(child: Text('amar@sc.com'), value: 'amar@sc.com')
+    DropdownMenuItem(child: Text('Kofi.Blankson@sc.com'), value: 'Kofi.Blankson@sc.com'),
+    DropdownMenuItem(child: Text('Williamson.Smith@sc.com'), value: 'Williamson.Smith@sc.com')
   ];
   static List<DropdownMenuItem> sampleLocationList = [
     DropdownMenuItem(child: Text('Bangalore'), value: 'Bangalore'),

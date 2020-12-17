@@ -103,6 +103,7 @@ class _MHomeState extends State<MHome2> with SingleTickerProviderStateMixin {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: List.generate(hackathonList.length, (index) {
+
                           return HackathonCard(hackathonList[index],
                               MHackathonDetail(hackathonList[index]));
                         }),
