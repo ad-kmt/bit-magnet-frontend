@@ -8,7 +8,6 @@ import 'package:bit_magnet/models/hackathon_basic_details.dart';
 
 import 'package:bit_magnet/models/sample_objects.dart';
 
-
 import 'package:bit_magnet/screens/moderator/hackathon_detail.dart';
 import 'package:bit_magnet/screens/moderator/side_bar.dart';
 import 'package:bit_magnet/styles/constants.dart';
@@ -33,7 +32,7 @@ class _MHomeState extends State<MHome> {
     super.initState();
 
     //API CALL
-    hackathonList = SampleObjects.sampleHackathonList;
+    hackathonList = SampleObjects.upcomingHackathonList;
   }
 
   @override

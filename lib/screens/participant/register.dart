@@ -1,10 +1,12 @@
 import 'package:bit_magnet/components/app_bar.dart';
 import 'package:bit_magnet/components/buttons.dart';
 import 'package:bit_magnet/components/team_card_select.dart';
+import 'package:bit_magnet/models/hackathon_basic_details.dart';
 import 'package:bit_magnet/models/problem_statement.dart';
 import 'package:bit_magnet/models/sample_objects.dart';
 import 'package:bit_magnet/models/team.dart';
 import 'package:bit_magnet/screens/participant/create_team.dart';
+import 'package:bit_magnet/screens/participant/hackathon_detail_registered.dart';
 import 'package:bit_magnet/styles/constants.dart';
 import 'package:bit_magnet/styles/palette.dart';
 import 'package:bit_magnet/models/sample_objects.dart';
@@ -51,7 +53,19 @@ class _RegisterState extends State<Register> {
       bottomNavigationBar: BottomAppBar(
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: 20, vertical: 8),
-          child: FlatGreenButton("Register", () {}),
+          child: FlatGreenButton(
+            "Register",
+            () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return PHackathonDetailRegistered(SampleObjects.hackathon1);
+                  },
+                ),
+              );
+            },
+          ),
         ),
       ),
       body: SingleChildScrollView(
@@ -64,19 +78,22 @@ class _RegisterState extends State<Register> {
                 "Problem:",
                 style: kBlackSubTitle,
               ),
-              SearchableDropdown.single(
-                items: problemList,
-                value: selectedProblem,
-                hint: "Select a Problem",
-                searchHint: "Search Problem by name",
-                onChanged: (value) {
-                  setState(() {
-                    selectedProblem = value;
-                  });
-                },
-                displayClearIcon: false,
-                isExpanded: true,
-                dialogBox: true,
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 8.0),
+                child: SearchableDropdown.single(
+                  items: problemList,
+                  value: selectedProblem,
+                  hint: "Select a Problem",
+                  searchHint: "Search Problem by name",
+                  onChanged: (value) {
+                    setState(() {
+                      selectedProblem = value;
+                    });
+                  },
+                  displayClearIcon: false,
+                  isExpanded: true,
+                  dialogBox: true,
+                ),
               ),
               // Padding(
               //   padding: const EdgeInsets.symmetric(vertical: 12),

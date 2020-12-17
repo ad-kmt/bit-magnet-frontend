@@ -47,7 +47,7 @@ class PSideBar extends PreferredSize {
             onTap: () {
               Navigator.push(context, MaterialPageRoute(
                 builder: (context) {
-                  return PHackathonList();
+                  return PHome();
                 },
               ));
             },

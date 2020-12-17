@@ -1,5 +1,4 @@
 import 'package:bit_magnet/components/app_bar.dart';
-import 'package:bit_magnet/components/app_bar_admin.dart';
 import 'package:bit_magnet/components/bottom_bar_register.dart';
 import 'package:bit_magnet/components/bottom_bar_two_buttons.dart';
 import 'package:bit_magnet/components/buttons.dart';
@@ -7,41 +6,49 @@ import 'package:bit_magnet/components/hackathon_cover.dart';
 import 'package:bit_magnet/components/hackathon_icon_bar.dart';
 import 'package:bit_magnet/components/lobby_card.dart';
 import 'package:bit_magnet/components/problem_statement_card.dart';
-import 'package:bit_magnet/components/problem_statement_detailed_card.dart';
 import 'package:bit_magnet/components/team_card.dart';
-import 'package:bit_magnet/models/hackathon_basic_details.dart';
 
+import 'package:bit_magnet/models/hackathon_basic_details.dart';
 import 'package:bit_magnet/models/participant.dart';
 import 'package:bit_magnet/models/problem_statement.dart';
 import 'package:bit_magnet/models/sample_objects.dart';
 import 'package:bit_magnet/models/team.dart';
-import 'package:bit_magnet/screens/moderator/problem_detail.dart';
 import 'package:bit_magnet/screens/participant/problem_detail.dart';
 import 'package:bit_magnet/screens/participant/register.dart';
 import 'package:bit_magnet/styles/constants.dart';
 import 'package:bit_magnet/styles/palette.dart';
 import 'package:flutter/material.dart';
 
-class MHackathonDetail extends StatefulWidget {
+import 'home.dart';
+
+class PHackathonDetailRegistered extends StatefulWidget {
   final dynamic hackathon;
 
-  MHackathonDetail(this.hackathon);
+  PHackathonDetailRegistered(this.hackathon);
 
   @override
-  _MHackathonDetailState createState() => _MHackathonDetailState();
+  _PHackathonDetailRegisteredState createState() =>
+      _PHackathonDetailRegisteredState();
 }
 
-class _MHackathonDetailState extends State<MHackathonDetail>
+class _PHackathonDetailRegisteredState extends State<PHackathonDetailRegistered>
     with SingleTickerProviderStateMixin {
+  IParticipant participant;
+  bool isRegistered;
+  ITeam userTeam;
+  List<IProblemStatement> userProblemStatements;
+
   TabController _tabController;
   ScrollController _scrollController;
 
   @override
   void initState() {
     super.initState();
+    participant = SampleObjects.sampleParticipant;
+    update(participant, widget.hackathon);
 
     _scrollController = ScrollController();
-    _tabController = TabController(vsync: this, length: 4);
+    _tabController = TabController(vsync: this, length: 5);
     _tabController.addListener(_smoothScrollToTop);
   }
 
@@ -53,25 +60,99 @@ class _MHackathonDetailState extends State<MHackathonDetail>
     );
   }
 
+  void update(IParticipant participant, IHackathonBasic hackathon) {
+    setState(() {
+      //LOGIC TO SEE IF PARTICIPANT'S ANY TEAM IS REGISTERED
+      //0. Get User details
+      //1. Get team details
+      //2. Get which hackathon registered. Check if matches
+      //3. Check which problem statement is/are registered
+
+      //GET THESE FIELDS FROM BACKEND
+      isRegistered = true;
+      userTeam = SampleObjects.sampleTeam;
+      userProblemStatements = [SampleObjects.sampleProblemStatement];
+    });
+  }
+
   List<Widget> showContent() {
     List<Widget> list = List();
-    list.add(
-        ProblemList("Problem Statements", SampleObjects.sampleProblemList));
+    if (isRegistered) {
+      list.add(TeamInfo(userTeam));
+      list.add(ProblemList(
+          "Your team's registered challenge(s):", userProblemStatements));
+      list.add(
+          ProblemList("Problem Statements", SampleObjects.sampleProblemList));
+    } else {
+      list.add(
+          ProblemList("Problem Statements", SampleObjects.sampleProblemList));
+    }
     return list;
+  }
+
+  BottomAppBar showRegisterButton() {
+    if (isRegistered) {
+      return BottomAppBar(
+        child: Container(
+          padding: EdgeInsets.symmetric(horizontal: 24, vertical: 8),
+          child: FlatGreenButton(
+            "Submit Solution",
+            () {},
+          ),
+        ),
+      );
+    } else {
+      return BottomAppBar(
+        child: Container(
+          padding: EdgeInsets.symmetric(horizontal: 24, vertical: 8),
+          child: FlatGreenButton("Register", () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) {
+                  return Register();
+                },
+              ),
+            );
+          }),
+        ),
+      );
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     var editButtonCallBack = () {};
 
-    var publishButtonCallBack = () {
-      //API CALL PUT:  hackathon update
-    };
+    var publishButtonCallBack = () {};
 
     return Scaffold(
-      appBar: MAppBar(),
-      bottomNavigationBar: BottomBarTwoButtons(
-          "Edit", editButtonCallBack, "Publish", publishButtonCallBack),
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        iconTheme: IconThemeData(
+          color: Palette.blue, //change your color here
+        ),
+        leading: GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) {
+                  return PHome();
+                },
+              ),
+            );
+          },
+          child: Icon(
+            Icons.arrow_back_ios,
+          ),
+        ),
+        title: Container(
+          alignment: Alignment.centerRight,
+          child: Image(image: AssetImage("images/logo.png")),
+        ),
+      ),
+      bottomNavigationBar: showRegisterButton(),
       backgroundColor: Palette.lightGreyBackground,
       body: NestedScrollView(
         controller: ScrollController(),
@@ -94,6 +175,7 @@ class _MHackathonDetailState extends State<MHackathonDetail>
                   unselectedLabelColor: Colors.grey,
                   indicatorColor: Palette.greenWidget,
                   tabs: [
+                    Tab(text: 'My Team'),
                     Tab(text: 'Problem Statements'),
                     Tab(text: 'Teams'),
                     Tab(text: 'Interested Lobby'),
@@ -111,6 +193,18 @@ class _MHackathonDetailState extends State<MHackathonDetail>
           child: TabBarView(
             controller: _tabController,
             children: [
+              SingleChildScrollView(
+                controller: ScrollController(),
+                child: Container(
+                  child: Column(
+                    children: [
+                      TeamInfo(userTeam),
+                      ProblemList("Your team's registered challenge(s):",
+                          userProblemStatements),
+                    ],
+                  ),
+                ),
+              ),
               SingleChildScrollView(
                 controller: ScrollController(),
                 child: Container(
@@ -180,24 +274,6 @@ class _MHackathonDetailState extends State<MHackathonDetail>
   }
 }
 
-// var single = SingleChildScrollView(
-//   child: Column(
-//     crossAxisAlignment: CrossAxisAlignment.start,
-//     children: [
-//       HackathonCover(widget.hackathon),
-//       HackathonIconBar(widget.hackathon),
-//       Padding(
-//         padding:
-//         const EdgeInsets.symmetric(horizontal: 20.0, vertical: 0),
-//         child: Column(
-//           crossAxisAlignment: CrossAxisAlignment.start,
-//           children: showContent(),
-//         ),
-//       )
-//     ],
-//   ),
-// );
-
 class TeamInfo extends StatelessWidget {
   final ITeam team;
   TeamInfo(this.team);
@@ -206,9 +282,12 @@ class TeamInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text(
-          "You're registered for this hackathon",
-          style: kBlackSubTitle,
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 8.0),
+          child: Text(
+            "You're registered for this hackathon",
+            style: kBlackSubTitle,
+          ),
         ),
         Padding(
           padding: const EdgeInsets.fromLTRB(0, 16, 0, 0),
@@ -262,7 +341,7 @@ class TeamInfo extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10.0),
+          padding: const EdgeInsets.symmetric(vertical: 16.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: List.generate(team.participants.length, (index) {
@@ -328,10 +407,7 @@ class ProblemList extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: List.generate(problems.length, (index) {
-              return ProblemStatementDetailedCard(
-                problems[index],
-                MProblemDetail(problems[index], "hackathon"),
-              );
+              return ProblemStatementCard(problems[index]);
             }),
           ),
         ],

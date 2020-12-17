@@ -45,7 +45,7 @@ class _PHackathonDetailState extends State<PHackathonDetail>
     update(participant, widget.hackathon);
 
     _scrollController = ScrollController();
-    _tabController = TabController(vsync: this, length: 5);
+    _tabController = TabController(vsync: this, length: 4);
     _tabController.addListener(_smoothScrollToTop);
   }
 
@@ -152,7 +152,6 @@ class _PHackathonDetailState extends State<PHackathonDetail>
                   unselectedLabelColor: Colors.grey,
                   indicatorColor: Palette.greenWidget,
                   tabs: [
-                    Tab(text: 'My Team'),
                     Tab(text: 'Problem Statements'),
                     Tab(text: 'Teams'),
                     Tab(text: 'Interested Lobby'),
@@ -170,12 +169,6 @@ class _PHackathonDetailState extends State<PHackathonDetail>
           child: TabBarView(
             controller: _tabController,
             children: [
-              SingleChildScrollView(
-                controller: ScrollController(),
-                child: Container(
-                  child: TeamInfo(userTeam),
-                ),
-              ),
               SingleChildScrollView(
                 controller: ScrollController(),
                 child: Container(

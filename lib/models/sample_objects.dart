@@ -8,19 +8,18 @@ import 'hackathon_basic_details.dart';
 
 class SampleObjects {
   static IProblemStatement sampleProblemStatement = IProblemStatement(
-      
-      "0083",
-        "Problem Name 1",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "RPBWM - Some Department",
-        "Lorem ipsum",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod",
-        ["React", "Java", "JavaScript"]);
+      "0085",
+      "aXess Challange App",
+      "An App to build problem statements which will be later hosted on SC App. This App will be meant to be available for Senior Mnaagement (CXOs, Country Heads).",
+      "Other",
+      "Benefits to the team to have submit the problem statement any time on their mobile",
+      "Frontend screens and possible integration with APP Center or aXess.sc.net",
+      ["React", "Java", "JavaScript"]);
 
   static IHackathonBasic sampleHackathon = IHackathonBasic(
     '_id',
     'topic',
-    'title',
+    'Hackathon Name',
     'location',
     'team_size',
     'moderator_id',
@@ -28,18 +27,55 @@ class SampleObjects {
     'updatedAt',
     'startDate',
     'endDate',
-    
+  );
+
+  static IHackathonBasic hackathon1 = IHackathonBasic(
+    '_id',
+    'topic',
+    'aXess Graduate Hackathon',
+    'Bangalore - India',
+    '15',
+    'moderator_id',
+    'createdAt',
+    'updatedAt',
+    'Dec\' 6',
+    'Dec\' 18',
+  );
+
+  static IHackathonBasic pastHackathon1 = IHackathonBasic(
+    '_id',
+    'topic',
+    'aXess Africa Hackathon',
+    'Chennai - India',
+    '15',
+    'moderator_id',
+    'createdAt',
+    'updatedAt',
+    'Sep\' 28',
+    'Nov\' 12',
+  );
+  static IHackathonBasic pastHackathon2 = IHackathonBasic(
+    '_id',
+    'topic',
+    'Multi - Faceted Hackathon',
+    'Singapore',
+    '5',
+    'moderator_id',
+    'createdAt',
+    'updatedAt',
+    'Jul\' 4',
+    'Jul\' 17',
   );
 
   static List<IProblemStatement> sampleProblemList = [
     IProblemStatement(
         "0083",
-      "QR Code - Africa",
-      "With the opening up of malls and retail sector, online and offline merchants provide a unique opportunity for us to explore a new channel/ medium for self assisted digital sales.",
-      "RPBWM - Retail Core Platforms",
-      "The model will provide incentives for (a) 'merchants to display SCB cards in the asset (b) clients to self initiate a registration journey",
-      "Able to scan the QR code and make the transactions from one wallet to other wallet",
-      ["React", "Java", "JavaScript", "Spring"]),
+        "QR Code - Africa",
+        "With the opening up of malls and retail sector, online and offline merchants provide a unique opportunity for us to explore a new channel/ medium for self assisted digital sales.",
+        "RPBWM - Retail Core Platforms",
+        "The model will provide incentives for (a) 'merchants to display SCB cards in the asset (b) clients to self initiate a registration journey",
+        "Able to scan the QR code and make the transactions from one wallet to other wallet",
+        ["React", "Java", "JavaScript", "Spring"]),
     IProblemStatement(
         "0084",
         "Algo trading based analysis",
@@ -84,16 +120,25 @@ class SampleObjects {
 
   static List<DropdownMenuItem> sampleProblemsList = [
     DropdownMenuItem(
-        child: Text('Axess Challenge App'), value: 'Axess Challenge App'),
-    DropdownMenuItem(child: Text('Gamification'), value: 'Gamification'),
-    DropdownMenuItem(child: Text('House Pricing'), value: 'House Pricing'),
+        child: Text('QR Code - Africa'), value: 'QR Code - Africa'),
     DropdownMenuItem(
-        child: Text('virtual customer assistant'),
-        value: 'virtual customer assistant'),
+        child: Text('Algo trading based analysis'),
+        value: 'Algo trading based analysis'),
     DropdownMenuItem(
-        child: Text('Stock Market Challenge'), value: 'Stock Market Challenge'),
+        child: Text('aXess Challange App'), value: 'aXess Challange App'),
+    DropdownMenuItem(
+        child: Text('Video Support-Hearing Impaired'),
+        value: 'Video Support-Hearing Impaired'),
   ];
-  static List<IHackathonBasic> sampleHackathonList = [sampleHackathon, sampleHackathon];
+
+  static List<IHackathonBasic> upcomingHackathonList = [
+    hackathon1,
+  ];
+
+  static List<IHackathonBasic> pastHackathonList = [
+    pastHackathon1,
+    pastHackathon2,
+  ];
 
   static List<DropdownMenuItem> sampleGroupList = [
     DropdownMenuItem(child: Text('Retails'), value: 'Retails'),
@@ -119,7 +164,9 @@ class SampleObjects {
     DropdownMenuItem(child: Text('TensorFlow'), value: 'TensorFlow'),
     DropdownMenuItem(child: Text('Keras'), value: 'Keras'),
     DropdownMenuItem(child: Text('Scikit-learn'), value: 'Scikit-learn'),
-    DropdownMenuItem(child: Text('Microsoft Cognitive Toolkit'), value: 'Microsoft Cognitive Toolkit'),
+    DropdownMenuItem(
+        child: Text('Microsoft Cognitive Toolkit'),
+        value: 'Microsoft Cognitive Toolkit'),
     DropdownMenuItem(child: Text('Theano'), value: 'Theano'),
     DropdownMenuItem(child: Text('Caffe'), value: 'Caffe'),
     DropdownMenuItem(child: Text('Torch'), value: 'Torch'),
