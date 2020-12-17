@@ -96,7 +96,7 @@ class BottomSheet extends StatelessWidget {
                           clipBehavior: Clip.antiAlias,
                           child: Column(children: [
                             ListTile(
-                              leading: Icon(Icons.arrow_drop_down_circle),
+                              leading: Image.asset('images/openBanking.jpeg', fit: BoxFit.cover),
                               title: const Text(
                                   'Imagine what we could do together'),
                             ),
