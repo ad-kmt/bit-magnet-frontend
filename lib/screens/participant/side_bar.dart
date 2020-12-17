@@ -69,7 +69,7 @@ class PSideBar extends PreferredSize {
             onTap: () {},
           ),
           ListTile(
-            leading: Icon(Icons.people, color: kSideBarIconColor),
+            leading: Icon(Icons.forum, color: kSideBarIconColor),
             title: Text(
               'Forum',
               style: kSideBarTextStyle,
