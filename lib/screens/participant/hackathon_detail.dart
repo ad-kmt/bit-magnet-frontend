@@ -19,6 +19,8 @@ import 'package:bit_magnet/styles/constants.dart';
 import 'package:bit_magnet/styles/palette.dart';
 import 'package:flutter/material.dart';
 
+import 'home.dart';
+
 class PHackathonDetail extends StatefulWidget {
   final dynamic hackathon;
 
@@ -128,7 +130,31 @@ class _PHackathonDetailState extends State<PHackathonDetail>
     };
 
     return Scaffold(
-      appBar: AxessAppBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        iconTheme: IconThemeData(
+          color: Palette.blue, //change your color here
+        ),
+        leading: GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) {
+                  return PHome();
+                },
+              ),
+            );
+          },
+          child: Icon(
+            Icons.arrow_back_ios,
+          ),
+        ),
+        title: Container(
+          alignment: Alignment.centerRight,
+          child: Image(image: AssetImage("images/logo.png")),
+        ),
+      ),
       bottomNavigationBar: returnBottomBar(),
       backgroundColor: Palette.lightGreyBackground,
       body: NestedScrollView(
