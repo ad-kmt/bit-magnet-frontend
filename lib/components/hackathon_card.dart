@@ -38,7 +38,7 @@ class HackathonCard extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(left: 8.0),
                   child: Text(
-                    hackathon["title"],
+                    hackathon["aXess Graduate Hackathon"],
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: 24,
@@ -48,10 +48,12 @@ class HackathonCard extends StatelessWidget {
                 HackathonInfo(
                   Icons.calendar_today_outlined,
                   "${hackathon["startDate"]} to ${hackathon["endDate"]}",
+               
                 ),
                 HackathonInfo(
                   Icons.location_on_outlined,
                   "${hackathon["location"]}",
+                  
                 ),
                 HackathonInfo(
                   Icons.event_seat_outlined,

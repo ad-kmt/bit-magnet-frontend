@@ -4,7 +4,9 @@ import 'package:bit_magnet/components/bottom_bar_two_buttons.dart';
 import 'package:bit_magnet/components/buttons.dart';
 import 'package:bit_magnet/components/hackathon_cover.dart';
 import 'package:bit_magnet/components/hackathon_icon_bar.dart';
+import 'package:bit_magnet/components/lobby_card.dart';
 import 'package:bit_magnet/components/problem_statement_card.dart';
+import 'package:bit_magnet/components/team_card.dart';
 
 import 'package:bit_magnet/models/hackathon_basic_details.dart';
 import 'package:bit_magnet/models/participant.dart';
@@ -26,17 +28,33 @@ class PHackathonDetail extends StatefulWidget {
   _PHackathonDetailState createState() => _PHackathonDetailState();
 }
 
-class _PHackathonDetailState extends State<PHackathonDetail> {
+class _PHackathonDetailState extends State<PHackathonDetail>
+    with SingleTickerProviderStateMixin {
   IParticipant participant;
   bool isRegistered;
   ITeam userTeam;
   List<IProblemStatement> userProblemStatements;
+
+  TabController _tabController;
+  ScrollController _scrollController;
 
   @override
   void initState() {
     super.initState();
     participant = SampleObjects.sampleParticipant;
     update(participant, widget.hackathon);
+
+    _scrollController = ScrollController();
+    _tabController = TabController(vsync: this, length: 5);
+    _tabController.addListener(_smoothScrollToTop);
+  }
+
+  _smoothScrollToTop() {
+    _scrollController.animateTo(
+      0,
+      duration: Duration(microseconds: 300),
+      curve: Curves.ease,
+    );
   }
 
   void update(IParticipant participant, dynamic hackathon) {
@@ -60,9 +78,11 @@ class _PHackathonDetailState extends State<PHackathonDetail> {
       list.add(TeamInfo(userTeam));
       list.add(ProblemList(
           "Your team's registered challenge(s):", userProblemStatements));
-      list.add(ProblemList("Problem Statements", SampleObjects.sampleProblemList));
+      list.add(
+          ProblemList("Problem Statements", SampleObjects.sampleProblemList));
     } else {
-      list.add(ProblemList("Problem Statements", SampleObjects.sampleProblemList));
+      list.add(
+          ProblemList("Problem Statements", SampleObjects.sampleProblemList));
     }
     return list;
   }
@@ -111,21 +131,114 @@ class _PHackathonDetailState extends State<PHackathonDetail> {
       appBar: AxessAppBar(),
       bottomNavigationBar: returnBottomBar(),
       backgroundColor: Palette.lightGreyBackground,
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            HackathonCover(widget.hackathon),
-            HackathonIconBar(widget.hackathon),
-            Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 20.0, vertical: 0),
+      body: NestedScrollView(
+        controller: ScrollController(),
+        headerSliverBuilder: (context, value) {
+          return [
+            SliverToBoxAdapter(
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: showContent(),
+                children: [
+                  HackathonCover(widget.hackathon),
+                  HackathonIconBar(widget.hackathon),
+                ],
               ),
-            )
-          ],
+            ),
+            SliverToBoxAdapter(
+              child: Container(
+                child: TabBar(
+                  controller: _tabController,
+                  isScrollable: true,
+                  labelColor: Colors.black,
+                  unselectedLabelColor: Colors.grey,
+                  indicatorColor: Palette.greenWidget,
+                  tabs: [
+                    Tab(text: 'My Team'),
+                    Tab(text: 'Problem Statements'),
+                    Tab(text: 'Teams'),
+                    Tab(text: 'Interested Lobby'),
+                    Tab(text: 'Submissions'),
+                  ],
+                ),
+              ),
+            ),
+          ];
+        },
+        body: Container(
+          padding: EdgeInsets.all(16),
+          decoration: BoxDecoration(
+              border: Border(top: BorderSide(color: Colors.grey, width: 0.5))),
+          child: TabBarView(
+            controller: _tabController,
+            children: [
+              SingleChildScrollView(
+                controller: ScrollController(),
+                child: Container(
+                  child: TeamInfo(userTeam),
+                ),
+              ),
+              SingleChildScrollView(
+                controller: ScrollController(),
+                child: Container(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: List.generate(
+                        SampleObjects.sampleProblemList.length, (index) {
+                      return ProblemStatementCard(
+                          SampleObjects.sampleProblemList[index]);
+                    }),
+                  ),
+                ),
+              ),
+              SingleChildScrollView(
+                controller: ScrollController(),
+                child: Container(
+                    child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 8.0),
+                      child: TeamCard(SampleObjects.sampleTeam),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 8.0),
+                      child: TeamCard(SampleObjects.sampleTeam),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 8.0),
+                      child: TeamCard(SampleObjects.sampleTeam),
+                    ),
+                  ],
+                )),
+              ),
+              SingleChildScrollView(
+                controller: ScrollController(),
+                child: Container(
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 8.0),
+                        child: LobbyCard(),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 8.0),
+                        child: LobbyCard(),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 8.0),
+                        child: LobbyCard(),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Container(
+                child: Center(
+                  child: Text('Display Tab 1',
+                      style:
+                          TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -140,9 +253,12 @@ class TeamInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text(
-          "You're registered for this hackathon",
-          style: kBlackSubTitle,
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 8.0),
+          child: Text(
+            "You're registered for this hackathon",
+            style: kBlackSubTitle,
+          ),
         ),
         Padding(
           padding: const EdgeInsets.fromLTRB(0, 16, 0, 0),
@@ -196,7 +312,7 @@ class TeamInfo extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10.0),
+          padding: const EdgeInsets.symmetric(vertical: 16.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: List.generate(team.participants.length, (index) {

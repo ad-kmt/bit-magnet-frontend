@@ -8,13 +8,14 @@ import 'hackathon_basic_details.dart';
 
 class SampleObjects {
   static IProblemStatement sampleProblemStatement = IProblemStatement(
+      
       "0083",
-      "Problem Name",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "RPBWM - Some Department",
-      "Lorem ipsum",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod",
-      ["React", "Java", "JavaScript"]);
+        "Problem Name 1",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "RPBWM - Some Department",
+        "Lorem ipsum",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod",
+        ["React", "Java", "JavaScript"]);
 
   static IHackathonBasic sampleHackathon = IHackathonBasic(
     '_id',
@@ -33,35 +34,35 @@ class SampleObjects {
   static List<IProblemStatement> sampleProblemList = [
     IProblemStatement(
         "0083",
-        "Problem Name 1",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "RPBWM - Some Department",
-        "Lorem ipsum",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod",
-        ["React", "Java", "JavaScript"]),
+      "QR Code - Africa",
+      "With the opening up of malls and retail sector, online and offline merchants provide a unique opportunity for us to explore a new channel/ medium for self assisted digital sales.",
+      "RPBWM - Retail Core Platforms",
+      "The model will provide incentives for (a) 'merchants to display SCB cards in the asset (b) clients to self initiate a registration journey",
+      "Able to scan the QR code and make the transactions from one wallet to other wallet",
+      ["React", "Java", "JavaScript", "Spring"]),
     IProblemStatement(
         "0084",
-        "Problem Name 2",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "RPBWM - Some Department",
-        "Lorem ipsum",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod",
+        "Algo trading based analysis",
+        "Collect the data from the news around financial world(Moneycontrol, Bloomberg) and build a data model that can predict the risk an organisation can get on my investment",
+        "RPBWM - Wealth Management",
+        "It helps institutaions in increasing yield on their investment book, while simultaneously reducing the risk, by leveraging quantitative and AI techniques",
+        "Model to predict the risk of the default and downgrade",
         ["React", "Java", "JavaScript"]),
     IProblemStatement(
         "0085",
-        "Problem Name 3",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "RPBWM - Some Department",
-        "Lorem ipsum",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod",
+        "aXess Challange App",
+        "An App to build problem statements which will be later hosted on SC App. This App will be meant to be available for Senior Mnaagement (CXOs, Country Heads).",
+        "Other",
+        "Benefits to the team to have submit the problem statement any time on their mobile",
+        "Frontend screens and possible integration with APP Center or aXess.sc.net",
         ["React", "Java", "JavaScript"]),
     IProblemStatement(
         "0086",
-        "Problem Name 4",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "RPBWM - Some Department",
-        "Lorem ipsum",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod",
+        "Video Support-Hearing Impaired",
+        "This Problem Statement is an intent of Corporate Social Responsibility(CSR) initiative to setup the Retail Banking prospects for our clients who are hearing impaired",
+        "RPBWM - Retail Core Platforms",
+        "Benefit the organisation overall",
+        "Creating a WebRTC and peer-to-peer communication.",
         ["React", "Java", "JavaScript"]),
   ];
 
@@ -96,11 +97,42 @@ class SampleObjects {
 
   static List<DropdownMenuItem> sampleGroupList = [
     DropdownMenuItem(child: Text('Retails'), value: 'Retails'),
-    DropdownMenuItem(child: Text('CCIB'), value: 'CCIB')
+    DropdownMenuItem(child: Text('CCIB'), value: 'CCIB'),
   ];
   static List<DropdownMenuItem> sampleSkillList = [
-    DropdownMenuItem(child: Text('ReactJS'), value: 'ReactJS'),
-    DropdownMenuItem(child: Text('NodeJS'), value: 'NodeJS')
+    DropdownMenuItem(child: Text('React JS'), value: 'React JS'),
+    DropdownMenuItem(child: Text('Node JS'), value: 'Node JS'),
+    DropdownMenuItem(child: Text('Angular'), value: 'Angular'),
+    DropdownMenuItem(child: Text('Express'), value: 'Express'),
+    DropdownMenuItem(child: Text('Django'), value: 'Django'),
+    DropdownMenuItem(child: Text('Flask'), value: 'Flask'),
+    DropdownMenuItem(child: Text('Bootstrap'), value: 'Bootstrap'),
+    DropdownMenuItem(child: Text('jQuery'), value: 'jQuery'),
+    DropdownMenuItem(child: Text('Ruby on Rails'), value: 'Ruby on Rails'),
+    DropdownMenuItem(child: Text('GraphQL'), value: 'GraphQL'),
+    DropdownMenuItem(child: Text('JavaScript'), value: 'JavaScript'),
+    DropdownMenuItem(child: Text('PHP'), value: 'PHP'),
+    DropdownMenuItem(child: Text('Python'), value: 'Python'),
+    DropdownMenuItem(child: Text('Ruby'), value: 'Ruby'),
+    DropdownMenuItem(child: Text('Java'), value: 'Java'),
+    DropdownMenuItem(child: Text('NPM'), value: 'NPM'),
+    DropdownMenuItem(child: Text('TensorFlow'), value: 'TensorFlow'),
+    DropdownMenuItem(child: Text('Keras'), value: 'Keras'),
+    DropdownMenuItem(child: Text('Scikit-learn'), value: 'Scikit-learn'),
+    DropdownMenuItem(child: Text('Microsoft Cognitive Toolkit'), value: 'Microsoft Cognitive Toolkit'),
+    DropdownMenuItem(child: Text('Theano'), value: 'Theano'),
+    DropdownMenuItem(child: Text('Caffe'), value: 'Caffe'),
+    DropdownMenuItem(child: Text('Torch'), value: 'Torch'),
+    DropdownMenuItem(child: Text('Accord.NET'), value: 'Accord.NET'),
+    DropdownMenuItem(child: Text('PyTorch'), value: 'PyTorch'),
+    DropdownMenuItem(child: Text('Weka'), value: 'Weka'),
+    DropdownMenuItem(child: Text('KNIME'), value: 'KNIME'),
+    DropdownMenuItem(child: Text('Colab'), value: 'Colab'),
+    DropdownMenuItem(child: Text('Apache Mahout'), value: 'Apache Mahout'),
+    DropdownMenuItem(child: Text('Accors.Net'), value: 'Accors.Net'),
+    DropdownMenuItem(child: Text('Shogun'), value: 'Shogun'),
+    DropdownMenuItem(child: Text('Keras.io'), value: 'Keras.io'),
+    DropdownMenuItem(child: Text('Rapid Miner'), value: 'Rapid Miner'),
   ];
   static List<DropdownMenuItem> sampleInvitationList = [
     DropdownMenuItem(child: Text('Aditya@sc.com'), value: 'Aditya@sc.com'),

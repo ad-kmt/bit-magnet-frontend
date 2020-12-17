@@ -36,10 +36,8 @@ class _AProblemDetailState extends State<AProblemDetail> {
                         style: kBlackSubTitle,
                       ),
                       Text(
-                        "Problem name",
-                        style: TextStyle(
-                          fontSize: 24,
-                        ),
+                        "${widget.problem.title}: ",
+                        style: kBlackSubTitle,
                       ),
                     ],
                   ),

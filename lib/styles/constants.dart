@@ -52,7 +52,7 @@ var kGradientFlatBoxDecoration = BoxDecoration(
 var kBoxShadowGrey = BoxShadow(
   color: Color(0x29000000),
   blurRadius: 6.0, // soften the shadow
-  spreadRadius: 0.0, //extend the shadow
+  spreadRadius: 0, //extend the shadow
   offset: Offset(
     0, // Move to right 10  horizontally
     3, // Move to bottom 10 Vertically

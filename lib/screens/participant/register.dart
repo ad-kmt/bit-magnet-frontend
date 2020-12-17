@@ -1,6 +1,6 @@
 import 'package:bit_magnet/components/app_bar.dart';
 import 'package:bit_magnet/components/buttons.dart';
-import 'package:bit_magnet/components/team_card.dart';
+import 'package:bit_magnet/components/team_card_select.dart';
 import 'package:bit_magnet/models/problem_statement.dart';
 import 'package:bit_magnet/models/sample_objects.dart';
 import 'package:bit_magnet/models/team.dart';
@@ -177,7 +177,8 @@ class _RegisterState extends State<Register> {
                               print(teamState);
                             });
                           },
-                          child: TeamCard(userTeams[index], teamState[index]),
+                          child: TeamCardSelect(
+                              userTeams[index], teamState[index]),
                         ),
                       ),
                     );

@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:bit_magnet/config/base.dart';
 import 'package:bit_magnet/screens/author/home.dart';
 import 'package:bit_magnet/screens/author/problem_list.dart';
@@ -99,19 +98,83 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return FlutterLogin(
-        title: 'Hackathon',
-        logo: 'images/logo.png',
-        onLogin: _authUser,
-        onSignup: _authUser,
-        emailValidator: psidValidator,
-        onSubmitAnimationCompleted: () {
-          routToDashBoards();
-        },
-        onRecoverPassword: _recoverPassword,
-        messages: LoginMessages(
-          usernameHint: 'Username',
-          passwordHint: 'Password',
-        ));
+    return Stack(children: [
+      FlutterLogin(
+          title: 'Hackathon',
+          logo: 'images/logo.png',
+          onLogin: _authUser,
+          onSignup: _authUser,
+          emailValidator: psidValidator,
+          onSubmitAnimationCompleted: () {
+            routToDashBoards();
+          },
+          onRecoverPassword: _recoverPassword,
+          messages: LoginMessages(
+            usernameHint: 'Username',
+            passwordHint: 'Password',
+          )),
+      Padding(
+        padding: const EdgeInsets.only(top: 50),
+        child: DraggableScrollableSheet(
+          builder: (context, controller) {
+            return Container(
+              child: ListView.builder(
+                  itemCount: 1,
+                  controller: controller,
+                  itemBuilder: (BuildContext context, index) {
+                    return Column(
+                      children: [
+                        Card(
+                          clipBehavior: Clip.antiAlias,
+                          child: Column(children: [
+                            ListTile(
+                              leading: Icon(Icons.arrow_drop_down_circle),
+                              title: const Text(
+                                  'aXess prepares us for Open Banking'),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(16.0),
+                              child: Text(
+                                'Learn how we are investing in our capabilities and community to build our Open Banking future.',
+                                style: TextStyle(
+                                    color: Colors.black.withOpacity(0.6)),
+                              ),
+                            ),
+                          ]),
+                        ),
+                        Card(
+                          clipBehavior: Clip.antiAlias,
+                          child: Column(children: [
+                            ListTile(
+                              leading: Icon(Icons.arrow_drop_down_circle),
+                              title: const Text(
+                                  'Imagine what we could do together'),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(16.0),
+                              child: Text(
+                                "Let's build the future of banking together to address our client needs across Asia, Africa, and the Middle East.",
+                                style: TextStyle(
+                                    color: Colors.black.withOpacity(0.6)),
+                              ),
+                            ),
+                          ]),
+                        ),
+                      ],
+                    );
+                  }),
+              decoration: BoxDecoration(
+                  color: Colors.white70,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(20),
+                    topRight: Radius.circular(20),
+                  )),
+            );
+          },
+          minChildSize: 0.2,
+          initialChildSize: 0.2,
+        ),
+      ),
+    ]);
   }
 }
