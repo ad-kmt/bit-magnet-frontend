@@ -41,7 +41,7 @@ class _CardWidgetState extends State<CardWidget> {
             Container(
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
-                    color: Colors.lightBlueAccent,
+                    color: Colors.blue[100],
                     boxShadow: [
                       BoxShadow(color: Colors.grey, offset: Offset(0.0, 3.0))
                     ]),
@@ -120,11 +120,19 @@ class _CardWidgetState extends State<CardWidget> {
               //     ]),
               child: Padding(
                 padding: EdgeInsets.fromLTRB(0, 5, 0, 10),
+
                 child: Row(
+
                   children: <Widget>[
                     Expanded(
                       child: Container(
-                        decoration: const BoxDecoration(color: Colors.white),
+                        decoration: BoxDecoration(
+                            color: Colors.grey[100],
+                            boxShadow: [
+                              BoxShadow(color: Colors.grey, offset: Offset(0.0, 3.0))
+                            ]),
+
+                        // decoration: const BoxDecoration(color: Colors.white),
                         child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.start,
@@ -190,7 +198,12 @@ class _CardWidgetState extends State<CardWidget> {
                     ),
                     Expanded(
                       child: Container(
-                        decoration: const BoxDecoration(color: Colors.white),
+                        // decoration: const BoxDecoration(color: Colors.white),
+                        decoration: BoxDecoration(
+                            color: Colors.grey[100],
+                            boxShadow: [
+                              BoxShadow(color: Colors.grey, offset: Offset(0.0, 3.0))
+                            ]),
                         child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.end,

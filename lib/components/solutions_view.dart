@@ -31,14 +31,14 @@ class _SolutionsViewState extends State<SolutionsView> {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(bottom: 12.0),
-                  child: Row(
+                  child: Column(
                     children: [
+                      // Text(
+                      //   "${"HC45"}: ",
+                      //   style: kBlackSubTitle,
+                      // ),
                       Text(
-                        "${"HC345"}: ",
-                        style: kBlackSubTitle,
-                      ),
-                      Text(
-                        "${"aXess Challenge App"}: ",
+                        "${"Mobile Money Challenge"}: ",
                         style: kBlackSubTitle,
                       ),
                     ],
