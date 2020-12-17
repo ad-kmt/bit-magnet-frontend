@@ -44,55 +44,11 @@ class _SolutionsViewState extends State<SolutionsView> {
                     ],
                   ),
                 ),
-                // Section(
-                //     "Challenge", "problem description", Palette.greenText),
-                // Section("Who we're solving for", "CCIB",
-                //     Colors.black),
-                // Section(
-                //   "Benefits",
-                //   "problem Benefits",
-                //   Colors.black,
-                // ),
-                // Section(
-                //   "Success Criteria",
-                //   "problem secuues criteria",
-                //   Colors.black,
-                // ),
                 Column(
                   children: List.generate(solutionList.length, (index) {
                     return CardWidget(solutionList[index]);
                   }),
                 ),
-                // Column(
-                //     children: ['Korea', 'China', 'Japan', 'USA', 'India'].map((country){
-                //       // returning the CardWidget passing only title
-                //       return CardWidget(title: country);
-                //     }).toList()
-                // ),
-                // Padding(
-                //   padding: const EdgeInsets.symmetric(vertical: 6),
-                //   child: Text(
-                //     "Suggested Technologies",
-                //     style: TextStyle(
-                //         fontSize: 22,
-                //         fontWeight: FontWeight.w600,
-                //         color: Colors.black),
-                //   ),
-                // ),
-                // Column(
-                //   crossAxisAlignment: CrossAxisAlignment.start,
-                //   children: List.generate(3, (index) {
-                //     return Padding(
-                //       padding: const EdgeInsets.symmetric(vertical: 6),
-                //       child: Text(
-                //         "c++",
-                //         style: TextStyle(
-                //           fontSize: 18,
-                //         ),
-                //       ),
-                //     );
-                //   }),
-                // ),
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 6),
                   child: Text(
@@ -147,28 +103,7 @@ class _SolutionsViewState extends State<SolutionsView> {
                     ],
                   ),
                 ),
-                // Padding(
-                //     padding: const EdgeInsets.symmetric(vertical: 6),
-                //     child: Row(
-                //       children: [
-                //         CircleAvatar(
-                //           radius: 30,
-                //           backgroundColor: Palette.lightGreyContainer,
-                //           child: Icon(
-                //             Icons.person,
-                //             size: 30,
-                //             color: Colors.white,
-                //           ),
-                //         ),
-                //         Padding(
-                //           padding: const EdgeInsets.symmetric(horizontal: 20),
-                //           child: Text(
-                //             "Shreya Singh",
-                //             style: TextStyle(fontSize: 18),
-                //           ),
-                //         ),
-                //       ],
-                //     )),
+
               ],
             ),
           ),
@@ -176,34 +111,3 @@ class _SolutionsViewState extends State<SolutionsView> {
   }
 }
 
-// class Section extends StatelessWidget {
-//   final String heading;
-//   final String description;
-//   final Color headingColor;
-//
-//   const Section(this.heading, this.description, this.headingColor);
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return Column(
-//       crossAxisAlignment: CrossAxisAlignment.start,
-//       children: [
-//         Padding(
-//           padding: const EdgeInsets.symmetric(vertical: 6),
-//           child: Text(
-//             heading,
-//             style: TextStyle(
-//                 fontSize: 22, fontWeight: FontWeight.w600, color: headingColor),
-//           ),
-//         ),
-//         Padding(
-//           padding: const EdgeInsets.symmetric(vertical: 6.0),
-//           child: Text(
-//             description,
-//             style: TextStyle(fontSize: 18),
-//           ),
-//         ),
-//       ],
-//     );
-//   }
-// }

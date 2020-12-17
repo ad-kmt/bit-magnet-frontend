@@ -284,7 +284,19 @@ class SampleObjects {
     IParticipant("Varun", "Bhandia"),
     IParticipant("Amardeep", "Singh"),
     IParticipant("Smita", "Meshram"),
-    IParticipant("Kanak", "Durga"),
+    IParticipant("Kanak", "Purohit"),
+  ];
+
+  static List<IParticipant> sampleParticipants3 = [
+    IParticipant("Sanjay", "Ishwar"),
+    IParticipant("himanshu", "Prakash"),
+    IParticipant("Shashank", "Chaudary"),
+  ];
+
+  static List<IParticipant> sampleParticipants4 = [
+    IParticipant("Kushagra", "Gupta"),
+    IParticipant("Shubham", "Shree"),
+    IParticipant("Sahajveer", "Singh"),
   ];
 
   static List<IParticipant> sampleParticipants2 = [
@@ -294,9 +306,14 @@ class SampleObjects {
   ];
 
   static IParticipant sampleParticipant = IParticipant("Aditya", "Kumawat");
+  static IParticipant sampleParticipant2 = IParticipant("Shubham", "Shree");
+  static IParticipant sampleParticipant3 = IParticipant("Sahajveer", "Singh");
+  static IParticipant sampleParticipant4 = IParticipant("Varun", "Bhandia");
+  static IParticipant sampleParticipant5 = IParticipant("Kanak", "Purohit");
 
-  static ITeam sampleTeam =
-      ITeam(sampleParticipants, IParticipant("Smita", "Meshram"), "Bit Magnet");
+  static ITeam sampleTeam = ITeam(sampleParticipants, IParticipant("Smita", "Meshram"), "Bit Magnet");
+  static ITeam sampleTeam3 = ITeam(sampleParticipants3, IParticipant("Sanjay", "Ishwar"), "Brute Force");
+  static ITeam sampleTeam4 = ITeam(sampleParticipants4, IParticipant("Sahajveer", "Singh"), "Python Got Ping");
 
   static ITeam sampleTeam2 = ITeam(
       sampleParticipants2, IParticipant("Amardeep", "Singh"), "Elastic Minds");

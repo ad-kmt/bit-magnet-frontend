@@ -55,7 +55,7 @@ class _MProblemDetailState extends State<MProblemDetail> {
                         style: kBlackSubTitle,
                       ),
                       Text(
-                        "Problem name",
+                        "${widget.problem.title}: ",
                         style: TextStyle(
                           fontSize: 24,
                         ),
