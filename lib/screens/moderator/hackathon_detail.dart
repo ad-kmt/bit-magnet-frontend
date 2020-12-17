@@ -5,8 +5,10 @@ import 'package:bit_magnet/components/bottom_bar_two_buttons.dart';
 import 'package:bit_magnet/components/buttons.dart';
 import 'package:bit_magnet/components/hackathon_cover.dart';
 import 'package:bit_magnet/components/hackathon_icon_bar.dart';
+import 'package:bit_magnet/components/lobby_card.dart';
 import 'package:bit_magnet/components/problem_statement_card.dart';
 import 'package:bit_magnet/components/problem_statement_detailed_card.dart';
+import 'package:bit_magnet/components/team_card.dart';
 import 'package:bit_magnet/models/hackathon_basic_details.dart';
 
 import 'package:bit_magnet/models/participant.dart';
@@ -29,15 +31,32 @@ class MHackathonDetail extends StatefulWidget {
   _MHackathonDetailState createState() => _MHackathonDetailState();
 }
 
-class _MHackathonDetailState extends State<MHackathonDetail> {
+class _MHackathonDetailState extends State<MHackathonDetail>
+    with SingleTickerProviderStateMixin {
+  TabController _tabController;
+  ScrollController _scrollController;
+
   @override
   void initState() {
     super.initState();
+
+    _scrollController = ScrollController();
+    _tabController = TabController(vsync: this, length: 4);
+    _tabController.addListener(_smoothScrollToTop);
+  }
+
+  _smoothScrollToTop() {
+    _scrollController.animateTo(
+      0,
+      duration: Duration(microseconds: 300),
+      curve: Curves.ease,
+    );
   }
 
   List<Widget> showContent() {
     List<Widget> list = List();
-    list.add(ProblemList("Problem Statements", SampleObjects.sampleProblemList));
+    list.add(
+        ProblemList("Problem Statements", SampleObjects.sampleProblemList));
     return list;
   }
 
@@ -54,26 +73,130 @@ class _MHackathonDetailState extends State<MHackathonDetail> {
       bottomNavigationBar: BottomBarTwoButtons(
           "Edit", editButtonCallBack, "Publish", publishButtonCallBack),
       backgroundColor: Palette.lightGreyBackground,
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            HackathonCover(widget.hackathon),
-            HackathonIconBar(widget.hackathon),
-            Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 20.0, vertical: 0),
+      body: NestedScrollView(
+        controller: ScrollController(),
+        headerSliverBuilder: (context, value) {
+          return [
+            SliverToBoxAdapter(
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: showContent(),
+                children: [
+                  HackathonCover(widget.hackathon),
+                  HackathonIconBar(widget.hackathon),
+                ],
               ),
-            )
-          ],
+            ),
+            SliverToBoxAdapter(
+              child: Container(
+                child: TabBar(
+                  controller: _tabController,
+                  isScrollable: true,
+                  labelColor: Colors.black,
+                  unselectedLabelColor: Colors.grey,
+                  indicatorColor: Palette.greenWidget,
+                  tabs: [
+                    Tab(text: 'Problem Statements'),
+                    Tab(text: 'Teams'),
+                    Tab(text: 'Interested Lobby'),
+                    Tab(text: 'Submissions'),
+                  ],
+                ),
+              ),
+            ),
+          ];
+        },
+        body: Container(
+          padding: EdgeInsets.all(16),
+          decoration: BoxDecoration(
+              border: Border(top: BorderSide(color: Colors.grey, width: 0.5))),
+          child: TabBarView(
+            controller: _tabController,
+            children: [
+              SingleChildScrollView(
+                controller: ScrollController(),
+                child: Container(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: List.generate(
+                        SampleObjects.sampleProblemList.length, (index) {
+                      return ProblemStatementCard(
+                          SampleObjects.sampleProblemList[index]);
+                    }),
+                  ),
+                ),
+              ),
+              SingleChildScrollView(
+                controller: ScrollController(),
+                child: Container(
+                    child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 8.0),
+                      child: TeamCard(SampleObjects.sampleTeam),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 8.0),
+                      child: TeamCard(SampleObjects.sampleTeam),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 8.0),
+                      child: TeamCard(SampleObjects.sampleTeam),
+                    ),
+                  ],
+                )),
+              ),
+              SingleChildScrollView(
+                controller: ScrollController(),
+                child: Container(
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 8.0),
+                        child: LobbyCard(),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 8.0),
+                        child: LobbyCard(),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 8.0),
+                        child: LobbyCard(),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Container(
+                child: Center(
+                  child: Text('Display Tab 1',
+                      style:
+                          TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
   }
 }
+
+// var single = SingleChildScrollView(
+//   child: Column(
+//     crossAxisAlignment: CrossAxisAlignment.start,
+//     children: [
+//       HackathonCover(widget.hackathon),
+//       HackathonIconBar(widget.hackathon),
+//       Padding(
+//         padding:
+//         const EdgeInsets.symmetric(horizontal: 20.0, vertical: 0),
+//         child: Column(
+//           crossAxisAlignment: CrossAxisAlignment.start,
+//           children: showContent(),
+//         ),
+//       )
+//     ],
+//   ),
+// );
 
 class TeamInfo extends StatelessWidget {
   final ITeam team;

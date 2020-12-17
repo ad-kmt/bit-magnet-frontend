@@ -19,7 +19,7 @@ class SampleObjects {
   static IHackathonBasic sampleHackathon = IHackathonBasic(
     '_id',
     'topic',
-    'title',
+    'Hackathon Name',
     'location',
     'team_size',
     'moderator_id',
@@ -27,7 +27,6 @@ class SampleObjects {
     'updatedAt',
     'startDate',
     'endDate',
-    
   );
 
   static List<IProblemStatement> sampleProblemList = [
@@ -92,7 +91,10 @@ class SampleObjects {
     DropdownMenuItem(
         child: Text('Stock Market Challenge'), value: 'Stock Market Challenge'),
   ];
-  static List<IHackathonBasic> sampleHackathonList = [sampleHackathon, sampleHackathon];
+  static List<IHackathonBasic> sampleHackathonList = [
+    sampleHackathon,
+    sampleHackathon
+  ];
 
   static List<DropdownMenuItem> sampleGroupList = [
     DropdownMenuItem(child: Text('Retails'), value: 'Retails'),
@@ -118,7 +120,9 @@ class SampleObjects {
     DropdownMenuItem(child: Text('TensorFlow'), value: 'TensorFlow'),
     DropdownMenuItem(child: Text('Keras'), value: 'Keras'),
     DropdownMenuItem(child: Text('Scikit-learn'), value: 'Scikit-learn'),
-    DropdownMenuItem(child: Text('Microsoft Cognitive Toolkit'), value: 'Microsoft Cognitive Toolkit'),
+    DropdownMenuItem(
+        child: Text('Microsoft Cognitive Toolkit'),
+        value: 'Microsoft Cognitive Toolkit'),
     DropdownMenuItem(child: Text('Theano'), value: 'Theano'),
     DropdownMenuItem(child: Text('Caffe'), value: 'Caffe'),
     DropdownMenuItem(child: Text('Torch'), value: 'Torch'),

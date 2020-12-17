@@ -1,4 +1,3 @@
-
 import 'package:bit_magnet/models/hackathon_basic_details.dart';
 import 'package:bit_magnet/models/sample_objects.dart';
 import 'package:bit_magnet/screens/participant/hackathon_detail.dart';
@@ -7,7 +6,7 @@ import 'package:flutter/material.dart';
 
 class HackathonCard extends StatelessWidget {
   //Hackathon object
-  final dynamic hackathon;
+  final IHackathonBasic hackathon;
   final dynamic hackathonDetailScreen;
 
   HackathonCard(this.hackathon, this.hackathonDetailScreen);
@@ -38,7 +37,7 @@ class HackathonCard extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(left: 8.0),
                   child: Text(
-                    hackathon["title"],
+                    hackathon.title,
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: 24,
@@ -47,11 +46,11 @@ class HackathonCard extends StatelessWidget {
                 ),
                 HackathonInfo(
                   Icons.calendar_today_outlined,
-                  "${hackathon["startDate"]} to ${hackathon["endDate"]}",
+                  "${hackathon.startDate} to ${hackathon.endDate}",
                 ),
                 HackathonInfo(
                   Icons.location_on_outlined,
-                  "${hackathon["location"]}",
+                  "${hackathon.location}",
                 ),
                 HackathonInfo(
                   Icons.event_seat_outlined,
