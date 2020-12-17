@@ -11,6 +11,7 @@ import 'package:flutter_login/flutter_login.dart';
 import 'package:http/http.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter_login/theme.dart';
 
 const users = const {
   '1625185': 'password',
@@ -100,8 +101,8 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Stack(children: [
       FlutterLogin(
-          title: 'Hackathon',
-          logo: 'images/logo.png',
+          title: 'Login',
+          logo: 'images/logo-login.png',
           onLogin: _authUser,
           onSignup: _authUser,
           emailValidator: psidValidator,
@@ -109,6 +110,15 @@ class _LoginScreenState extends State<LoginScreen> {
             routToDashBoards();
           },
           onRecoverPassword: _recoverPassword,
+        theme: LoginTheme(
+          primaryColor: Colors.blueGrey,
+          titleStyle: TextStyle(
+              fontSize: 32
+          ),
+          buttonTheme: LoginButtonTheme(
+            backgroundColor: Colors.blue,
+        ),),
+
           messages: LoginMessages(
             usernameHint: 'Username',
             passwordHint: 'Password',
