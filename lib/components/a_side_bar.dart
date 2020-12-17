@@ -69,7 +69,7 @@ class ASideBarHeader extends StatelessWidget {
                     width: MediaQuery.of(context).size.width * 0.45,
                     padding: EdgeInsets.symmetric(vertical: 4),
                     child: Text(
-                      "John Doe",
+                      "Andrés Fonoliosa",
                       style: TextStyle(
                         fontSize: 20,
                         color: Colors.white,
