@@ -52,8 +52,8 @@ class SampleObjects {
     'moderator_id',
     'createdAt',
     'updatedAt',
-    'Jul\' 6',
-    'Jul\' 18',
+    'Jan\' 6',
+    'Jan\' 18',
   );
 
   static IHackathonBasic pastHackathon1 = IHackathonBasic(
