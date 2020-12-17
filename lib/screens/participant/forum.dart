@@ -72,10 +72,10 @@ class _ForumScreenState extends State<ForumScreen>
                   unselectedLabelColor: Colors.grey,
                   indicatorColor: Palette.greenWidget,
                   tabs: [
-                    Tab(text: 'My Team'),
-                    Tab(text: 'Problem Statements'),
-                    Tab(text: 'Teams'),
-                    Tab(text: 'Interested Lobby'),
+                    Tab(text: 'Newest'),
+                    Tab(text: 'Featured'),
+                    Tab(text: 'All Posts'),
+                    Tab(text: 'Unanswered'),
                   ],
                 ),
               ),
@@ -92,7 +92,42 @@ class _ForumScreenState extends State<ForumScreen>
               SingleChildScrollView(
                 controller: ScrollController(),
                 child: Container(
-                  child: Icon(Icons.directions_car),
+                  child: Row(
+                    children: [
+                      CircleAvatar(
+                        radius: 32,
+                        backgroundColor: Palette.lightGreyContainer,
+                        child: Icon(
+                          Icons.person,
+                          size: 34,
+                          color: Colors.white,
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 14.0),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Container(
+                                width: MediaQuery.of(context).size.width * 0.45,
+                                padding: EdgeInsets.symmetric(vertical: 4),
+                                child: Text(
+                                  "Aditya",
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
               SingleChildScrollView(
