@@ -16,14 +16,14 @@ class IHackathonBasic {
 
   
   String description =
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+      "Welcome to the aXess Year End Hackathon, exclusively for our talented Graduate. We always cherish the great ideas and solutions from you. The idea of this hackathon is to ensure, based on your passion and interest we make this more meaningful.";
 
   static List<String> instructions = [
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do",
-    "eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim",
-    "veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    "Excepteur sint occaecat cupidatat non proident."
+    "Register your team first with PSID on your portal using the registration link. Don't forget to include yourself!",
+    "Once registered with your team, register on the problem statement with your team",
+    "An invite will be sent to you and your teams on Briefing Sessions and Clinic Sessions",
+    "Start working on your component from now",
+    "Contact aXess.Hackathon@sc.com for any further details"
   ];
 
   
