@@ -4,7 +4,6 @@ import 'package:bit_magnet/components/hackathon_card.dart';
 import 'package:bit_magnet/components/home_carousel.dart';
 import 'package:bit_magnet/components/past_hackathon_card.dart';
 
-import 'package:bit_magnet/components/side_bar.dart';
 import 'package:bit_magnet/models/hackathon_basic_details.dart';
 
 import 'package:bit_magnet/models/sample_objects.dart';
