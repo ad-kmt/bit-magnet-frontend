@@ -18,8 +18,8 @@ class PHome extends StatefulWidget {
 }
 
 class _PHomeState extends State<PHome> with SingleTickerProviderStateMixin {
-  List<IHackathonBasic> hackathons;
-  List<IHackathonBasic> pastHackathons;
+  List<dynamic> hackathons;
+  List<dynamic> pastHackathons;
 
   TabController _tabController;
   ScrollController _scrollController;
