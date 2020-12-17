@@ -38,8 +38,8 @@ class _ProblemSubmitState extends State<ProblemSubmit> {
       backgroundColor: Palette.lightGreyBackground,
       body: Column(
         children: [
-          HackathonCover(SampleObjects.sampleHackathon),
-          HackathonIconBar(SampleObjects.sampleHackathon),
+          HackathonCover(SampleObjects.hackathon1),
+          HackathonIconBar(SampleObjects.hackathon1),
           Container(
             margin: EdgeInsets.fromLTRB(16, 24, 16, 8),
             alignment: Alignment.centerLeft,

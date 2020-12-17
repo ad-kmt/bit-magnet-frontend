@@ -30,14 +30,22 @@ class _AProblemDetailState extends State<AProblemDetail> {
                 Padding(
                   padding: const EdgeInsets.only(bottom: 12.0),
                   child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        "${widget.problem.id}: ",
-                        style: kBlackSubTitle,
+                      Padding(
+                        padding: const EdgeInsets.only(top: 1.0),
+                        child: Text(
+                          "${widget.problem.id}: ",
+                          style: kBlackSubTitle,
+                        ),
                       ),
-                      Text(
-                        "${widget.problem.title}: ",
-                        style: kBlackSubTitle,
+                      Expanded(
+                        child: Container(
+                          child: Text(
+                            "${widget.problem.title} ",
+                            style: kBlackSubTitle,
+                          ),
+                        ),
                       ),
                     ],
                   ),

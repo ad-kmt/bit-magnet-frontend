@@ -167,9 +167,11 @@ class _MHackathonDetailState extends State<MHackathonDetail>
               ),
               Container(
                 child: Center(
-                  child: Text('Display Tab 1',
-                      style:
-                          TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+                  child: Text('Submissions',
+                      style: TextStyle(
+                          color: Colors.grey.shade400,
+                          fontSize: 22,
+                          fontWeight: FontWeight.w600)),
                 ),
               ),
             ],

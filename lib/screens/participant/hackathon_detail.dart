@@ -48,7 +48,8 @@ class _PHackathonDetailState extends State<PHackathonDetail>
     update(participant, widget.hackathon);
 
     _scrollController = ScrollController();
-    _tabController = TabController(vsync: this, length: 4);
+    _tabController = TabController(
+        vsync: this, length: 4, initialIndex: widget.initialIndex);
     _tabController.addListener(_smoothScrollToTop);
   }
 

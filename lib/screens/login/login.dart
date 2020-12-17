@@ -102,7 +102,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return Stack(children: [
       FlutterLogin(
           title: 'Login',
-          logo: 'images/logo-login.png',
+          logo: 'images/logo2.png',
           onLogin: _authUser,
           onSignup: _authUser,
           emailValidator: psidValidator,
@@ -110,19 +110,16 @@ class _LoginScreenState extends State<LoginScreen> {
             routToDashBoards();
           },
           onRecoverPassword: _recoverPassword,
-        theme: LoginTheme(
-          //primaryColor: Colors.blue[100],
-          titleStyle: TextStyle(
-              color: Colors.blueGrey[50],
-              fontSize: 32
+          theme: LoginTheme(
+            //primaryColor: Colors.blue[100],
+            titleStyle: TextStyle(color: Colors.blueGrey[50], fontSize: 32),
+            // cardTheme: CardTheme(
+            //   color: Colors.blue[100],
+            // ),
+            buttonTheme: LoginButtonTheme(
+              backgroundColor: Colors.blue,
+            ),
           ),
-          // cardTheme: CardTheme(
-          //   color: Colors.blue[100],
-          // ),
-          buttonTheme: LoginButtonTheme(
-            backgroundColor: Colors.blue,
-        ),),
-
           messages: LoginMessages(
             usernameHint: 'Username',
             passwordHint: 'Password',
@@ -142,7 +139,8 @@ class _LoginScreenState extends State<LoginScreen> {
                           clipBehavior: Clip.antiAlias,
                           child: Column(children: [
                             ListTile(
-                              leading: Image.asset('images/openBanking.jpeg', fit: BoxFit.cover),
+                              leading: Image.asset('images/openBanking.jpeg',
+                                  fit: BoxFit.cover),
                               title: const Text(
                                   'aXess prepares us for Open Banking'),
                             ),
@@ -160,7 +158,8 @@ class _LoginScreenState extends State<LoginScreen> {
                           clipBehavior: Clip.antiAlias,
                           child: Column(children: [
                             ListTile(
-                              leading: Image.asset('images/futurebanking.png', fit: BoxFit.cover),
+                              leading: Image.asset('images/futurebanking.png',
+                                  fit: BoxFit.cover),
                               title: const Text(
                                   'Imagine what we could do together'),
                             ),
