@@ -142,7 +142,7 @@ class _ForumScreenState extends State<ForumScreen>
                               width: MediaQuery.of(context).size.width * 0.9,
                               padding: EdgeInsets.only(top: 20),
                               child: Text(
-                                "How to type cast for my use case in Dart 2",
+                                "How do I merge two dictionaries in a single expression in Python?",
                                 style: TextStyle(
                                     fontSize: 20,
                                     color: Colors.blue
@@ -153,7 +153,7 @@ class _ForumScreenState extends State<ForumScreen>
                               width: MediaQuery.of(context).size.width * 0.9,
                               padding: EdgeInsets.only(top: 10),
                               child: Text(
-                                "I am trying to clean-up some (working) code on a fork of the Flutter Architecture Samples github project. Does anyone familiar with casting in Dart 2 have any suggestions on how to clean up my attempt? This may change after posting, but what I currently have is:",
+                                "I have two dictionaries and I want to write a single expression that returns two dictionaries, merged. How can I get the final dictionary?",
                                 style: TextStyle(
                                     fontSize: 14,
                                     color: Colors.blueGrey
@@ -166,7 +166,7 @@ class _ForumScreenState extends State<ForumScreen>
                                     margin: const EdgeInsets.only(top: 30.0, right: 5, left: 5),
                                     padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                                     color: Colors.blueGrey,
-                                    child: Text('flutter',
+                                    child: Text('python',
                                       style: TextStyle(
                                           fontSize: 15,
                                           color: Colors.white
@@ -177,7 +177,7 @@ class _ForumScreenState extends State<ForumScreen>
                                     margin: const EdgeInsets.only(top: 30.0, right: 5, left: 5),
                                     padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                                     color: Colors.blueGrey,
-                                    child: Text('dart',
+                                    child: Text('dictionary',
                                       style: TextStyle(
                                           fontSize: 15,
                                           color: Colors.white
@@ -188,7 +188,7 @@ class _ForumScreenState extends State<ForumScreen>
                                     margin: const EdgeInsets.only(top: 30.0, right: 5, left: 5),
                                     padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                                     color: Colors.blueGrey,
-                                    child: Text('colors',
+                                    child: Text('merge',
                                       style: TextStyle(
                                           fontSize: 15,
                                           color: Colors.white
@@ -200,14 +200,14 @@ class _ForumScreenState extends State<ForumScreen>
                             Row(
                                 children: [
                                   Container(
-                                      margin: const EdgeInsets.only(top: 30.0, right: 5, left: 5),
+                                      margin: const EdgeInsets.only(top: 30.0, right: 1, left: 1),
                                       padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                                       child: Row(
                                           children: [
 
                                             Text('25 ',
                                               style: TextStyle(
-                                                  fontSize: 20,
+                                                  fontSize: 16,
                                                   color: Colors.blue
                                               ),
                                             ),
@@ -220,41 +220,41 @@ class _ForumScreenState extends State<ForumScreen>
                                       )
                                   ),
                                   Container(
-                                      margin: const EdgeInsets.only(top: 30.0, right: 5, left: 5),
+                                      margin: const EdgeInsets.only(top: 30.0, right: 1, left: 1),
                                       padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                                       child: Row(
                                           children: [
 
                                             Text('47 ',
                                               style: TextStyle(
-                                                  fontSize: 20,
-                                                  color: Colors.blue
+                                                  fontSize: 16,
+                                                  color: Colors.grey
                                               ),
                                             ),
                                             Text(' comments',
                                               style: TextStyle(
                                                   fontSize: 14,
-                                                  color: Colors.blue
+                                                  color: Colors.grey
                                               ),)
                                           ]
                                       )
                                   ),
                                   Container(
-                                      margin: const EdgeInsets.only(top: 30.0, right: 5, left: 5),
+                                      margin: const EdgeInsets.only(top: 30.0, right: 1, left: 1),
                                       padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                                       child: Row(
                                           children: [
 
-                                            Text('2053 ',
+                                            Text('153 ',
                                               style: TextStyle(
-                                                  fontSize: 20,
-                                                  color: Colors.blue
+                                                  fontSize: 16,
+                                                  color: Colors.grey
                                               ),
                                             ),
                                             Text(' views',
                                               style: TextStyle(
                                                   fontSize: 14,
-                                                  color: Colors.blue
+                                                  color: Colors.grey
                                               ),)
                                           ]
                                       )
@@ -275,7 +275,7 @@ class _ForumScreenState extends State<ForumScreen>
                               width: MediaQuery.of(context).size.width * 0.9,
                               padding: EdgeInsets.only(top: 20),
                               child: Text(
-                                "How to type cast for my use case in Dart 2",
+                                "How to type cast for my use case in Dart 2?",
                                 style: TextStyle(
                                     fontSize: 20,
                                     color: Colors.blue
@@ -286,7 +286,7 @@ class _ForumScreenState extends State<ForumScreen>
                               width: MediaQuery.of(context).size.width * 0.9,
                               padding: EdgeInsets.only(top: 10),
                               child: Text(
-                                "I am trying to clean-up some (working) code on a fork of the Flutter Architecture Samples github project. Does anyone familiar with casting in Dart 2 have any suggestions on how to clean up my attempt? This may change after posting, but what I currently have is:",
+                                "I am trying to clean-up some (working) code on a fork of the Flutter Architecture Samples github project. Does anyone familiar with casting in Dart 2 have any suggestions on how to clean up my attempt?",
                                 style: TextStyle(
                                     fontSize: 14,
                                     color: Colors.blueGrey
@@ -333,34 +333,37 @@ class _ForumScreenState extends State<ForumScreen>
                             Row(
                                 children: [
                                   Container(
-                                      margin: const EdgeInsets.only(top: 30.0, right: 5, left: 5),
+                                      margin: const EdgeInsets.only(top: 30.0, right: 1, left: 1),
                                       padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                                      child: Row(
-                                          children: [
-
-                                            Text('25 ',
-                                              style: TextStyle(
-                                                  fontSize: 20,
-                                                  color: Colors.blue
+                                      child: Expanded(
+                                        child: Row(
+                                            children: [
+                                              Text('40 ',
+                                                style: TextStyle(
+                                                    fontSize: 16,
+                                                    color: Colors.grey,
+                                                ),
+                                                overflow: TextOverflow.fade,
                                               ),
-                                            ),
-                                            Text(' upvotes',
-                                              style: TextStyle(
-                                                  fontSize: 14,
-                                                  color: Colors.blue
-                                              ),)
-                                          ]
+                                              Text(' upvotes',
+                                                style: TextStyle(
+                                                    fontSize: 14,
+                                                    color: Colors.grey,
+                                                ),
+                                                overflow: TextOverflow.fade,)
+                                            ]
+                                        ),
                                       )
                                   ),
                                   Container(
-                                      margin: const EdgeInsets.only(top: 30.0, right: 5, left: 5),
+                                      margin: const EdgeInsets.only(top: 30.0, right: 1, left: 1),
                                       padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                                       child: Row(
                                           children: [
 
-                                            Text('47 ',
+                                            Text('60 ',
                                               style: TextStyle(
-                                                  fontSize: 20,
+                                                  fontSize: 16,
                                                   color: Colors.grey
                                               ),
                                             ),
@@ -373,23 +376,27 @@ class _ForumScreenState extends State<ForumScreen>
                                       )
                                   ),
                                   Container(
-                                      margin: const EdgeInsets.only(top: 30.0, right: 5, left: 5),
+                                      margin: const EdgeInsets.only(top: 30.0, right: 1, left: 1),
                                       padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                                      child: Row(
-                                          children: [
+                                      child: Expanded(
+                                        child: Row(
+                                            children: [
 
-                                            Text('2053 ',
-                                              style: TextStyle(
-                                                  fontSize: 20,
-                                                  color: Colors.grey
+                                              Text('303 ',
+                                                style: TextStyle(
+                                                    fontSize: 16,
+                                                    color: Colors.grey
+                                                ),
+                                                overflow: TextOverflow.fade,
                                               ),
-                                            ),
-                                            Text(' views',
-                                              style: TextStyle(
-                                                  fontSize: 14,
-                                                  color: Colors.grey
-                                              ),)
-                                          ]
+                                              Text(' views',
+                                                style: TextStyle(
+                                                    fontSize: 14,
+                                                    color: Colors.grey
+                                                ),
+                                                overflow: TextOverflow.fade,)
+                                            ]
+                                        ),
                                       )
                                   ),
                                 ]
