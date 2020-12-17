@@ -111,9 +111,13 @@ class _LoginScreenState extends State<LoginScreen> {
           },
           onRecoverPassword: _recoverPassword,
         theme: LoginTheme(
-          primaryColor: Colors.blueGrey,
+          primaryColor: Colors.white,
           titleStyle: TextStyle(
+              color: Colors.blueGrey,
               fontSize: 32
+          ),
+          cardTheme: CardTheme(
+            color: Colors.blueGrey,
           ),
           buttonTheme: LoginButtonTheme(
             backgroundColor: Colors.blue,
