@@ -122,7 +122,8 @@ class _RegisterState extends State<Register> {
                         context,
                         MaterialPageRoute(
                           builder: (context) {
-                            return PHackathonDetail(SampleObjects.hackathon1);
+                            return PHackathonDetail(
+                                SampleObjects.hackathon1, 2);
                           },
                         ),
                       );

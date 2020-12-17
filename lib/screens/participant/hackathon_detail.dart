@@ -23,8 +23,9 @@ import 'home.dart';
 
 class PHackathonDetail extends StatefulWidget {
   final dynamic hackathon;
+  final int initialIndex;
 
-  PHackathonDetail(this.hackathon);
+  PHackathonDetail(this.hackathon, [this.initialIndex = 0]);
 
   @override
   _PHackathonDetailState createState() => _PHackathonDetailState();
