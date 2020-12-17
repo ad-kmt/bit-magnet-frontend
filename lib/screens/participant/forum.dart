@@ -92,42 +92,311 @@ class _ForumScreenState extends State<ForumScreen>
               SingleChildScrollView(
                 controller: ScrollController(),
                 child: Container(
-                  child: Row(
-                    children: [
-                      CircleAvatar(
-                        radius: 32,
-                        backgroundColor: Palette.lightGreyContainer,
-                        child: Icon(
-                          Icons.person,
-                          size: 34,
-                          color: Colors.white,
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 14.0),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Container(
-                                width: MediaQuery.of(context).size.width * 0.45,
-                                padding: EdgeInsets.symmetric(vertical: 4),
-                                child: Text(
-                                  "Aditya",
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                    color: Colors.white,
+                  child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Row(
+                          children: [
+                            CircleAvatar(
+                              radius: 32,
+                              backgroundColor: Palette.lightGreyContainer,
+                              child: Icon(
+                                Icons.person,
+                                size: 34,
+                                color: Colors.white,
+                              ),
+                            ),
+                            Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Container(
+                                    padding: EdgeInsets.symmetric(vertical: 4, horizontal: 10),
+                                    child: Text(
+                                      "Norma Andrews",
+                                      style: TextStyle(
+                                        fontSize: 18,
+                                      ),
+                                    ),
                                   ),
+                                  Container(
+                                    padding: EdgeInsets.symmetric(vertical: 4, horizontal: 10),
+                                    child: Text(
+                                      "30 minutes ago",
+                                      style: TextStyle(
+                                          fontSize: 14,
+                                          color: Colors.blueGrey
+                                      ),
+                                    ),
+                                  ),
+                                ]),
+                          ],
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+
+                            Container(
+                              width: MediaQuery.of(context).size.width * 0.9,
+                              padding: EdgeInsets.only(top: 20),
+                              child: Text(
+                                "How to type cast for my use case in Dart 2",
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    color: Colors.blue
                                 ),
                               ),
-                            ],
-                          ),
+                            ),
+                            Container(
+                              width: MediaQuery.of(context).size.width * 0.9,
+                              padding: EdgeInsets.only(top: 10),
+                              child: Text(
+                                "I am trying to clean-up some (working) code on a fork of the Flutter Architecture Samples github project. Does anyone familiar with casting in Dart 2 have any suggestions on how to clean up my attempt? This may change after posting, but what I currently have is:",
+                                style: TextStyle(
+                                    fontSize: 14,
+                                    color: Colors.blueGrey
+                                ),
+                              ),
+                            ),
+                            Row(
+                                children: [
+                                  Container(
+                                    margin: const EdgeInsets.only(top: 30.0, right: 5, left: 5),
+                                    padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                                    color: Colors.blueGrey,
+                                    child: Text('flutter',
+                                      style: TextStyle(
+                                          fontSize: 15,
+                                          color: Colors.white
+                                      ),
+                                    ),
+                                  ),
+                                  Container(
+                                    margin: const EdgeInsets.only(top: 30.0, right: 5, left: 5),
+                                    padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                                    color: Colors.blueGrey,
+                                    child: Text('dart',
+                                      style: TextStyle(
+                                          fontSize: 15,
+                                          color: Colors.white
+                                      ),
+                                    ),
+                                  ),
+                                  Container(
+                                    margin: const EdgeInsets.only(top: 30.0, right: 5, left: 5),
+                                    padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                                    color: Colors.blueGrey,
+                                    child: Text('colors',
+                                      style: TextStyle(
+                                          fontSize: 15,
+                                          color: Colors.white
+                                      ),
+                                    ),
+                                  )
+                                ]
+                            ),
+                            Row(
+                                children: [
+                                  Container(
+                                      margin: const EdgeInsets.only(top: 30.0, right: 5, left: 5),
+                                      padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                                      child: Row(
+                                          children: [
+
+                                            Text('25 ',
+                                              style: TextStyle(
+                                                  fontSize: 20,
+                                                  color: Colors.blue
+                                              ),
+                                            ),
+                                            Text(' upvotes',
+                                              style: TextStyle(
+                                                  fontSize: 14,
+                                                  color: Colors.blue
+                                              ),)
+                                          ]
+                                      )
+                                  ),
+                                  Container(
+                                      margin: const EdgeInsets.only(top: 30.0, right: 5, left: 5),
+                                      padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                                      child: Row(
+                                          children: [
+
+                                            Text('47 ',
+                                              style: TextStyle(
+                                                  fontSize: 20,
+                                                  color: Colors.blue
+                                              ),
+                                            ),
+                                            Text(' comments',
+                                              style: TextStyle(
+                                                  fontSize: 14,
+                                                  color: Colors.blue
+                                              ),)
+                                          ]
+                                      )
+                                  ),
+                                  Container(
+                                      margin: const EdgeInsets.only(top: 30.0, right: 5, left: 5),
+                                      padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                                      child: Row(
+                                          children: [
+
+                                            Text('2053 ',
+                                              style: TextStyle(
+                                                  fontSize: 20,
+                                                  color: Colors.blue
+                                              ),
+                                            ),
+                                            Text(' views',
+                                              style: TextStyle(
+                                                  fontSize: 14,
+                                                  color: Colors.blue
+                                              ),)
+                                          ]
+                                      )
+                                  ),
+                                ]
+                            ),
+                          ],
                         ),
-                      ),
-                    ],
-                  ),
+                        Container(
+                          height: 20,
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+
+                            Container(
+                              width: MediaQuery.of(context).size.width * 0.9,
+                              padding: EdgeInsets.only(top: 20),
+                              child: Text(
+                                "How to type cast for my use case in Dart 2",
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    color: Colors.blue
+                                ),
+                              ),
+                            ),
+                            Container(
+                              width: MediaQuery.of(context).size.width * 0.9,
+                              padding: EdgeInsets.only(top: 10),
+                              child: Text(
+                                "I am trying to clean-up some (working) code on a fork of the Flutter Architecture Samples github project. Does anyone familiar with casting in Dart 2 have any suggestions on how to clean up my attempt? This may change after posting, but what I currently have is:",
+                                style: TextStyle(
+                                    fontSize: 14,
+                                    color: Colors.blueGrey
+                                ),
+                              ),
+                            ),
+                            Row(
+                                children: [
+                                  Container(
+                                    margin: const EdgeInsets.only(top: 30.0, right: 5, left: 5),
+                                    padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                                    color: Colors.blueGrey,
+                                    child: Text('flutter',
+                                      style: TextStyle(
+                                          fontSize: 15,
+                                          color: Colors.white
+                                      ),
+                                    ),
+                                  ),
+                                  Container(
+                                    margin: const EdgeInsets.only(top: 30.0, right: 5, left: 5),
+                                    padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                                    color: Colors.blueGrey,
+                                    child: Text('dart',
+                                      style: TextStyle(
+                                          fontSize: 15,
+                                          color: Colors.white
+                                      ),
+                                    ),
+                                  ),
+                                  Container(
+                                    margin: const EdgeInsets.only(top: 30.0, right: 5, left: 5),
+                                    padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                                    color: Colors.blueGrey,
+                                    child: Text('colors',
+                                      style: TextStyle(
+                                          fontSize: 15,
+                                          color: Colors.white
+                                      ),
+                                    ),
+                                  )
+                                ]
+                            ),
+                            Row(
+                                children: [
+                                  Container(
+                                      margin: const EdgeInsets.only(top: 30.0, right: 5, left: 5),
+                                      padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                                      child: Row(
+                                          children: [
+
+                                            Text('25 ',
+                                              style: TextStyle(
+                                                  fontSize: 20,
+                                                  color: Colors.blue
+                                              ),
+                                            ),
+                                            Text(' upvotes',
+                                              style: TextStyle(
+                                                  fontSize: 14,
+                                                  color: Colors.blue
+                                              ),)
+                                          ]
+                                      )
+                                  ),
+                                  Container(
+                                      margin: const EdgeInsets.only(top: 30.0, right: 5, left: 5),
+                                      padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                                      child: Row(
+                                          children: [
+
+                                            Text('47 ',
+                                              style: TextStyle(
+                                                  fontSize: 20,
+                                                  color: Colors.grey
+                                              ),
+                                            ),
+                                            Text(' comments',
+                                              style: TextStyle(
+                                                  fontSize: 14,
+                                                  color: Colors.grey
+                                              ),)
+                                          ]
+                                      )
+                                  ),
+                                  Container(
+                                      margin: const EdgeInsets.only(top: 30.0, right: 5, left: 5),
+                                      padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                                      child: Row(
+                                          children: [
+
+                                            Text('2053 ',
+                                              style: TextStyle(
+                                                  fontSize: 20,
+                                                  color: Colors.grey
+                                              ),
+                                            ),
+                                            Text(' views',
+                                              style: TextStyle(
+                                                  fontSize: 14,
+                                                  color: Colors.grey
+                                              ),)
+                                          ]
+                                      )
+                                  ),
+                                ]
+                            ),
+                          ],
+                        ),
+                      ]),
                 ),
               ),
               SingleChildScrollView(
@@ -140,7 +409,7 @@ class _ForumScreenState extends State<ForumScreen>
               SingleChildScrollView(
                 controller: ScrollController(),
                 child: Icon(Icons.directions_car),
-      ),
+              ),
               SingleChildScrollView(
                 controller: ScrollController(),
                 child: Icon(Icons.directions_car),

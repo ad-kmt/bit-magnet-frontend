@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 class HackathonIconBar extends StatelessWidget {
 
-  final IHackathonBasic hackathon;
+  final dynamic hackathon;
 
   HackathonIconBar(this.hackathon);
 
