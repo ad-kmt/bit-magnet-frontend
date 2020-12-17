@@ -1,6 +1,7 @@
 import 'package:bit_magnet/models/invitation.dart';
 import 'package:bit_magnet/models/participant.dart';
 import 'package:bit_magnet/models/problem_statement.dart';
+import 'package:bit_magnet/models/solution.dart';
 import 'package:flutter/material.dart';
 import 'package:bit_magnet/models/team.dart';
 
@@ -8,14 +9,13 @@ import 'hackathon_basic_details.dart';
 
 class SampleObjects {
   static IProblemStatement sampleProblemStatement = IProblemStatement(
-      
       "0083",
-        "Problem Name 1",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "RPBWM - Some Department",
-        "Lorem ipsum",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod",
-        ["React", "Java", "JavaScript"]);
+      "Problem Name 1",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "RPBWM - Some Department",
+      "Lorem ipsum",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod",
+      ["React", "Java", "JavaScript"]);
 
   static IHackathonBasic sampleHackathon = IHackathonBasic(
     '_id',
@@ -28,18 +28,76 @@ class SampleObjects {
     'updatedAt',
     'startDate',
     'endDate',
-    
   );
+
+  static List<ISolution> sampleSolutions = [
+    ISolution(
+      "34657689",
+      "BitMagnet",
+      ["Smita Smart", "Aditya Kumawat", "Amardeep", "Varun", "Kanak"],
+      "Smita Smart",
+      "Mobile Money SC Ruby App",
+      "The proposed solution is Ruby mobile App. It is a digital version of the wallet that you can carry in your pocket. it stores payment details like credit or debil and cash balances which can be used to make payments. you can simply use your smartphone or a tablet to make the payment.",
+      "Desisgned & plan the activities",
+      "Flutter Framework Dart programming language python oracle Jboss Android Studio",
+      "Flutter",
+      "Dec 16, 2020",
+      23,
+      ["Helpfull", "Nice One"],
+    ),
+    ISolution(
+      "5679809",
+      "BitMagnet",
+      ["Smita Smart", "Aditya Kumawat", "Amardeep", "Varun", "Kanak"],
+      "Smita Smart",
+      "Mobile Money SC Ruby App",
+      "The proposed solution is Ruby mobile App. It is a digital version of the wallet that you can carry in your pocket. it stores payment details like credit or debil and cash balances which can be used to make payments. you can simply use your smartphone or a tablet to make the payment.",
+      "Desisgned & plan the activities",
+      "Flutter Framework Dart programming language python oracle Jboss Android Studio",
+      "Flutter",
+      "Dec 16, 2020",
+      15,
+      ["Helpfull", "Nice One"],
+    ),
+    ISolution(
+      "5679888",
+      "BitMagnet",
+      ["Smita Smart", "Aditya Kumawat", "Amardeep", "Varun", "Kanak"],
+      "Smita Smart",
+      "Mobile Money SC Ruby App",
+      "The proposed solution is Ruby mobile App. It is a digital version of the wallet that you can carry in your pocket. it stores payment details like credit or debil and cash balances which can be used to make payments. you can simply use your smartphone or a tablet to make the payment.",
+      "Desisgned & plan the activities",
+      "Flutter Framework Dart programming language python oracle Jboss Android Studio",
+      "Flutter",
+      "Dec 16, 2020",
+      7,
+      ["Helpfull", "Nice One"],
+    ),
+    ISolution(
+      "8887774",
+      "BitMagnet",
+      ["Smita Smart", "Aditya Kumawat", "Amardeep", "Varun", "Kanak"],
+      "Smita Smart",
+      "Mobile Money SC Ruby App",
+      "The proposed solution is Ruby mobile App. It is a digital version of the wallet that you can carry in your pocket. it stores payment details like credit or debil and cash balances which can be used to make payments. you can simply use your smartphone or a tablet to make the payment.",
+      "Desisgned & plan the activities",
+      "Flutter Framework Dart programming language python oracle Jboss Android Studio",
+      "Flutter",
+      "Dec 16, 2020",
+      2,
+      ["Helpfull", "Nice One"],
+    ),
+  ];
 
   static List<IProblemStatement> sampleProblemList = [
     IProblemStatement(
         "0083",
-      "QR Code - Africa",
-      "With the opening up of malls and retail sector, online and offline merchants provide a unique opportunity for us to explore a new channel/ medium for self assisted digital sales.",
-      "RPBWM - Retail Core Platforms",
-      "The model will provide incentives for (a) 'merchants to display SCB cards in the asset (b) clients to self initiate a registration journey",
-      "Able to scan the QR code and make the transactions from one wallet to other wallet",
-      ["React", "Java", "JavaScript", "Spring"]),
+        "QR Code - Africa",
+        "With the opening up of malls and retail sector, online and offline merchants provide a unique opportunity for us to explore a new channel/ medium for self assisted digital sales.",
+        "RPBWM - Retail Core Platforms",
+        "The model will provide incentives for (a) 'merchants to display SCB cards in the asset (b) clients to self initiate a registration journey",
+        "Able to scan the QR code and make the transactions from one wallet to other wallet",
+        ["React", "Java", "JavaScript", "Spring"]),
     IProblemStatement(
         "0084",
         "Algo trading based analysis",
@@ -93,7 +151,10 @@ class SampleObjects {
     DropdownMenuItem(
         child: Text('Stock Market Challenge'), value: 'Stock Market Challenge'),
   ];
-  static List<IHackathonBasic> sampleHackathonList = [sampleHackathon, sampleHackathon];
+  static List<IHackathonBasic> sampleHackathonList = [
+    sampleHackathon,
+    sampleHackathon
+  ];
 
   static List<DropdownMenuItem> sampleGroupList = [
     DropdownMenuItem(child: Text('Retails'), value: 'Retails'),
@@ -119,7 +180,9 @@ class SampleObjects {
     DropdownMenuItem(child: Text('TensorFlow'), value: 'TensorFlow'),
     DropdownMenuItem(child: Text('Keras'), value: 'Keras'),
     DropdownMenuItem(child: Text('Scikit-learn'), value: 'Scikit-learn'),
-    DropdownMenuItem(child: Text('Microsoft Cognitive Toolkit'), value: 'Microsoft Cognitive Toolkit'),
+    DropdownMenuItem(
+        child: Text('Microsoft Cognitive Toolkit'),
+        value: 'Microsoft Cognitive Toolkit'),
     DropdownMenuItem(child: Text('Theano'), value: 'Theano'),
     DropdownMenuItem(child: Text('Caffe'), value: 'Caffe'),
     DropdownMenuItem(child: Text('Torch'), value: 'Torch'),
