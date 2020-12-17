@@ -42,6 +42,19 @@ class SampleObjects {
     'Dec\' 18',
   );
 
+  static IHackathonBasic hackathon2 = IHackathonBasic(
+    '_id',
+    'topic',
+    'aXess Graduate Hackathon',
+    'Bangalore - India',
+    '15',
+    'moderator_id',
+    'createdAt',
+    'updatedAt',
+    'Dec\' 6',
+    'Dec\' 18',
+  );
+
   static IHackathonBasic pastHackathon1 = IHackathonBasic(
     '_id',
     'topic',
@@ -133,6 +146,10 @@ class SampleObjects {
 
   static List<IHackathonBasic> upcomingHackathonList = [
     hackathon1,
+  ];
+  static List<IHackathonBasic> upcomingHackathonList2 = [
+    hackathon1,
+    hackathon2,
   ];
 
   static List<IHackathonBasic> pastHackathonList = [

@@ -7,6 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:searchable_dropdown/searchable_dropdown.dart';
 import 'package:flutter/cupertino.dart';
 
+import 'home2.dart';
+
 class CreateHackathon extends StatefulWidget {
   const CreateHackathon({
     Key key,
@@ -30,6 +32,10 @@ class _CreateHackathonState extends State<CreateHackathon> {
   Widget build(BuildContext context) {
     var submitCallback = () {
       //API CALL
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => MHome2()),
+      );
     };
 
     return Scaffold(
