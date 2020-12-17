@@ -35,6 +35,11 @@ class _CreateProblemtState extends State<CreateProblem> {
   @override
   Widget build(BuildContext context) {
     var createCallback = ()async {
+      Navigator.of(context).pushReplacement(MaterialPageRoute(
+        builder: (context) {
+          return AHome();
+        },
+      ));
       //API CALL: creating problem statement.
       SharedPreferences preferences = await SharedPreferences.getInstance();
       String jwt = 'Bearer ' + preferences.getString("token");
