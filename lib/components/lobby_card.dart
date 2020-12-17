@@ -43,7 +43,7 @@ class LobbyCard extends StatelessWidget {
           ),
           ListTile(
             title: Text(
-              "Aditya Kumawat",
+              "Shubham Shree",
               style: TextStyle(fontSize: 16),
             ),
             trailing: Icon(
@@ -53,7 +53,7 @@ class LobbyCard extends StatelessWidget {
           ),
           ListTile(
             title: Text(
-              "Varun Bhandia",
+              "Yash Sharma",
               style: TextStyle(fontSize: 16),
             ),
             trailing: Icon(
@@ -63,7 +63,7 @@ class LobbyCard extends StatelessWidget {
           ),
           ListTile(
             title: Text(
-              "Amardeep Saini",
+              "Stanley Gabriel",
               style: TextStyle(fontSize: 16),
             ),
             trailing: Icon(
@@ -73,7 +73,7 @@ class LobbyCard extends StatelessWidget {
           ),
           ListTile(
             title: Text(
-              "Smita Meshram",
+              "Shubham Sharma",
               style: TextStyle(fontSize: 16),
             ),
             trailing: Icon(
@@ -83,7 +83,7 @@ class LobbyCard extends StatelessWidget {
           ),
           ListTile(
             title: Text(
-              "Kanak Purohit",
+              "Pulkit Gupta",
               style: TextStyle(fontSize: 16),
             ),
             trailing: Icon(
