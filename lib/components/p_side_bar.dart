@@ -80,7 +80,7 @@ class PSideBarHeader extends StatelessWidget {
                     width: MediaQuery.of(context).size.width * 0.45,
                     padding: EdgeInsets.symmetric(vertical: 4),
                     child: Text(
-                      "Admin",
+                      "Participant",
                       style: TextStyle(
                         fontSize: 12,
                         color: Colors.white,
