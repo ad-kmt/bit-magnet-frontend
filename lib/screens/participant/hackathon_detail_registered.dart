@@ -19,16 +19,19 @@ import 'package:bit_magnet/styles/constants.dart';
 import 'package:bit_magnet/styles/palette.dart';
 import 'package:flutter/material.dart';
 
-class PHackathonDetail extends StatefulWidget {
+import 'home.dart';
+
+class PHackathonDetailRegistered extends StatefulWidget {
   final dynamic hackathon;
 
-  PHackathonDetail(this.hackathon);
+  PHackathonDetailRegistered(this.hackathon);
 
   @override
-  _PHackathonDetailState createState() => _PHackathonDetailState();
+  _PHackathonDetailRegisteredState createState() =>
+      _PHackathonDetailRegisteredState();
 }
 
-class _PHackathonDetailState extends State<PHackathonDetail>
+class _PHackathonDetailRegisteredState extends State<PHackathonDetailRegistered>
     with SingleTickerProviderStateMixin {
   IParticipant participant;
   bool isRegistered;
@@ -45,7 +48,7 @@ class _PHackathonDetailState extends State<PHackathonDetail>
     update(participant, widget.hackathon);
 
     _scrollController = ScrollController();
-    _tabController = TabController(vsync: this, length: 4);
+    _tabController = TabController(vsync: this, length: 5);
     _tabController.addListener(_smoothScrollToTop);
   }
 
@@ -66,7 +69,7 @@ class _PHackathonDetailState extends State<PHackathonDetail>
       //3. Check which problem statement is/are registered
 
       //GET THESE FIELDS FROM BACKEND
-      isRegistered = false;
+      isRegistered = true;
       userTeam = SampleObjects.sampleTeam;
       userProblemStatements = [SampleObjects.sampleProblemStatement];
     });
@@ -89,7 +92,15 @@ class _PHackathonDetailState extends State<PHackathonDetail>
 
   BottomAppBar showRegisterButton() {
     if (isRegistered) {
-      return null;
+      return BottomAppBar(
+        child: Container(
+          padding: EdgeInsets.symmetric(horizontal: 24, vertical: 8),
+          child: FlatGreenButton(
+            "Submit Solution",
+            () {},
+          ),
+        ),
+      );
     } else {
       return BottomAppBar(
         child: Container(
@@ -115,21 +126,33 @@ class _PHackathonDetailState extends State<PHackathonDetail>
 
     var publishButtonCallBack = () {};
 
-    var returnBottomBar = () {
-      //IF MODERATOR OR AUTHOR
-      if (false) {
-        return BottomBarTwoButtons(
-            "Edit", editButtonCallBack, "Publish", publishButtonCallBack);
-      }
-      //IF PARTICIPANT
-      else {
-        return showRegisterButton();
-      }
-    };
-
     return Scaffold(
-      appBar: AxessAppBar(),
-      bottomNavigationBar: returnBottomBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        iconTheme: IconThemeData(
+          color: Palette.blue, //change your color here
+        ),
+        leading: GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) {
+                  return PHome();
+                },
+              ),
+            );
+          },
+          child: Icon(
+            Icons.arrow_back_ios,
+          ),
+        ),
+        title: Container(
+          alignment: Alignment.centerRight,
+          child: Image(image: AssetImage("images/logo.png")),
+        ),
+      ),
+      bottomNavigationBar: showRegisterButton(),
       backgroundColor: Palette.lightGreyBackground,
       body: NestedScrollView(
         controller: ScrollController(),
@@ -152,6 +175,7 @@ class _PHackathonDetailState extends State<PHackathonDetail>
                   unselectedLabelColor: Colors.grey,
                   indicatorColor: Palette.greenWidget,
                   tabs: [
+                    Tab(text: 'My Team'),
                     Tab(text: 'Problem Statements'),
                     Tab(text: 'Teams'),
                     Tab(text: 'Interested Lobby'),
@@ -169,6 +193,18 @@ class _PHackathonDetailState extends State<PHackathonDetail>
           child: TabBarView(
             controller: _tabController,
             children: [
+              SingleChildScrollView(
+                controller: ScrollController(),
+                child: Container(
+                  child: Column(
+                    children: [
+                      TeamInfo(userTeam),
+                      ProblemList("Your team's registered challenge(s):",
+                          userProblemStatements),
+                    ],
+                  ),
+                ),
+              ),
               SingleChildScrollView(
                 controller: ScrollController(),
                 child: Container(

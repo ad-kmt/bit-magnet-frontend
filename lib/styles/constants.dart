@@ -81,6 +81,11 @@ var kGradientBlueInverted = LinearGradient(
     end: Alignment.bottomRight,
     colors: [Color(0xff0087b9), Color(0xff00cbee)]);
 
+var kGradientGrey = LinearGradient(
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+    colors: [Colors.grey.shade700, Colors.grey.shade500]);
+
 var kSideBarIconColor = Colors.grey.shade700;
 
 var kSideBarTextStyle = TextStyle(color: Colors.grey.shade800);
