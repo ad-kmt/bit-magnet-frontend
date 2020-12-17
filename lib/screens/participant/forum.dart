@@ -19,17 +19,16 @@ import 'package:bit_magnet/styles/constants.dart';
 import 'package:bit_magnet/styles/palette.dart';
 import 'package:flutter/material.dart';
 
-class PHackathonDetail extends StatefulWidget {
+class Forum extends StatefulWidget {
   final dynamic hackathon;
 
-  PHackathonDetail(this.hackathon);
+  Forum(this.hackathon);
 
   @override
-  _PHackathonDetailState createState() => _PHackathonDetailState();
+  _ForumState createState() => _ForumState();
 }
 
-class _PHackathonDetailState extends State<PHackathonDetail>
-    with SingleTickerProviderStateMixin {
+class _ForumState extends State<Forum> with SingleTickerProviderStateMixin {
   IParticipant participant;
   bool isRegistered;
   ITeam userTeam;

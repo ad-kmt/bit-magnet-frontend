@@ -16,6 +16,7 @@ class TeamCard extends StatelessWidget {
         borderRadius: BorderRadius.all(Radius.circular(24)),
         boxShadow: [kBoxShadowGrey],
       ),
+      margin: EdgeInsets.symmetric(horizontal: 4),
       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
