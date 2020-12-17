@@ -38,6 +38,7 @@ class ProblemStatementCard extends StatelessWidget {
                 ),
               ),
               child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     "${problemStatement.id}: ",
@@ -46,12 +47,16 @@ class ProblemStatementCard extends StatelessWidget {
                         fontSize: 18,
                         fontWeight: FontWeight.w900),
                   ),
-                  Text(
-                    problemStatement.title,
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 18,
-                        fontWeight: FontWeight.w400),
+                  Expanded(
+                    child: Container(
+                      child: Text(
+                        problemStatement.title,
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w400),
+                      ),
+                    ),
                   ),
                 ],
               ),

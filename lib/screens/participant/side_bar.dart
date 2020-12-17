@@ -1,7 +1,9 @@
-import 'package:bit_magnet/components/side_bar.dart';
+import 'package:bit_magnet/components/m_side_bar.dart';
+import 'package:bit_magnet/components/p_side_bar.dart';
 import 'package:bit_magnet/screens/author/invitations.dart';
 import 'package:bit_magnet/screens/author/problem_list.dart';
 import 'package:bit_magnet/screens/login/login.dart';
+import 'package:bit_magnet/screens/participant/forum.dart';
 import 'package:bit_magnet/screens/participant/hackathon_list.dart';
 import 'package:bit_magnet/screens/participant/home.dart';
 import 'package:bit_magnet/styles/constants.dart';
@@ -22,7 +24,7 @@ class PSideBar extends PreferredSize {
         // Important: Remove any padding from the ListView.
         padding: EdgeInsets.zero,
         children: <Widget>[
-          SideBarHeader(),
+          PSideBarHeader(),
           ListTile(
             leading: Icon(Icons.home, color: kSideBarIconColor),
             title: Text(
@@ -46,7 +48,7 @@ class PSideBar extends PreferredSize {
             onTap: () {
               Navigator.push(context, MaterialPageRoute(
                 builder: (context) {
-                  return PHackathonList();
+                  return PHome();
                 },
               ));
             },
@@ -66,6 +68,20 @@ class PSideBar extends PreferredSize {
               style: kSideBarTextStyle,
             ),
             onTap: () {},
+          ),
+          ListTile(
+            leading: Icon(Icons.forum, color: kSideBarIconColor),
+            title: Text(
+              'Forum',
+              style: kSideBarTextStyle,
+            ),
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(
+                builder: (context) {
+                  return ForumScreen();
+                },
+              ));
+            },
           ),
           ListTile(
             leading: Icon(Icons.logout, color: kSideBarIconColor),

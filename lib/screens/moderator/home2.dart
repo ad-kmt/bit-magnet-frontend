@@ -1,24 +1,32 @@
 import 'package:bit_magnet/components/app_bar.dart';
+import 'package:bit_magnet/components/app_bar_admin.dart';
 import 'package:bit_magnet/components/hackathon_card.dart';
 import 'package:bit_magnet/components/home_carousel.dart';
 import 'package:bit_magnet/components/past_hackathon_card.dart';
+
 import 'package:bit_magnet/models/hackathon_basic_details.dart';
 
 import 'package:bit_magnet/models/sample_objects.dart';
-import 'package:bit_magnet/screens/participant/side_bar.dart';
+
+import 'package:bit_magnet/screens/moderator/hackathon_detail.dart';
+import 'package:bit_magnet/screens/moderator/side_bar.dart';
+import 'package:bit_magnet/screens/participant/hackathon_detail.dart';
 import 'package:bit_magnet/styles/constants.dart';
 import 'package:bit_magnet/styles/palette.dart';
 import 'package:flutter/material.dart';
 
-import 'hackathon_detail.dart';
+import 'create_hackathon.dart';
 
-class PHome extends StatefulWidget {
-  @override
-  _PHomeState createState() => _PHomeState();
+class MHome2 extends StatefulWidget {
+  const MHome2({
+    Key key,
+  }) : super(key: key);
+
+  _MHomeState createState() => _MHomeState();
 }
 
-class _PHomeState extends State<PHome> with SingleTickerProviderStateMixin {
-  List<dynamic> hackathons;
+class _MHomeState extends State<MHome2> with SingleTickerProviderStateMixin {
+  List<IHackathonBasic> hackathonList;
   List<dynamic> pastHackathons;
 
   TabController _tabController;
@@ -27,7 +35,8 @@ class _PHomeState extends State<PHome> with SingleTickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-    hackathons = SampleObjects.upcomingHackathonList;
+    //API CALL
+    hackathonList = SampleObjects.upcomingHackathonList2;
 
     pastHackathons = SampleObjects.pastHackathonList;
 
@@ -47,8 +56,9 @@ class _PHomeState extends State<PHome> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AxessAppBar(),
+      appBar: MAppBar(),
       backgroundColor: Palette.lightGreyBackground,
+      drawer: MSideBar(),
       body: NestedScrollView(
         controller: ScrollController(),
         headerSliverBuilder: (context, value) {
@@ -91,9 +101,10 @@ class _PHomeState extends State<PHome> with SingleTickerProviderStateMixin {
                     children: [
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: List.generate(hackathons.length, (index) {
-                          return HackathonCard(hackathons[index],
-                              PHackathonDetail(hackathons[index]));
+                        children: List.generate(hackathonList.length, (index) {
+
+                          return HackathonCard(hackathonList[index],
+                              MHackathonDetail(hackathonList[index]));
                         }),
                       ),
                     ],
@@ -121,12 +132,23 @@ class _PHomeState extends State<PHome> with SingleTickerProviderStateMixin {
           ),
         ),
       ),
-      drawer: PSideBar(),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {
+          print('Clicked');
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => CreateHackathon()),
+          );
+        },
+        label: Text('Create'),
+        icon: Icon(Icons.add),
+        backgroundColor: Palette.greenWidget,
+      ),
     );
   }
 }
 
-// var column = Column(
+// var col = Column(
 //   children: [
 //     HomeCarousel(),
 //     Padding(
@@ -134,23 +156,19 @@ class _PHomeState extends State<PHome> with SingleTickerProviderStateMixin {
 //       child: Column(
 //         crossAxisAlignment: CrossAxisAlignment.start,
 //         children: [
-//           Padding(
-//             padding: const EdgeInsets.symmetric(vertical: 4.0),
-//             child: Text(
-//               "Live Hackathons",
-//               style: TextStyle(
-//                 color: Palette.blue,
-//                 fontSize: 24,
-//                 fontWeight: FontWeight.w400,
-//               ),
+//           Text(
+//             "Hackathons",
+//             style: TextStyle(
+//               color: Palette.blue,
+//               fontSize: 24,
+//               fontWeight: FontWeight.w400,
 //             ),
 //           ),
 //           Column(
-//             crossAxisAlignment: CrossAxisAlignment.start,
-//             children: List.generate(hackathons.length, (index) {
-//               return HackathonCard(
-//                   hackathons[index], PHackathonDetail(hackathons[index]));
-//             }),
+//             children: [
+//               for (var hackathon in hackathonList)
+//                 HackathonCard(hackathon, MHackathonDetail(hackathon)),
+//             ],
 //           ),
 //         ],
 //       ),

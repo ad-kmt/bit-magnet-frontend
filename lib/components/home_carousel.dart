@@ -103,7 +103,7 @@ var listCaraousel = [
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: Text(
-            "Axess Event",
+            "aXess Event",
             style: TextStyle(color: Colors.white, fontSize: 18),
           ),
         )
@@ -128,7 +128,7 @@ var listCaraousel = [
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: Text(
-            "Axess Event",
+            "aXess Event",
             style: TextStyle(color: Colors.white, fontSize: 18),
           ),
         )
@@ -152,7 +152,7 @@ var listCaraousel = [
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: Text(
-            "Axess Event",
+            "aXess Event",
             style: TextStyle(color: Colors.white, fontSize: 18),
           ),
         )

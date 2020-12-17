@@ -1,4 +1,4 @@
-import 'package:bit_magnet/components/side_bar.dart';
+import 'package:bit_magnet/components/m_side_bar.dart';
 import 'package:bit_magnet/screens/author/invitations.dart';
 import 'package:bit_magnet/screens/author/problem_list.dart';
 import 'package:bit_magnet/screens/login/login.dart';
@@ -25,7 +25,7 @@ class MSideBar extends PreferredSize {
         // Important: Remove any padding from the ListView.
         padding: EdgeInsets.zero,
         children: <Widget>[
-          SideBarHeader(),
+          MSideBarHeader(),
           ListTile(
             leading: Icon(Icons.home, color: kSideBarIconColor),
             title: Text(

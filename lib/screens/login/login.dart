@@ -11,6 +11,7 @@ import 'package:flutter_login/flutter_login.dart';
 import 'package:http/http.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter_login/theme.dart';
 
 const users = const {
   '1625185': 'password',
@@ -37,7 +38,7 @@ class _LoginScreenState extends State<LoginScreen> {
           print("author");
           return AHome();
         } else if (role == "PARTICIPANT") {
-          return PHackathonList();
+          return PHome();
         } else if (role == "MODERATOR") {
           return MHome();
         } else {
@@ -100,8 +101,8 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Stack(children: [
       FlutterLogin(
-          title: 'Hackathon',
-          logo: 'images/logo.png',
+          title: 'Login',
+          logo: 'images/logo2.png',
           onLogin: _authUser,
           onSignup: _authUser,
           emailValidator: psidValidator,
@@ -109,6 +110,16 @@ class _LoginScreenState extends State<LoginScreen> {
             routToDashBoards();
           },
           onRecoverPassword: _recoverPassword,
+          theme: LoginTheme(
+            //primaryColor: Colors.blue[100],
+            titleStyle: TextStyle(color: Colors.blueGrey[50], fontSize: 32),
+            // cardTheme: CardTheme(
+            //   color: Colors.blue[100],
+            // ),
+            buttonTheme: LoginButtonTheme(
+              backgroundColor: Colors.blue,
+            ),
+          ),
           messages: LoginMessages(
             usernameHint: 'Username',
             passwordHint: 'Password',
@@ -128,7 +139,8 @@ class _LoginScreenState extends State<LoginScreen> {
                           clipBehavior: Clip.antiAlias,
                           child: Column(children: [
                             ListTile(
-                              leading: Icon(Icons.arrow_drop_down_circle),
+                              leading: Image.asset('images/openBanking.jpeg',
+                                  fit: BoxFit.cover),
                               title: const Text(
                                   'aXess prepares us for Open Banking'),
                             ),
@@ -146,7 +158,8 @@ class _LoginScreenState extends State<LoginScreen> {
                           clipBehavior: Clip.antiAlias,
                           child: Column(children: [
                             ListTile(
-                              leading: Icon(Icons.arrow_drop_down_circle),
+                              leading: Image.asset('images/futurebanking.png',
+                                  fit: BoxFit.cover),
                               title: const Text(
                                   'Imagine what we could do together'),
                             ),

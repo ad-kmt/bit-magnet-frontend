@@ -9,25 +9,76 @@ import 'hackathon_basic_details.dart';
 
 class SampleObjects {
   static IProblemStatement sampleProblemStatement = IProblemStatement(
-      "0083",
-      "Problem Name 1",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "RPBWM - Some Department",
-      "Lorem ipsum",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod",
+      "0085",
+      "aXess Challange App",
+      "An App to build problem statements which will be later hosted on SC App. This App will be meant to be available for Senior Mnaagement (CXOs, Country Heads).",
+      "Other",
+      "Benefits to the team to have submit the problem statement any time on their mobile",
+      "Frontend screens and possible integration with APP Center or aXess.sc.net",
       ["React", "Java", "JavaScript"]);
 
   static IHackathonBasic sampleHackathon = IHackathonBasic(
     '_id',
     'topic',
-    'title',
-    'location',
+    'aXess Graduate Hackathon',
+    'Bangalore - India',
     'team_size',
     'moderator_id',
     'createdAt',
     'updatedAt',
-    'startDate',
-    'endDate',
+    'Dec 6',
+    'Dec 18',
+  );
+
+  static IHackathonBasic hackathon1 = IHackathonBasic(
+    '_id',
+    'topic',
+    'aXess Graduate Hackathon',
+    'Bangalore - India',
+    '15',
+    'moderator_id',
+    'createdAt',
+    'updatedAt',
+    'Dec\' 6',
+    'Dec\' 18',
+  );
+
+  static IHackathonBasic hackathon2 = IHackathonBasic(
+    '_id',
+    'topic',
+    'aXess Retail Banking Hackathon',
+    'Bangalore - India',
+    '15',
+    'moderator_id',
+    'createdAt',
+    'updatedAt',
+    'Jul\' 6',
+    'Jul\' 18',
+  );
+
+  static IHackathonBasic pastHackathon1 = IHackathonBasic(
+    '_id',
+    'topic',
+    'aXess Africa Hackathon',
+    'Chennai - India',
+    '15',
+    'moderator_id',
+    'createdAt',
+    'updatedAt',
+    'Sep\' 28',
+    'Nov\' 12',
+  );
+  static IHackathonBasic pastHackathon2 = IHackathonBasic(
+    '_id',
+    'topic',
+    'Multi - Faceted Hackathon',
+    'Singapore',
+    '5',
+    'moderator_id',
+    'createdAt',
+    'updatedAt',
+    'Jul\' 4',
+    'Jul\' 17',
   );
 
   static List<ISolution> sampleSolutions = [
@@ -142,14 +193,28 @@ class SampleObjects {
 
   static List<DropdownMenuItem> sampleProblemsList = [
     DropdownMenuItem(
-        child: Text('Axess Challenge App'), value: 'Axess Challenge App'),
-    DropdownMenuItem(child: Text('Gamification'), value: 'Gamification'),
-    DropdownMenuItem(child: Text('House Pricing'), value: 'House Pricing'),
+        child: Text('QR Code - Africa'), value: 'QR Code - Africa'),
     DropdownMenuItem(
-        child: Text('virtual customer assistant'),
-        value: 'virtual customer assistant'),
+        child: Text('Algo trading based analysis'),
+        value: 'Algo trading based analysis'),
     DropdownMenuItem(
-        child: Text('Stock Market Challenge'), value: 'Stock Market Challenge'),
+        child: Text('aXess Challange App'), value: 'aXess Challange App'),
+    DropdownMenuItem(
+        child: Text('Video Support-Hearing Impaired'),
+        value: 'Video Support-Hearing Impaired'),
+  ];
+
+  static List<IHackathonBasic> upcomingHackathonList = [
+    hackathon1,
+  ];
+  static List<IHackathonBasic> upcomingHackathonList2 = [
+    hackathon1,
+    hackathon2,
+  ];
+
+  static List<IHackathonBasic> pastHackathonList = [
+    pastHackathon1,
+    pastHackathon2,
   ];
   static List<IHackathonBasic> sampleHackathonList = [
     sampleHackathon,
@@ -198,20 +263,20 @@ class SampleObjects {
     DropdownMenuItem(child: Text('Rapid Miner'), value: 'Rapid Miner'),
   ];
   static List<DropdownMenuItem> sampleInvitationList = [
-    DropdownMenuItem(child: Text('Aditya@sc.com'), value: 'Aditya@sc.com'),
-    DropdownMenuItem(child: Text('amar@sc.com'), value: 'amar@sc.com')
+    DropdownMenuItem(child: Text('Kofi.Blankson@sc.com'), value: 'Kofi.Blankson@sc.com'),
+    DropdownMenuItem(child: Text('Williamson.Smith@sc.com'), value: 'Williamson.Smith@sc.com')
   ];
   static List<DropdownMenuItem> sampleLocationList = [
     DropdownMenuItem(child: Text('Bangalore'), value: 'Bangalore'),
     DropdownMenuItem(child: Text('Chennai'), value: 'Chennai')
   ];
   static List<DropdownMenuItem> sampleProblemList2 = [
-    DropdownMenuItem(child: Text('problem 1'), value: 'problem 1'),
-    DropdownMenuItem(child: Text('problem 2'), value: 'problem 2')
+    DropdownMenuItem(child: Text('0050: Intelligent pricing of CCIB Clients'), value: '0050: Intelligent pricing of CCIB Clients'),
+    DropdownMenuItem(child: Text('0051: Mobile Money'), value: 'problem 2')
   ];
 
   static List<IInvitation> sampleIlist = [
-    IInvitation('1', 'Aditya', sampleHackathon)
+    IInvitation('1', 'Shreya', sampleHackathon)
   ];
 
   static List<IParticipant> sampleParticipants = [

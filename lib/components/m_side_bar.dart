@@ -2,7 +2,7 @@ import 'package:bit_magnet/styles/constants.dart';
 import 'package:bit_magnet/styles/palette.dart';
 import 'package:flutter/material.dart';
 
-class SideBar extends PreferredSize {
+class MSideBar extends PreferredSize {
   @override
   Size get preferredSize => Size.fromHeight(50);
 
@@ -16,7 +16,7 @@ class SideBar extends PreferredSize {
         // Important: Remove any padding from the ListView.
         padding: EdgeInsets.zero,
         children: <Widget>[
-          SideBarHeader(),
+          MSideBarHeader(),
           ListTile(
             title: Text('Item 1'),
             onTap: () {
@@ -41,7 +41,7 @@ class SideBar extends PreferredSize {
   }
 }
 
-class SideBarHeader extends StatelessWidget {
+class MSideBarHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DrawerHeader(
@@ -69,7 +69,7 @@ class SideBarHeader extends StatelessWidget {
                     width: MediaQuery.of(context).size.width * 0.45,
                     padding: EdgeInsets.symmetric(vertical: 4),
                     child: Text(
-                      "Aditya",
+                      "John Doe",
                       style: TextStyle(
                         fontSize: 20,
                         color: Colors.white,
@@ -80,24 +80,13 @@ class SideBarHeader extends StatelessWidget {
                     width: MediaQuery.of(context).size.width * 0.45,
                     padding: EdgeInsets.symmetric(vertical: 4),
                     child: Text(
-                      "Developer - Technology & Innovation",
+                      "Admin",
                       style: TextStyle(
                         fontSize: 12,
                         color: Colors.white,
                       ),
                     ),
                   ),
-                  Container(
-                    width: MediaQuery.of(context).size.width * 0.45,
-                    padding: EdgeInsets.symmetric(vertical: 4),
-                    child: Text(
-                      "Admin",
-                      style: TextStyle(
-                        fontSize: 14,
-                        color: Colors.white,
-                      ),
-                    ),
-                  )
                 ],
               ),
             ),

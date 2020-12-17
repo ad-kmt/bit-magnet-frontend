@@ -34,7 +34,7 @@ class InvitationCard extends StatelessWidget {
               children: [
                 Expanded(
                   child: Text(
-                    invitationCard.host.toString() + ' is inviting you.',
+                    invitationCard.host.toString() + ' has invited you for the hakathon.',
                     style: TextStyle(
                         color: Palette.darkBlue,
                         fontSize: 18,

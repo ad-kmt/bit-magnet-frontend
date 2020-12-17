@@ -1,33 +1,28 @@
 import 'package:bit_magnet/models/hackathon_basic_details.dart';
-import 'package:bit_magnet/models/sample_objects.dart';
-import 'package:bit_magnet/screens/participant/hackathon_detail.dart';
 import 'package:bit_magnet/styles/constants.dart';
 import 'package:flutter/material.dart';
 
-class HackathonCard extends StatelessWidget {
+class PastHackathonCard extends StatelessWidget {
   //Hackathon object
-  final dynamic hackathon;
+  final IHackathonBasic hackathon;
   final dynamic hackathonDetailScreen;
 
-  HackathonCard(this.hackathon, this.hackathonDetailScreen);
+  PastHackathonCard(this.hackathon, this.hackathonDetailScreen);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 10.0),
       child: Ink(
-        decoration: kGradientBoxDecoration,
+        decoration: BoxDecoration(
+          gradient: kGradientGrey,
+          borderRadius: BorderRadius.all(
+            Radius.circular(20),
+          ),
+          boxShadow: [kBoxShadowGrey],
+        ),
         child: InkWell(
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) {
-                  return hackathonDetailScreen;
-                },
-              ),
-            );
-          },
+          onTap: () {},
           child: Container(
             padding: EdgeInsets.fromLTRB(16, 16, 16, 20),
             child: Column(
@@ -43,17 +38,17 @@ class HackathonCard extends StatelessWidget {
                         fontWeight: FontWeight.w600),
                   ),
                 ),
-                HackathonInfo(
+                PastHackathonInfo(
                   Icons.calendar_today_outlined,
                   "${hackathon.startDate} to ${hackathon.endDate}",
                 ),
-                HackathonInfo(
+                PastHackathonInfo(
                   Icons.location_on_outlined,
                   "${hackathon.location}",
                 ),
-                HackathonInfo(
+                PastHackathonInfo(
                   Icons.event_seat_outlined,
-                  "Space left: 5 team(s)",
+                  "Team(s): ${hackathon.team_size}",
                 ),
               ],
             ),
@@ -64,11 +59,11 @@ class HackathonCard extends StatelessWidget {
   }
 }
 
-class HackathonInfo extends StatelessWidget {
+class PastHackathonInfo extends StatelessWidget {
   final IconData iconData;
   final String infoText;
 
-  const HackathonInfo(this.iconData, this.infoText);
+  const PastHackathonInfo(this.iconData, this.infoText);
 
   @override
   Widget build(BuildContext context) {
