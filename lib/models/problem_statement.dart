@@ -1,7 +1,7 @@
 class IProblemStatement {
-  static String defaultBenefits = "Lorem ipsum";
+  static String defaultBenefits = "1) Predict client pricing based on decisions taken in the past and forecasted client usage, 2) Minimizing risks such as underpricing/overpricing based on analysis";
   static String defaultSuccessCriteria =
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod";
+      "A working prototype which will be demonstrated to Bill winters that can better identity clients with the need of this product to improve Client responses";
 
   final String id;
   final String title;
