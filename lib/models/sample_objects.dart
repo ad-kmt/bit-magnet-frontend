@@ -1,6 +1,7 @@
 import 'package:bit_magnet/models/invitation.dart';
 import 'package:bit_magnet/models/participant.dart';
 import 'package:bit_magnet/models/problem_statement.dart';
+import 'package:bit_magnet/models/solution.dart';
 import 'package:flutter/material.dart';
 import 'package:bit_magnet/models/team.dart';
 
@@ -80,6 +81,65 @@ class SampleObjects {
     'Jul\' 17',
   );
 
+  static List<ISolution> sampleSolutions = [
+    ISolution(
+      "34657689",
+      "BitMagnet",
+      ["Smita Smart", "Aditya Kumawat", "Amardeep", "Varun", "Kanak"],
+      "Smita Smart",
+      "Mobile Money SC Ruby App",
+      "The proposed solution is Ruby mobile App. It is a digital version of the wallet that you can carry in your pocket. it stores payment details like credit or debil and cash balances which can be used to make payments. you can simply use your smartphone or a tablet to make the payment.",
+      "Desisgned & plan the activities",
+      "Flutter Framework Dart programming language python oracle Jboss Android Studio",
+      "Flutter",
+      "Dec 16, 2020",
+      23,
+      ["Helpfull", "Nice One"],
+    ),
+    ISolution(
+      "5679809",
+      "BitMagnet",
+      ["Smita Smart", "Aditya Kumawat", "Amardeep", "Varun", "Kanak"],
+      "Smita Smart",
+      "Mobile Money SC Ruby App",
+      "The proposed solution is Ruby mobile App. It is a digital version of the wallet that you can carry in your pocket. it stores payment details like credit or debil and cash balances which can be used to make payments. you can simply use your smartphone or a tablet to make the payment.",
+      "Desisgned & plan the activities",
+      "Flutter Framework Dart programming language python oracle Jboss Android Studio",
+      "Flutter",
+      "Dec 16, 2020",
+      15,
+      ["Helpfull", "Nice One"],
+    ),
+    ISolution(
+      "5679888",
+      "BitMagnet",
+      ["Smita Smart", "Aditya Kumawat", "Amardeep", "Varun", "Kanak"],
+      "Smita Smart",
+      "Mobile Money SC Ruby App",
+      "The proposed solution is Ruby mobile App. It is a digital version of the wallet that you can carry in your pocket. it stores payment details like credit or debil and cash balances which can be used to make payments. you can simply use your smartphone or a tablet to make the payment.",
+      "Desisgned & plan the activities",
+      "Flutter Framework Dart programming language python oracle Jboss Android Studio",
+      "Flutter",
+      "Dec 16, 2020",
+      7,
+      ["Helpfull", "Nice One"],
+    ),
+    ISolution(
+      "8887774",
+      "BitMagnet",
+      ["Smita Smart", "Aditya Kumawat", "Amardeep", "Varun", "Kanak"],
+      "Smita Smart",
+      "Mobile Money SC Ruby App",
+      "The proposed solution is Ruby mobile App. It is a digital version of the wallet that you can carry in your pocket. it stores payment details like credit or debil and cash balances which can be used to make payments. you can simply use your smartphone or a tablet to make the payment.",
+      "Desisgned & plan the activities",
+      "Flutter Framework Dart programming language python oracle Jboss Android Studio",
+      "Flutter",
+      "Dec 16, 2020",
+      2,
+      ["Helpfull", "Nice One"],
+    ),
+  ];
+
   static List<IProblemStatement> sampleProblemList = [
     IProblemStatement(
         "0083",
@@ -155,6 +215,10 @@ class SampleObjects {
   static List<IHackathonBasic> pastHackathonList = [
     pastHackathon1,
     pastHackathon2,
+  ];
+  static List<IHackathonBasic> sampleHackathonList = [
+    sampleHackathon,
+    sampleHackathon
   ];
 
   static List<DropdownMenuItem> sampleGroupList = [
