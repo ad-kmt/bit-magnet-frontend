@@ -6,6 +6,7 @@ import 'package:bit_magnet/components/hackathon_cover.dart';
 import 'package:bit_magnet/components/hackathon_icon_bar.dart';
 import 'package:bit_magnet/components/lobby_card.dart';
 import 'package:bit_magnet/components/problem_statement_card.dart';
+import 'package:bit_magnet/components/solutions_view.dart';
 import 'package:bit_magnet/components/team_card.dart';
 
 import 'package:bit_magnet/models/hackathon_basic_details.dart';
@@ -214,21 +215,21 @@ class _PHackathonDetailState extends State<PHackathonDetail>
                 controller: ScrollController(),
                 child: Container(
                     child: Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 8.0),
-                      child: TeamCard(SampleObjects.sampleTeam),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 8.0),
-                      child: TeamCard(SampleObjects.sampleTeam),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 8.0),
-                      child: TeamCard(SampleObjects.sampleTeam),
-                    ),
-                  ],
-                )),
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 8.0),
+                          child: TeamCard(SampleObjects.sampleTeam),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 8.0),
+                          child: TeamCard(SampleObjects.sampleTeam),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 8.0),
+                          child: TeamCard(SampleObjects.sampleTeam),
+                        ),
+                      ],
+                    )),
               ),
               SingleChildScrollView(
                 controller: ScrollController(),
@@ -251,13 +252,10 @@ class _PHackathonDetailState extends State<PHackathonDetail>
                   ),
                 ),
               ),
-              Container(
-                child: Center(
-                  child: Text('Display Tab 1',
-                      style:
-                          TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
-                ),
-              ),
+              SingleChildScrollView(
+                controller: ScrollController(),
+                child: SolutionsView(),
+              )
             ],
           ),
         ),

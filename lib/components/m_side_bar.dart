@@ -69,7 +69,7 @@ class MSideBarHeader extends StatelessWidget {
                     width: MediaQuery.of(context).size.width * 0.45,
                     padding: EdgeInsets.symmetric(vertical: 4),
                     child: Text(
-                      "John Doe",
+                      "Shreya Singh",
                       style: TextStyle(
                         fontSize: 20,
                         color: Colors.white,

@@ -1,4 +1,5 @@
 import 'package:bit_magnet/models/solution.dart';
+import 'package:bit_magnet/styles/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -41,10 +42,10 @@ class _CardWidgetState extends State<CardWidget> {
                 Container(
                     width: MediaQuery.of(context).size.width,
                     decoration: BoxDecoration(
-                        color: Colors.blue[100],
-                        boxShadow: [
-                          BoxShadow(color: Colors.grey, offset: Offset(0.0, 3.0))
-                        ]),
+                      color: Colors.white,
+                      borderRadius: BorderRadius.all(Radius.circular(24)),
+                      boxShadow: [kBoxShadowGrey],
+                    ),
                     child: Column(children: [
                       Padding(
                           padding: EdgeInsets.all(5.0),
