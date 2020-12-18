@@ -3,6 +3,7 @@ import 'package:bit_magnet/components/hackathon_icon_bar.dart';
 import 'package:bit_magnet/components/problem_statement_card.dart';
 import 'package:bit_magnet/models/sample_objects.dart';
 import 'package:bit_magnet/screens/author/create_problem.dart';
+import 'package:bit_magnet/screens/author/problem_list.dart';
 import 'package:bit_magnet/screens/author/side_bar.dart';
 import 'package:bit_magnet/styles/palette.dart';
 import 'package:flutter/cupertino.dart';
@@ -77,7 +78,13 @@ class _ProblemSubmitState extends State<ProblemSubmit> {
             ),
             CupertinoButton.filled(
               child: Text('Submit'),
-              onPressed: () {/** */},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(
+                builder: (context) {
+                  return AProblemList();
+                },
+              ));
+              },
             ),
           ],
         ),
