@@ -26,7 +26,8 @@ class _CreateHackathonState extends State<CreateHackathon> {
   final List<DropdownMenuItem> invitationList =
       SampleObjects.sampleInvitationList;
   final List<DropdownMenuItem> locationList = SampleObjects.sampleLocationList;
-  final List<DropdownMenuItem> problemList = SampleObjects.sampleProblemList2;
+  final List<DropdownMenuItem> problemList =
+      SampleObjects.sampleProblemListModerator;
 
   @override
   Widget build(BuildContext context) {

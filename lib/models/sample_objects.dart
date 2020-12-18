@@ -263,16 +263,33 @@ class SampleObjects {
     DropdownMenuItem(child: Text('Rapid Miner'), value: 'Rapid Miner'),
   ];
   static List<DropdownMenuItem> sampleInvitationList = [
-    DropdownMenuItem(child: Text('Kofi.Blankson@sc.com'), value: 'Kofi.Blankson@sc.com'),
-    DropdownMenuItem(child: Text('Williamson.Smith@sc.com'), value: 'Williamson.Smith@sc.com')
+    DropdownMenuItem(
+        child: Text('Kofi.Blankson@sc.com'), value: 'Kofi.Blankson@sc.com'),
+    DropdownMenuItem(
+        child: Text('Williamson.Smith@sc.com'),
+        value: 'Williamson.Smith@sc.com')
   ];
   static List<DropdownMenuItem> sampleLocationList = [
     DropdownMenuItem(child: Text('Bangalore'), value: 'Bangalore'),
     DropdownMenuItem(child: Text('Chennai'), value: 'Chennai')
   ];
-  static List<DropdownMenuItem> sampleProblemList2 = [
-    DropdownMenuItem(child: Text('0050: Intelligent pricing of CCIB Clients'), value: '0050: Intelligent pricing of CCIB Clients'),
-    DropdownMenuItem(child: Text('0051: Mobile Money'), value: 'problem 2')
+  static List<DropdownMenuItem> sampleProblemListAuthor = [
+    DropdownMenuItem(
+        child: Text('0050: Intelligent pricing of CCIB Clients'),
+        value: '0050: Intelligent pricing of CCIB Clients'),
+  ];
+
+  static List<DropdownMenuItem> sampleProblemListModerator = [
+    DropdownMenuItem(
+        child: Text('0083: QR Code - Africa'), value: 'QR Code - Africa'),
+    DropdownMenuItem(
+        child: Text('0084: Algo trading based analysis'),
+        value: 'Algo trading based analysis'),
+    DropdownMenuItem(
+        child: Text('0085: aXess Challange App'), value: 'aXess Challange App'),
+    DropdownMenuItem(
+        child: Text('0086: Video Support-Hearing Impaired'),
+        value: 'Video Support-Hearing Impaired'),
   ];
 
   static List<IInvitation> sampleIlist = [
@@ -311,9 +328,12 @@ class SampleObjects {
   static IParticipant sampleParticipant4 = IParticipant("Varun", "Bhandia");
   static IParticipant sampleParticipant5 = IParticipant("Kanak", "Purohit");
 
-  static ITeam sampleTeam = ITeam(sampleParticipants, IParticipant("Smita", "Meshram"), "Bit Magnet");
-  static ITeam sampleTeam3 = ITeam(sampleParticipants3, IParticipant("Sanjay", "Ishwar"), "Brute Force");
-  static ITeam sampleTeam4 = ITeam(sampleParticipants4, IParticipant("Sahajveer", "Singh"), "Python Got Ping");
+  static ITeam sampleTeam =
+      ITeam(sampleParticipants, IParticipant("Smita", "Meshram"), "Bit Magnet");
+  static ITeam sampleTeam3 = ITeam(
+      sampleParticipants3, IParticipant("Sanjay", "Ishwar"), "Brute Force");
+  static ITeam sampleTeam4 = ITeam(sampleParticipants4,
+      IParticipant("Sahajveer", "Singh"), "Python Got Ping");
 
   static ITeam sampleTeam2 = ITeam(
       sampleParticipants2, IParticipant("Amardeep", "Singh"), "Elastic Minds");
