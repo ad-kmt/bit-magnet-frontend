@@ -89,6 +89,7 @@ class _CardWidgetState extends State<CardWidget> {
                                 Container(
                                   height: 5,
                                 ),
+                                Text("First install all package dependency"),
                                 Container(
                                   margin: const EdgeInsets.only(top: 5.0, right: 5, left: 5, bottom: 5.0),
                                   padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
@@ -100,6 +101,19 @@ class _CardWidgetState extends State<CardWidget> {
                                     ),
                                   ),
                                 ),
+                                Text("To start a server on PORT 3000"),
+                                Container(
+                                  margin: const EdgeInsets.only(top: 5.0, right: 5, left: 5, bottom: 5.0),
+                                  padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                                  color: Colors.grey[200],
+                                  child: Text('npm start',
+                                    style: TextStyle(
+                                        fontSize: 14,
+                                        color: Colors.black87
+                                    ),
+                                  ),
+                                ),
+                                Text("To start a dev server on PORT 3000"),
                                 Container(
                                   margin: const EdgeInsets.only(top: 5.0, right: 5, left: 5, bottom: 5.0),
                                   padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
@@ -143,7 +157,7 @@ class _CardWidgetState extends State<CardWidget> {
                           children: [
                             Container(
                               margin: const EdgeInsets.only(top: 20.0, right: 5, left: 5, bottom: 20.0),
-                              padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                              padding: EdgeInsets.symmetric(vertical: 5, horizontal: 5),
                               color: Colors.blueGrey,
                               child: Text('flutter',
                                 style: TextStyle(
