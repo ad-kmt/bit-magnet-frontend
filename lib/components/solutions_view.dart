@@ -21,11 +21,11 @@ class _SolutionsViewState extends State<SolutionsView> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.all(Radius.circular(24)),
-        boxShadow: [kBoxShadowGrey],
-      ),
+//      decoration: BoxDecoration(
+//        color: Colors.white,
+//        borderRadius: BorderRadius.all(Radius.circular(24)),
+//        boxShadow: [kBoxShadowGrey],
+//      ),
       padding: EdgeInsets.all(16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -51,17 +51,22 @@ class _SolutionsViewState extends State<SolutionsView> {
             }),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 6),
+            padding: const EdgeInsets.symmetric(vertical: 15),
             child: Text(
-              "Still have question?..",
+              "Still have question?",
               style: TextStyle(
                   fontSize: 22,
                   fontWeight: FontWeight.w600,
                   color: Colors.black),
             ),
           ),
-          Padding(
+          Container(
             padding: EdgeInsets.fromLTRB(5, 5, 5, 20),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.all(Radius.circular(24)),
+              boxShadow: [kBoxShadowGrey],
+            ),
             child: Row(
               children: <Widget>[
                 Expanded(
@@ -84,16 +89,17 @@ class _SolutionsViewState extends State<SolutionsView> {
                 ),
                 Expanded(
                   child: Container(
-                    decoration:
-                    const BoxDecoration(color: Colors.white),
                     child: new GestureDetector(
                       // SizedBox()
                       child: Container(
-                          width: 40.0,
-                          height: 30.0,
-                          child: new Tab(
-                              icon: new Image.asset(
-                                  "images/send.png"))),
+                        width: 40.0,
+                        height: 30.0,
+                        child: Icon(
+                          Icons.send,
+                          size: 18,
+                          color: Colors.white,
+                        ),
+                      ),
                       onTap: () {
                         print("share cliked");
                       },

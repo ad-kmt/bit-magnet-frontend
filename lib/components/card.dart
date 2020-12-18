@@ -46,44 +46,147 @@ class _CardWidgetState extends State<CardWidget> {
                       boxShadow: [kBoxShadowGrey],
                     ),
                     child: Column(children: [
-
                       Padding(
-                          padding: EdgeInsets.all(5.0),
+                          padding: EdgeInsets.all(10.0),
                           child: Column(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
                                 Text("Walletiers",
-                                    style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.w400)),
+                                  style: kDarkBlueSubHeading22,
+                                ),
                               ])),
                       Padding(
-                          padding: EdgeInsets.all(5.0),
+                          padding: EdgeInsets.all(10.0),
                           child: Column(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
-                                Text("Installation and Usage:",
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold, fontSize: 18)),
                                 Text(widget.solution.solutioDetail),
+
+                                Container(
+                                  height: 10,
+                                ),
+                                Text("1. See the issues queue for all discussions and tasks."),
+                                Text("2. Chat available on HOTOSM Slack within the #hotosm-website channel."),
+
+                                Container(
+                                  height: 10,
+                                ),
                               ])),
                       Padding(
-                          padding: EdgeInsets.all(5.0),
+                          padding: EdgeInsets.all(10.0),
                           child: Column(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
-                                Text("Technology Used:",
+                                Text("Getting Started with Development",
                                     style: TextStyle(
                                         fontWeight: FontWeight.bold, fontSize: 18)),
-                                Text(widget.solution.accomplishment),
+                                Container(
+                                  height: 5,
+                                ),
+                                Container(
+                                  margin: const EdgeInsets.only(top: 5.0, right: 5, left: 5, bottom: 5.0),
+                                  padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                                  color: Colors.grey[200],
+                                  child: Text('npm install',
+                                    style: TextStyle(
+                                        fontSize: 14,
+                                        color: Colors.black87
+                                    ),
+                                  ),
+                                ),
+                                Container(
+                                  margin: const EdgeInsets.only(top: 5.0, right: 5, left: 5, bottom: 5.0),
+                                  padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                                  color: Colors.grey[200],
+                                  child: Text('npm run dev',
+                                    style: TextStyle(
+                                        fontSize: 14,
+                                        color: Colors.black87
+                                    ),
+                                  ),
+                                ),
                               ])),
+                      Padding(
+                          padding: EdgeInsets.all(10.0),
+                          child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                Text("Source Code",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold, fontSize: 18)),
+                                Container(
+                                  height: 5,
+                                ),
+                                Row(
+                                    children: [
+                                      Container(
+                                        padding: EdgeInsets.symmetric(vertical: 5, horizontal: 5),
+                                        child: Text('https://github.com/hotosm/hotosm-website.git',
+                                        ),
+                                      ),
+                                      Icon(
+                                        Icons.copy,
+                                        size: 24,
+                                      ),
+                                    ]
+                                ),
+                              ])),
+                      Row(
+                          children: [
+                            Container(
+                              margin: const EdgeInsets.only(top: 20.0, right: 5, left: 5, bottom: 20.0),
+                              padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                              color: Colors.blueGrey,
+                              child: Text('flutter',
+                                style: TextStyle(
+                                    fontSize: 13,
+                                    color: Colors.white
+                                ),
+                              ),
+                            ),
+                            Container(
+                              margin: const EdgeInsets.only(top: 20.0, right: 5, left: 5, bottom: 20.0),
+                              padding: EdgeInsets.symmetric(vertical: 5, horizontal: 5),
+                              color: Colors.blueGrey,
+                              child: Text('dart',
+                                style: TextStyle(
+                                    fontSize: 13,
+                                    color: Colors.white
+                                ),
+                              ),
+                            ),
+                            Container(
+                              margin: const EdgeInsets.only(top: 20.0, right: 5, left: 5, bottom: 20.0),
+                              padding: EdgeInsets.symmetric(vertical: 5, horizontal: 5),
+                              color: Colors.blueGrey,
+                              child: Text('node',
+                                style: TextStyle(
+                                    fontSize: 13,
+                                    color: Colors.white
+                                ),
+                              ),
+                            ),
+                            Container(
+                              margin: const EdgeInsets.only(top: 20.0, right: 5, left: 5, bottom: 20.0),
+                              padding: EdgeInsets.symmetric(vertical: 5, horizontal: 5),
+                              color: Colors.blueGrey,
+                              child: Text('AWS',
+                                style: TextStyle(
+                                    fontSize: 13,
+                                    color: Colors.white
+                                ),
+                              ),
+                            )
+                          ]
+                      ),
                       Container(
                         // decoration: BoxDecoration(
                         //     boxShadow: [
@@ -112,11 +215,11 @@ class _CardWidgetState extends State<CardWidget> {
                                                   ? Icon(
                                                 Icons.favorite,
                                                 color: Colors.pink,
-                                                size: 34,
+                                                size: 24,
                                               )
                                                   : Icon(
                                                 Icons.favorite_outline,
-                                                size: 34,
+                                                size: 24,
                                               )),
                                           onTap: () {
                                             setState(() => idLiked = !idLiked);
@@ -137,7 +240,7 @@ class _CardWidgetState extends State<CardWidget> {
                                               height: 30.0,
                                               child: Icon(
                                                 Icons.comment,
-                                                size: 34,
+                                                size: 24,
                                               )),
                                           onTap: () {
                                             print("comment cliked");
@@ -156,7 +259,7 @@ class _CardWidgetState extends State<CardWidget> {
                                               height: 30.0,
                                               child: Icon(
                                                 Icons.share,
-                                                size: 34,
+                                                size: 24,
                                               )),
                                           onTap: () {
                                             print("share cliked");
@@ -186,7 +289,7 @@ class _CardWidgetState extends State<CardWidget> {
                                               )
                                                   : Icon(
                                                 Icons.bookmark_outline,
-                                                size: 34,
+                                                size: 24,
                                               )),
                                           onTap: () {
                                             setState(() => idBookMarked = !idBookMarked);
