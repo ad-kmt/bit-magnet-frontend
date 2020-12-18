@@ -111,11 +111,11 @@ class _CardWidgetState extends State<CardWidget> {
                                               child: idLiked
                                                   ? Icon(
                                                 Icons.favorite,
+                                                color: Colors.pink,
                                                 size: 34,
                                               )
                                                   : Icon(
                                                 Icons.favorite_outline,
-                                                color: Colors.pink,
                                                 size: 34,
                                               )),
                                           onTap: () {
