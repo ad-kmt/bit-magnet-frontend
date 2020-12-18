@@ -36,48 +36,50 @@ class _ProblemSubmitState extends State<ProblemSubmit> {
     return Scaffold(
       appBar: AxessAppBar(),
       backgroundColor: Palette.lightGreyBackground,
-      body: Column(
-        children: [
-          HackathonCover(SampleObjects.hackathon1),
-          HackathonIconBar(SampleObjects.hackathon1),
-          Container(
-            margin: EdgeInsets.fromLTRB(16, 24, 16, 8),
-            alignment: Alignment.centerLeft,
-            child: Text(
-              "Problems",
-              style: customLabel,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            HackathonCover(SampleObjects.hackathon1),
+            HackathonIconBar(SampleObjects.hackathon1),
+            Container(
+              margin: EdgeInsets.fromLTRB(16, 24, 16, 8),
+              alignment: Alignment.centerLeft,
+              child: Text(
+                "Problems",
+                style: customLabel,
+              ),
             ),
-          ),
-          SearchableDropdown.multiple(
-            items: problemList,
-            selectedItems: problemSelectedValues,
-            hint: Text("Select problems"),
-            searchHint: "",
-            onChanged: (value) {
-              setState(() {
-                problemSelectedValues = value;
-              });
-            },
-            closeButton: (problemSelectedValues) {
-              return (problemSelectedValues.isNotEmpty
-                  ? "Save ${problemSelectedValues.length == 1 ? '"' + problemList[problemSelectedValues.first].value.toString() + '"' : '(' + problemSelectedValues.length.toString() + ')'}"
-                  : "Save without selection");
-            },
-            isExpanded: true,
-          ),
-          Container(
-            margin: EdgeInsets.fromLTRB(16, 1, 16, 8),
-            alignment: Alignment.centerLeft,
-            child: Text(
-              "Problem statements for this hackathon",
-              style: customHeplerText,
+            SearchableDropdown.multiple(
+              items: problemList,
+              selectedItems: problemSelectedValues,
+              hint: Text("Select problems"),
+              searchHint: "",
+              onChanged: (value) {
+                setState(() {
+                  problemSelectedValues = value;
+                });
+              },
+              closeButton: (problemSelectedValues) {
+                return (problemSelectedValues.isNotEmpty
+                    ? "Save ${problemSelectedValues.length == 1 ? '"' + problemList[problemSelectedValues.first].value.toString() + '"' : '(' + problemSelectedValues.length.toString() + ')'}"
+                    : "Save without selection");
+              },
+              isExpanded: true,
             ),
-          ),
-          CupertinoButton.filled(
-            child: Text('Submit'),
-            onPressed: () {/** */},
-          ),
-        ],
+            Container(
+              margin: EdgeInsets.fromLTRB(16, 1, 16, 8),
+              alignment: Alignment.centerLeft,
+              child: Text(
+                "Problem statements for this hackathon",
+                style: customHeplerText,
+              ),
+            ),
+            CupertinoButton.filled(
+              child: Text('Submit'),
+              onPressed: () {/** */},
+            ),
+          ],
+        ),
       ),
     );
   }
