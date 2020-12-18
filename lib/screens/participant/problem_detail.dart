@@ -38,15 +38,20 @@ class _PProblemDetailState extends State<PProblemDetail> {
                 Padding(
                   padding: const EdgeInsets.only(bottom: 12.0),
                   child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         "${widget.problem.id}: ",
                         style: kBlackSubTitle,
                       ),
-                      Text(
-                        "${widget.problem.title}: ",
-                        style: TextStyle(
-                          fontSize: 24,
+                      Expanded(
+                        child: Container(
+                          child: Text(
+                            "${widget.problem.title}: ",
+                            style: TextStyle(
+                              fontSize: 24,
+                            ),
+                          ),
                         ),
                       ),
                     ],
