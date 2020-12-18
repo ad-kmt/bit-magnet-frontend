@@ -56,9 +56,9 @@ class _CardWidgetState extends State<CardWidget> {
                               children: <Widget>[
                                 Text("Walletiers",
                                     style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 20,
-                              fontWeight: FontWeight.w400)),
+                                        color: Colors.black,
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.w400)),
                               ])),
                       Padding(
                           padding: EdgeInsets.all(5.0),
@@ -67,7 +67,7 @@ class _CardWidgetState extends State<CardWidget> {
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
-                                Text("Solution Detail:",
+                                Text("Installation and Usage:",
                                     style: TextStyle(
                                         fontWeight: FontWeight.bold, fontSize: 18)),
                                 Text(widget.solution.solutioDetail),
@@ -79,133 +79,130 @@ class _CardWidgetState extends State<CardWidget> {
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
-                                Text("Accomplishment:",
+                                Text("Technology Used:",
                                     style: TextStyle(
                                         fontWeight: FontWeight.bold, fontSize: 18)),
                                 Text(widget.solution.accomplishment),
                               ])),
+                      Container(
+                        // decoration: BoxDecoration(
+                        //     boxShadow: [
+                        //       BoxShadow(color: Colors.grey, offset: Offset(0.0, 1.0))
+                        //     ]),
+                        child: Padding(
+                          padding: EdgeInsets.fromLTRB(0, 5, 0, 10),
+
+                          child: Row(
+
+                            children: <Widget>[
+                              Expanded(
+                                child: Container(
+                                  // decoration: const BoxDecoration(color: Colors.white),
+                                  child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      crossAxisAlignment: CrossAxisAlignment.center,
+                                      children: <Widget>[
+                                        new GestureDetector(
+                                          // SizedBox()
+                                          child: Container(
+                                              width: 40.0,
+                                              height: 30.0,
+                                              child: idLiked
+                                                  ? Icon(
+                                                Icons.favorite,
+                                                size: 34,
+                                              )
+                                                  : Icon(
+                                                Icons.favorite_outline,
+                                                color: Colors.pink,
+                                                size: 34,
+                                              )),
+                                          onTap: () {
+                                            setState(() => idLiked = !idLiked);
+                                          },
+                                        ),
+                                        Padding(
+                                            padding: EdgeInsets.fromLTRB(0, 0, 15, 0),
+                                            child: Text(
+                                                idLiked
+                                                    ? (widget.solution.upvotes + 1)
+                                                    .toString()
+                                                    : widget.solution.upvotes.toString(),
+                                                style: TextStyle(fontSize: 18))),
+                                        new GestureDetector(
+                                          // SizedBox()
+                                          child: Container(
+                                              width: 40.0,
+                                              height: 30.0,
+                                              child: Icon(
+                                                Icons.comment,
+                                                size: 34,
+                                              )),
+                                          onTap: () {
+                                            print("comment cliked");
+                                            setState(
+                                                    () => _showComments = !_showComments);
+                                          },
+                                        ),
+                                        Padding(
+                                            padding: EdgeInsets.fromLTRB(0, 0, 15, 0),
+                                            child: Text('3',
+                                                style: TextStyle(fontSize: 18))),
+                                        new GestureDetector(
+                                          // SizedBox()
+                                          child: Container(
+                                              width: 40.0,
+                                              height: 30.0,
+                                              child: Icon(
+                                                Icons.share,
+                                                size: 34,
+                                              )),
+                                          onTap: () {
+                                            print("share cliked");
+                                          },
+                                        ),
+                                      ]),
+                                ),
+                                flex: 3,
+                              ),
+                              Expanded(
+                                child: Container(
+                                  // decoration: const BoxDecoration(color: Colors.white),
+                                  child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment: MainAxisAlignment.end,
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: <Widget>[
+                                        new GestureDetector(
+                                          // SizedBox()
+                                          child: Container(
+                                              width: 40.0,
+                                              height: 30.0,
+                                              child: idBookMarked
+                                                  ? Icon(
+                                                Icons.bookmark,
+                                                size: 34,
+                                              )
+                                                  : Icon(
+                                                Icons.bookmark_outline,
+                                                size: 34,
+                                              )),
+                                          onTap: () {
+                                            setState(() => idBookMarked = !idBookMarked);
+                                          },
+                                        ),
+                                      ]),
+                                ),
+                                flex: 1,
+                              ),
+                            ],
+                          ),
+                        ),
+                      )
 
                     ])),
-                Container(
-                  // decoration: BoxDecoration(
-                  //     boxShadow: [
-                  //       BoxShadow(color: Colors.grey, offset: Offset(0.0, 1.0))
-                  //     ]),
-                  child: Padding(
-                    padding: EdgeInsets.fromLTRB(0, 5, 0, 10),
 
-                    child: Row(
-
-                      children: <Widget>[
-                        Expanded(
-                          child: Container(
-                            decoration: BoxDecoration(
-                                color: Colors.grey[100],
-                                boxShadow: [
-                                  BoxShadow(color: Colors.grey, offset: Offset(0.0, 3.0))
-                                ]),
-
-                            // decoration: const BoxDecoration(color: Colors.white),
-                            child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: <Widget>[
-                                  new GestureDetector(
-                                    // SizedBox()
-                                    child: Container(
-                                        width: 40.0,
-                                        height: 30.0,
-                                        child: idLiked
-                                            ? new Tab(
-                                            icon: new Image.asset(
-                                                "images/liked.png"))
-                                            : new Tab(
-                                            icon: new Image.asset(
-                                                "images/unliked.png"))),
-                                    onTap: () {
-                                      setState(() => idLiked = !idLiked);
-                                    },
-                                  ),
-                                  Padding(
-                                      padding: EdgeInsets.fromLTRB(0, 0, 15, 0),
-                                      child: Text(
-                                          idLiked
-                                              ? (widget.solution.upvotes + 1)
-                                              .toString()
-                                              : widget.solution.upvotes.toString(),
-                                          style: TextStyle(fontSize: 18))),
-                                  new GestureDetector(
-                                    // SizedBox()
-                                    child: Container(
-                                        width: 40.0,
-                                        height: 30.0,
-                                        child: new Tab(
-                                            icon: new Image.asset(
-                                                "images/comment.png"))),
-                                    onTap: () {
-                                      print("comment cliked");
-                                      setState(
-                                              () => _showComments = !_showComments);
-                                    },
-                                  ),
-                                  Padding(
-                                      padding: EdgeInsets.fromLTRB(0, 0, 15, 0),
-                                      child: Text('3',
-                                          style: TextStyle(fontSize: 18))),
-                                  new GestureDetector(
-                                    // SizedBox()
-                                    child: Container(
-                                        width: 40.0,
-                                        height: 30.0,
-                                        child: new Tab(
-                                            icon: new Image.asset(
-                                                "images/share.png"))),
-                                    onTap: () {
-                                      print("share cliked");
-                                    },
-                                  ),
-                                ]),
-                          ),
-                          flex: 3,
-                        ),
-                        Expanded(
-                          child: Container(
-                            // decoration: const BoxDecoration(color: Colors.white),
-                            decoration: BoxDecoration(
-                                color: Colors.grey[100],
-                                boxShadow: [
-                                  BoxShadow(color: Colors.grey, offset: Offset(0.0, 3.0))
-                                ]),
-                            child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: <Widget>[
-                                  new GestureDetector(
-                                    // SizedBox()
-                                    child: Container(
-                                        width: 40.0,
-                                        height: 30.0,
-                                        child: idBookMarked
-                                            ? new Tab(
-                                            icon: new Image.asset(
-                                                "images/bookmarked.png"))
-                                            : new Tab(
-                                            icon: new Image.asset(
-                                                "images/bookmark.png"))),
-                                    onTap: () {
-                                      setState(() => idBookMarked = !idBookMarked);
-                                    },
-                                  ),
-                                ]),
-                          ),
-                          flex: 1,
-                        ),
-                      ],
-                    ),
-                  ),
-                )
               ])),
 
           // this is the company card which is toggling based upon the bool
@@ -246,7 +243,7 @@ class _CardWidgetState extends State<CardWidget> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: <Widget>[
-                          Text("Smita Smart:- ",
+                          Text("Smita Meshram:- ",
                               style:
                               TextStyle(fontWeight: FontWeight.bold)),
                           Text(comments[2]),
