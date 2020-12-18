@@ -89,10 +89,14 @@ class _CardWidgetState extends State<CardWidget> {
                                 Container(
                                   height: 5,
                                 ),
-                                Text("First install all package dependency"),
+                                Container(
+                                  padding: EdgeInsets.symmetric(vertical: 5, horizontal: 5),
+                                  child: Text("First install all package dependency"),
+                                ),
+
                                 Container(
                                   margin: const EdgeInsets.only(top: 5.0, right: 5, left: 5, bottom: 5.0),
-                                  padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                                  padding: EdgeInsets.symmetric(vertical: 5, horizontal: 5),
                                   color: Colors.grey[200],
                                   child: Text('npm install',
                                     style: TextStyle(
@@ -101,7 +105,11 @@ class _CardWidgetState extends State<CardWidget> {
                                     ),
                                   ),
                                 ),
-                                Text("To start a server on PORT 3000"),
+                                Container(
+                                  padding: EdgeInsets.symmetric(vertical: 5, horizontal: 5),
+                                  child: Text("To start a server on PORT 3000"),
+                                ),
+
                                 Container(
                                   margin: const EdgeInsets.only(top: 5.0, right: 5, left: 5, bottom: 5.0),
                                   padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
@@ -113,7 +121,10 @@ class _CardWidgetState extends State<CardWidget> {
                                     ),
                                   ),
                                 ),
-                                Text("To start a dev server on PORT 3000"),
+                                Container(
+                                  padding: EdgeInsets.symmetric(vertical: 5, horizontal: 5),
+                                  child: Text("To start a dev server on PORT 3000"),
+                                ),
                                 Container(
                                   margin: const EdgeInsets.only(top: 5.0, right: 5, left: 5, bottom: 5.0),
                                   padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
@@ -156,8 +167,8 @@ class _CardWidgetState extends State<CardWidget> {
                       Row(
                           children: [
                             Container(
-                              margin: const EdgeInsets.only(top: 20.0, right: 5, left: 5, bottom: 20.0),
-                              padding: EdgeInsets.symmetric(vertical: 5, horizontal: 5),
+                              margin: const EdgeInsets.only(top: 0, right: 10, left: 10, bottom: 20.0),
+                              padding: EdgeInsets.symmetric(vertical: 5, horizontal: 20),
                               color: Colors.blueGrey,
                               child: Text('flutter',
                                 style: TextStyle(
@@ -167,7 +178,7 @@ class _CardWidgetState extends State<CardWidget> {
                               ),
                             ),
                             Container(
-                              margin: const EdgeInsets.only(top: 20.0, right: 5, left: 5, bottom: 20.0),
+                              margin: const EdgeInsets.only(top: 0, right: 5, left: 5, bottom: 20.0),
                               padding: EdgeInsets.symmetric(vertical: 5, horizontal: 5),
                               color: Colors.blueGrey,
                               child: Text('dart',
@@ -178,7 +189,7 @@ class _CardWidgetState extends State<CardWidget> {
                               ),
                             ),
                             Container(
-                              margin: const EdgeInsets.only(top: 20.0, right: 5, left: 5, bottom: 20.0),
+                              margin: const EdgeInsets.only(top: 0, right: 5, left: 5, bottom: 20.0),
                               padding: EdgeInsets.symmetric(vertical: 5, horizontal: 5),
                               color: Colors.blueGrey,
                               child: Text('node',
@@ -189,7 +200,7 @@ class _CardWidgetState extends State<CardWidget> {
                               ),
                             ),
                             Container(
-                              margin: const EdgeInsets.only(top: 20.0, right: 5, left: 5, bottom: 20.0),
+                              margin: const EdgeInsets.only(top: 0, right: 5, left: 5, bottom: 20.0),
                               padding: EdgeInsets.symmetric(vertical: 5, horizontal: 5),
                               color: Colors.blueGrey,
                               child: Text('AWS',
