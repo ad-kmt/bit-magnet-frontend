@@ -215,21 +215,21 @@ class _PHackathonDetailState extends State<PHackathonDetail>
                 controller: ScrollController(),
                 child: Container(
                     child: Column(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 8.0),
-                          child: TeamCard(SampleObjects.sampleTeam),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 8.0),
-                          child: TeamCard(SampleObjects.sampleTeam),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 8.0),
-                          child: TeamCard(SampleObjects.sampleTeam),
-                        ),
-                      ],
-                    )),
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 8.0),
+                      child: TeamCard(SampleObjects.sampleTeam),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 8.0),
+                      child: TeamCard(SampleObjects.sampleTeam2),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 8.0),
+                      child: TeamCard(SampleObjects.sampleTeam3),
+                    ),
+                  ],
+                )),
               ),
               SingleChildScrollView(
                 controller: ScrollController(),

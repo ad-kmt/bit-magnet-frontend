@@ -24,7 +24,8 @@ class ProblemSubmit extends StatefulWidget {
 
 class _ProblemSubmitState extends State<ProblemSubmit> {
   List<IProblemStatement> samplePlist = SampleObjects.sampleProblemList;
-  final List<DropdownMenuItem> problemList = SampleObjects.sampleProblemList2;
+  final List<DropdownMenuItem> problemList =
+      SampleObjects.sampleProblemListAuthor;
   List<int> problemSelectedValues = [];
 
   @override

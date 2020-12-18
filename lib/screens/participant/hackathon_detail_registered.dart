@@ -229,11 +229,11 @@ class _PHackathonDetailRegisteredState extends State<PHackathonDetailRegistered>
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 8.0),
-                      child: TeamCard(SampleObjects.sampleTeam),
+                      child: TeamCard(SampleObjects.sampleTeam2),
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 8.0),
-                      child: TeamCard(SampleObjects.sampleTeam),
+                      child: TeamCard(SampleObjects.sampleTeam3),
                     ),
                   ],
                 )),
