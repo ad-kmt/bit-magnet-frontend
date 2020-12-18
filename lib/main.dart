@@ -1,4 +1,5 @@
 import 'package:bit_magnet/components/hackathon_card.dart';
+import 'package:bit_magnet/components/solutions_view.dart';
 import 'package:bit_magnet/models/sample_objects.dart';
 import 'package:bit_magnet/screens/author/create_problem.dart';
 import 'package:bit_magnet/screens/author/home.dart';
@@ -29,7 +30,7 @@ class AxessApp extends StatelessWidget {
     return MaterialApp(
       title: 'aXess App',
       debugShowCheckedModeBanner: false,
-      home: LoginScreen(),
+      home: PHome(),
       routes: {},
     );
   }

@@ -30,7 +30,6 @@ class _CardWidgetState extends State<CardWidget> {
   Widget build(BuildContext context) {
     return Column(
         mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(height: 10.0),
           // list card containing country name
@@ -42,24 +41,24 @@ class _CardWidgetState extends State<CardWidget> {
                 Container(
                     width: MediaQuery.of(context).size.width,
                     decoration: BoxDecoration(
-    color: Colors.white,
-    borderRadius: BorderRadius.all(Radius.circular(24)),
-    boxShadow: [kBoxShadowGrey],
-    ),
+                      color: Colors.white,
+                      borderRadius: BorderRadius.all(Radius.circular(24)),
+                      boxShadow: [kBoxShadowGrey],
+                    ),
                     child: Column(children: [
+
                       Padding(
                           padding: EdgeInsets.all(5.0),
                           child: Column(
-                              mainAxisSize: MainAxisSize.min,
+                              mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
-                                Text(widget.solution.title,
+                                Text("Walletiers",
                                     style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.w400)),
-                                // Text(),
+                              color: Colors.black,
+                              fontSize: 20,
+                              fontWeight: FontWeight.w400)),
                               ])),
                       Padding(
                           padding: EdgeInsets.all(5.0),
@@ -85,36 +84,7 @@ class _CardWidgetState extends State<CardWidget> {
                                         fontWeight: FontWeight.bold, fontSize: 18)),
                                 Text(widget.solution.accomplishment),
                               ])),
-                      Padding(
-                          padding: EdgeInsets.all(5.0),
-                          child: Column(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                Text("How it's build/Tech Stack:",
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold, fontSize: 18)),
-                                Text(widget.solution.techDetail),
-                              ])),
-                      Padding(
-                          padding: EdgeInsets.all(5.0),
-                          child: Column(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                Text("Teammates/Contacts:",
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold, fontSize: 18)),
-                                Column(
-                                    children: new List.generate(
-                                        widget.solution.teamMember.length,
-                                            (int index) {
-                                          return new Text(
-                                              widget.solution.teamMember[index]);
-                                        })),
-                              ])),
+
                     ])),
                 Container(
                   // decoration: BoxDecoration(
