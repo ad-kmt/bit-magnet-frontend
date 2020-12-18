@@ -42,10 +42,10 @@ class _CardWidgetState extends State<CardWidget> {
                 Container(
                     width: MediaQuery.of(context).size.width,
                     decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.all(Radius.circular(24)),
-                      boxShadow: [kBoxShadowGrey],
-                    ),
+    color: Colors.white,
+    borderRadius: BorderRadius.all(Radius.circular(24)),
+    boxShadow: [kBoxShadowGrey],
+    ),
                     child: Column(children: [
                       Padding(
                           padding: EdgeInsets.all(5.0),
@@ -56,7 +56,9 @@ class _CardWidgetState extends State<CardWidget> {
                               children: <Widget>[
                                 Text(widget.solution.title,
                                     style: TextStyle(
-                                        fontWeight: FontWeight.bold, fontSize: 22)),
+                                        color: Colors.black,
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w400)),
                                 // Text(),
                               ])),
                       Padding(

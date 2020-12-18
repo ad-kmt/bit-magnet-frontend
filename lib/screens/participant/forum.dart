@@ -266,6 +266,43 @@ class _ForumScreenState extends State<ForumScreen>
                         Container(
                           height: 20,
                         ),
+                        Row(
+                          children: [
+                            CircleAvatar(
+                              radius: 32,
+                              backgroundColor: Palette.lightGreyContainer,
+                              child: Icon(
+                                Icons.person,
+                                size: 34,
+                                color: Colors.white,
+                              ),
+                            ),
+                            Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Container(
+                                    padding: EdgeInsets.symmetric(vertical: 4, horizontal: 10),
+                                    child: Text(
+                                      "Andrés de Fonollosa",
+                                      style: TextStyle(
+                                        fontSize: 18,
+                                      ),
+                                    ),
+                                  ),
+                                  Container(
+                                    padding: EdgeInsets.symmetric(vertical: 4, horizontal: 10),
+                                    child: Text(
+                                      "58 minutes ago",
+                                      style: TextStyle(
+                                          fontSize: 14,
+                                          color: Colors.blueGrey
+                                      ),
+                                    ),
+                                  ),
+                                ]),
+                          ],
+                        ),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.center,
